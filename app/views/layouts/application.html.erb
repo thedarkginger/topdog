@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Topdog Trivia</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TopdogTrivia.com</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<%= render 'layouts/header' %>
+	
+	<%= yield %>
 
-<%= render 'layouts/header' %>
-
-<%= yield %>
+	<!--- STICKY FOOTER -->
+	<div id="footer">
+    	<div class="container">
+        <p class="text-muted credit">TopDog Trivia: Bringing Trivia to the Pros</p>
+        <ul>
+        	<li><%= link_to "Home", root_path %></li>
+     		<li><%= link_to "About", about_path %></li> 
+      		<li><%= link_to "Legal", legal_path %></li> 
+      		<li><%= link_to "Contact Us", contact_path %></li> 
+        </ul>
+      </div>
+	 </div>
+	 <!-- END FOOTER ELEMENT -->
 
 </body>
 </html>
