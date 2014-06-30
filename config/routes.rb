@@ -1,4 +1,8 @@
 Topdog::Application.routes.draw do
+  root "pages#home"
+  get "about" => "pages#about"
+  get "legal" => "pages#legal"
+  get "contact" => "pages#contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
