@@ -1,10 +1,9 @@
 $body-bg: white; 
-
-
 $navbar-default-bg: #8e44ad;
 $navbar-default-link-color: #ecf0f1;
 $jumbotron-padding: 15px;
 $font-size-base: 16px; 
+$navbar-border-radius: 0;
 
 
 @import 'bootstrap';
@@ -28,6 +27,12 @@ body {
 
 .center {
 	text-align: center; 
+}
+
+.navbar {
+	border-style: solid; 
+	border-width: 0px; 
+	border-color: black; 
 }
 
 
