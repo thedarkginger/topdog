@@ -1,3 +1,12 @@
+$body-bg: white; 
+
+
+$navbar-default-bg: #8e44ad;
+$navbar-default-link-color: #ecf0f1;
+$jumbotron-padding: 15px;
+$font-size-base: 16px; 
+
+
 @import 'bootstrap';
 
 
@@ -12,6 +21,16 @@ body {
   /* The html and body elements cannot have any padding or margin. */
 }
 
+.navdivide {
+	height: 28px;
+	background-color: #f1c40f;
+}
+
+.center {
+	text-align: center; 
+}
+
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -25,7 +44,7 @@ body {
 /* Set the fixed height of the footer here */
 #footer {
   height: 200px;
-  background-color: #D35400;
+  background-color: #8e44ad;
   padding: 20px;
   margin-top: 50px; 
 }
