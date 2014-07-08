@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TopdogTrivia.com</title>
+	<title>TopDogTrivia.com</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   	<%= csrf_meta_tags %>
@@ -12,6 +12,10 @@
 	<%= render 'layouts/header' %>
 	
 	<%= yield %>
+
+	<div class="bottomthird">
+		<div class="navdivide">
+		</div>
 
 	<!--- STICKY FOOTER -->
 	<div id="footer">
@@ -26,6 +30,7 @@
       </div>
 	 </div>
 	 <!-- END FOOTER ELEMENT -->
+	</div>
 
 </body>
 </html>

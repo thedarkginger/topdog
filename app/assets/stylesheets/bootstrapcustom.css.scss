@@ -46,12 +46,12 @@ body {
   padding: 0 0 60px;
 }
 
+
 /* Set the fixed height of the footer here */
 #footer {
   height: 200px;
   background-color: #8e44ad;
   padding: 20px;
-  margin-top: 50px; 
 }
 
 /* unvisited link */
@@ -74,3 +74,22 @@ body {
 #footer ul li {
 	color: black;
 }
+
+.bottomthird {
+  margin-top: 40px; 
+}
+
+/* Design Video Game Elements */
+
+.videogame {
+  height: 90px; 
+  width: 90px; 
+  border-style: solid; 
+  border-width: 3px; 
+  border-color: black; 
+}
+
+
+
+
+
