@@ -4,7 +4,7 @@
 		<h1>TopDog Trivia</h1>
 		<p>This is the first paragraph describing what the site does.</p>
 		<% if user_signed_in? %>
-          # do something
+          <a class="btn btn-stripe" <%= link_to "Find Games", triviahub_path %> </a>
     <% else %>
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
