@@ -1,10 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
 $body-bg: white; 
 $navbar-default-bg: #8e44ad;
 $navbar-default-link-color: #ecf0f1;
 $jumbotron-padding: 15px;
 $font-size-base: 16px; 
 $navbar-border-radius: 0;
-
 
 @import 'bootstrap';
 
@@ -23,6 +24,11 @@ body {
 .navdivide {
 	height: 28px;
 	background-color: #f1c40f;
+}
+
+.purplebar {
+  height: 15px;
+  background-color: #8e44ad;
 }
 
 .center {

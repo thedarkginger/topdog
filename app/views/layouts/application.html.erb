@@ -18,8 +18,8 @@
 	<%= yield %>
 
 	<div class="bottomthird">
-		<div class="navdivide">
-		</div>
+		<div class="navdivide"></div>
+
 
 	<!--- STICKY FOOTER -->
 	<div id="footer">
@@ -34,7 +34,15 @@
       </div>
 	 </div>
 	 <!-- END FOOTER ELEMENT -->
-	</div>
+	</div> 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/footer-reveal-master/footer-reveal.js"></script>
+<script> 
+	$(document).ready(function(){
+		$('#footer').footerReveal();
+	}
+</script>
 
 </body>
 </html>
