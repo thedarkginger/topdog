@@ -3,8 +3,14 @@
 	<div class="jumbotron center">
 		<h1>TopDog Trivia</h1>
 		<p>This is the first paragraph describing what the site does.</p>
-		<p>I am going to put another paragraph here as a placeholder</p>
-		<p>Click here to <%= link_to "Sign Up", "#", class: "btn btn-primary" %></p>
+		<% if user_signed_in? %>
+          # do something
+    <% else %>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+       </p>
+  <% end %> 
 	</div>
 
 	 <div class="container">
