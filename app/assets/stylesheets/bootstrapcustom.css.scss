@@ -6,7 +6,7 @@
 
 $body-bg: white; 
 $navbar-default-bg: #2c3e50;
-$navbar-default-link-color: #bdc3c7;
+$navbar-default-link-color: #F2F1EF;
 $jumbotron-padding: 15px;
 $font-size-base: 16px; 
 $navbar-border-radius: 0;
@@ -15,12 +15,12 @@ $navbar-border-radius: 0;
 
 .navbar-default {
   font-family: 'Ubuntu';
-  font-size: 19px; 
+  font-size: 20px; 
 }
 
 .navbar-brand {
   font-family: 'Ubuntu'; 
-  font-size: 21px; 
+  font-size: 23px; 
 }
 
 
@@ -36,8 +36,8 @@ body {
 }
 
 .navdivide {
-	height: 22px;
-	background-color: #f1c40f;
+	height: 25px;
+	background-color: #2980b9;
 }
 
 .purplebar {
@@ -130,6 +130,9 @@ body {
   -o-border-radius: 17px;
   border-radius: 17px;
   border-color: #008cdd;
+  margin-right: 15px; 
+  padding-right: 12px; 
+  padding-left: 12px;  
 }
 .btn-stripe:hover {
   color: #fff;
