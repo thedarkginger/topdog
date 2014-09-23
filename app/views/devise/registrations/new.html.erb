@@ -26,7 +26,25 @@
 				    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %></div>
 				</div>
 
-				  <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
+
+				<h3> Billing Information </h3>
+
+				<div class="form-group">
+				  <div><%= f.label :legal_Name %><br />
+				    <%= f.password_field :legal_Name, autocomplete: "off", class: "form-control" %></div>
+				</div>
+
+				<div class="form-group">
+				  <div><%= f.label :street_Address %><br />
+				    <%= f.password_field :street_Address, autocomplete: "off", class: "form-control" %></div>
+				</div>
+
+				<div class="form-group">
+				  <div><%= f.label :city %><br />
+				    <%= f.password_field :city, autocomplete: "off", class: "form-control" %></div>
+				</div>
+
+				<div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
 				<% end %>
 
 			</div>
