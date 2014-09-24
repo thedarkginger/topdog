@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   
   def contact
   end
+
+  def triviahub
+  end
+  
 end
