@@ -2,7 +2,8 @@
 function Trivia() {
   // http://coursesweb.net/
   var obth = this;       // stores the object contained in 'this'
-  var objfiles = {};     // stores the object with "category":"file_name" elements, received in setCateg()
+ 
+    
   var level = 'level1';  // 'level1' with variant of answers, 'level2' with text field to write the answer
   var stopct = 0;        // if not 0, countdown-timer not continue, in startCT()
   var ctsec = 15;         // number of seconds for each quiz
