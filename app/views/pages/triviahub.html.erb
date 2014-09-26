@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
 
 	<div class="jumbotron">
@@ -5,21 +8,22 @@
 		<h2>This is where you will be able to find the different games of the day.</h2>
 		<h4>Response to a question right here in smaller text. Here are some links about the business.</h4>
 
-		<!-- First Trivia Construction --> 
-
-		<div id="content">
-       		 <h3 id="question"></h3>
-       		 <div id="choices"></div>
-       		 <p><button id="submit"></button></p>
-       		 <p id="score"></p>
-      	</div>
-    	</div>
-
 	</div>
 
-	<script> 
+  
+    <!-- First Trivia Construction --> 
 
-	var quiz = [{
+    <div id="content">
+           <h3 id="question"></h3>
+           <div id="choices"></div>
+           <p><button id="submit"></button></p>
+           <p id="score"></p>
+        </div>
+      </div>
+
+      <script> 
+
+  var quiz = [{
   "question": "What is the full form of IP?",
   "choices": ["Internet Provider", "Internet Port", "Internet Protocol"],
   "correct": "Internet Protocol"
@@ -143,6 +147,8 @@ function showFinalResults() {
 window.addEventListener("load", askQuestion, false);
 submitBtn.addEventListener("click", checkAnswer, false);
 
-</script>
+</script> 
+
+
 
 	
