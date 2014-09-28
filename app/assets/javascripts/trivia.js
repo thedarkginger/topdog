@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$("#content").ready(function() { 
 
 
   var quiz = [{
