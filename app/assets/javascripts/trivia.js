@@ -1,5 +1,6 @@
 $(document).ready(function() { 
 
+
   var quiz = [{
   "question": "What is the full form of IP?",
   "choices": ["Internet Provider", "Internet Port", "Internet Protocol"],
@@ -123,5 +124,6 @@ function showFinalResults() {
 
 window.addEventListener("load", askQuestion, false);
 submitBtn.addEventListener("click", checkAnswer, false);
+
 
 });

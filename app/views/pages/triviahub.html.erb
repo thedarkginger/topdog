@@ -10,7 +10,7 @@
 
 	</div>
 
-  
+
     <!-- First Trivia Construction --> 
 
     <div id="content">
@@ -19,7 +19,26 @@
            <p><button id="submit"></button></p>
            <p id="score"></p>
         </div>
-      </div>
+
+    <button id="btn-click" type="submit" class="btn btn-primary btn-lg"> Take History Quiz </button>
+
+</div>
+
+<script> 
+
+$(document).ready(function() {
+
+$("#content").hide(); 
+
+$("#btn-click").click(function(quiz) {
+  $("#content").show();
+  $("#btn-click").hide();
+}
+  );
+
+}); 
+
+</script>
 
 
 
