@@ -11,34 +11,9 @@
 	</div>
 
 
-    <!-- First Trivia Construction --> 
-
-    <div id="content">
-           <h3 id="question"></h3>
-           <div id="choices"></div>
-           <p><button id="submit"></button></p>
-           <p id="score"></p>
-        </div>
-
-    <button id="btn-click" type="submit" class="btn btn-primary btn-lg"> Take History Quiz </button>
+  <%= link_to "History", history_path, class: "btn btn-primary btn-lg" %>
 
 </div>
-
-<script> 
-
-$(document).ready(function() {
-
-$("#content").hide(); 
-
-$("#btn-click").click(function(e) {
-  $("#content").show();
-  $("#btn-click").hide();
-}
-  );
-
-}); 
-
-</script>
 
 
 

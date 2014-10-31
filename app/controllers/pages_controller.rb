@@ -13,5 +13,8 @@ class PagesController < ApplicationController
 
   def triviahub
   end
+
+  def history
+  end
   
 end
