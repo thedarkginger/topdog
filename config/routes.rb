@@ -1,4 +1,6 @@
 Topdog::Application.routes.draw do
+  resources :high_scores
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
