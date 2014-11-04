@@ -11,11 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103054125) do
+ActiveRecord::Schema.define(version: 20141104005616) do
+
+  create_table "demo_questions", force: true do |t|
+    t.integer  "order"
+    t.string   "question1"
+    t.string   "question2"
+    t.string   "question3"
+    t.string   "question4"
+    t.string   "answer"
+    t.date     "creation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "high_scores", force: true do |t|
     t.string   "game"
     t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trivia_demos", force: true do |t|
+    t.integer  "order"
+    t.string   "question"
+    t.string   "answer1"
+    t.string   "answer2"
+    t.string   "answer3"
+    t.string   "answer4"
+    t.string   "correcta"
+    t.date     "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

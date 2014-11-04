@@ -1,4 +1,7 @@
 Topdog::Application.routes.draw do
+
+  resources :trivia_demos
+
   resources :high_scores
 
   devise_for :users

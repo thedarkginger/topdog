@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @trivia_demo.order %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @trivia_demo.question %>
+</p>
+
+<p>
+  <strong>Answer1:</strong>
+  <%= @trivia_demo.answer1 %>
+</p>
+
+<p>
+  <strong>Answer2:</strong>
+  <%= @trivia_demo.answer2 %>
+</p>
+
+<p>
+  <strong>Answer3:</strong>
+  <%= @trivia_demo.answer3 %>
+</p>
+
+<p>
+  <strong>Answer4:</strong>
+  <%= @trivia_demo.answer4 %>
+</p>
+
+<p>
+  <strong>Correcta:</strong>
+  <%= @trivia_demo.correcta %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @trivia_demo.published %>
+</p>
+
+<%= link_to 'Edit', edit_trivia_demo_path(@trivia_demo) %> |
+<%= link_to 'Back', trivia_demos_path %>

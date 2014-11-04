@@ -1,0 +1,45 @@
+<div class="container">
+
+<h1>Demo Mode - Build Trivia Question Set</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Question</th>
+      <th>Answer 1</th>
+      <th>Answer 2</th>
+      <th>Answer 3</th>
+      <th>Answer 4</th>
+      <th>Correct Answer</th>
+      <th>Published Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trivia_demos.each do |trivia_demo| %>
+      <tr>
+        <td><%= trivia_demo.order %></td>
+        <td><%= trivia_demo.question %></td>
+        <td><%= trivia_demo.answer1 %></td>
+        <td><%= trivia_demo.answer2 %></td>
+        <td><%= trivia_demo.answer3 %></td>
+        <td><%= trivia_demo.answer4 %></td>
+        <td><%= trivia_demo.correcta %></td>
+        <td><%= trivia_demo.published %></td>
+        <td><%= link_to 'Show', trivia_demo %></td>
+        <td><%= link_to 'Edit', edit_trivia_demo_path(trivia_demo) %></td>
+        <td><%= link_to 'Destroy', trivia_demo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trivia demo', new_trivia_demo_path %>
+
+</div>
