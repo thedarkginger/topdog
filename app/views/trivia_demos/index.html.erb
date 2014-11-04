@@ -1,8 +1,12 @@
 <div class="container">
 
-<h1>Demo Mode - Build Trivia Question Set</h1>
+<h1>Demo Mode - An Interface for Trivia Builds</h1>
 
-<table>
+<div class="jumbotron">
+  <p>This is a demo interface for creating sets of trivia questions and answers that will be sent to the individual trivia views. The postgreSQL will generate an json file that we can pull from when a contestant reaches the trivia engine to prevent seeing the questions/answers in the source code.</p>
+</div>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Order</th>
@@ -40,6 +44,6 @@
 
 <br>
 
-<%= link_to 'New Trivia demo', new_trivia_demo_path %>
+<%= link_to 'Create New Trivia Question for Demo', new_trivia_demo_path, class:"btn btn-primary btn-lg" %>
 
 </div>

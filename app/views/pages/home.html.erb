@@ -4,8 +4,9 @@
     <%= image_tag("logo.png", size: "690x450") %> 
 		<p>This is the first paragraph describing what the site does.</p>
 		<% if user_signed_in? %>
-          <a class="btn btn-stripe" <%= link_to "Find Games", triviahub_path %> </a>
-          <a class="btn btn-stripe" <%= link_to "Chip Wallet", triviahub_path %> </a>
+          <a class="btn btn-primary btn-lg", id="frontbuttons" <%= link_to "Find Games", triviahub_path %> </a>
+          <a class="btn btn-default btn-lg". id="frontbuttons" <%= link_to "Chip Wallet", triviahub_path %> </a>
+           <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", trivia_demos_path %> </a>
     <% else %>
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>

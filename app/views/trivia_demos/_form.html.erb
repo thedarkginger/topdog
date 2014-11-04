@@ -11,39 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :order %><br>
-    <%= f.number_field :order %>
+ <div class="form-group">
+    <%= f.label :Question_Number %><br>
+    <%= f.number_field :order, class: "form-control" %>
   </div>
-  <div class="field">
+ <div class="form-group">
     <%= f.label :question %><br>
-    <%= f.text_field :question %>
+    <%= f.text_field :question, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :answer1 %><br>
-    <%= f.text_field :answer1 %>
+  <div class="form-group">
+    <%= f.label :answer_1 %><br>
+    <%= f.text_field :answer1, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :answer2 %><br>
-    <%= f.text_field :answer2 %>
+ <div class="form-group">
+    <%= f.label :answer_2 %><br>
+    <%= f.text_field :answer2, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :answer3 %><br>
-    <%= f.text_field :answer3 %>
+  <div class="form-group">
+    <%= f.label :answer_3 %><br>
+    <%= f.text_field :answer3, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :answer4 %><br>
-    <%= f.text_field :answer4 %>
+  <div class="form-group">
+    <%= f.label :answer_4 %><br>
+    <%= f.text_field :answer4, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :correcta %><br>
-    <%= f.text_field :correcta %>
+  <div class="form-group">
+    <%= f.label :correct_Answer %><br>
+    <%= f.text_field :correcta, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :published %><br>
-    <%= f.date_select :published %>
+    <%= f.date_select :published, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+ <div class="form-group">
+    <%= f.submit class: "btn btn-primary btn-lg" %>
   </div>
 <% end %>

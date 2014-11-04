@@ -55,6 +55,16 @@ body {
 	border-color: black; 
 }
 
+.btn-primary {
+  background: #c0392b;
+  border-color: #c0392b; 
+}
+
+.btn-primary:hover {
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
 
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -66,6 +76,9 @@ body {
   padding: 0 0 60px;
 }
 
+#frontbuttons {
+  margin: 5px;
+}
 
 /* Set the fixed height of the footer here */
 #footer {
@@ -93,6 +106,14 @@ body {
 }
 #footer ul li {
 	color: black;
+}
+
+#logofooter {
+  height: 21%;
+  width: 23%;
+  float: right;
+  margin-right: 7%;
+
 }
 
 .bottomthird {
@@ -246,6 +267,11 @@ body {
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
           border-radius: 5px;
+      }
+
+      #questioncreation {
+        text-align: center;
+        float: center;
       }
 
 
