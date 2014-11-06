@@ -1,7 +1,7 @@
 <div class="container">
 
 	<div class="jumbotron center">
-    <%= image_tag("logo.png", size: "690x450") %> 
+    <%= image_tag("logo.png", id: "homelogo", size: "690x450") %> 
 		<p>This is the first paragraph describing what the site does.</p>
 		<% if user_signed_in? %>
           <a class="btn btn-primary btn-lg", id="frontbuttons" <%= link_to "Find Games", triviahub_path %> </a>

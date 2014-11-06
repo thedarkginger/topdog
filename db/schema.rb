@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104005616) do
+ActiveRecord::Schema.define(version: 20141106015945) do
 
   create_table "demo_questions", force: true do |t|
     t.integer  "order"
@@ -43,7 +43,10 @@ ActiveRecord::Schema.define(version: 20141104005616) do
     t.date     "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "trivia_demos", ["user_id"], name: "index_trivia_demos_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
