@@ -18,20 +18,22 @@
 <div id="example">
 </div>
 
+
 </div>
 
 <script> 
 
-	$.getJSON('/trivia_demos.json', function(data) {
-		var items = [] 
-		$.each(data, function (item, i) {
-    		items.push('<li id="' + i.order + '">' + i.question + ' - ' + i.answer1 +  '</li>');
-			});
 
-  	$('<ul/>', {
-    	'class': 'my-new-list',
-    	html: items.join('')
- 	 }).appendTo('#example');
+$.getJSON('/trivia_demos.json', function(data) {
+var items = [] 
+$.each(data, function (item, i) {
+items.push('<li id="' + i.order + '">' + i.question + ' - ' + i.correcta +  '</li>');
+});
+
+$('<ul/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+ 	}).appendTo('#example');
 
   });
 
