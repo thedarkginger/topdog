@@ -6,4 +6,25 @@
 <p>You can be better than that</p>
 </div>
 
+<div id="example"></div>
+
 </div>
+
+<script> 
+
+
+$.getJSON('/trivia_demos.json', function(data) {
+var items = [] 
+$.each(data, function (item, i) {
+items.push('<p id="' + i.order + '">' + i.question + ' - ' + i.correcta +  '</p>');
+});
+
+$('<p/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+ 	}).appendTo('#example');
+
+  });
+
+	
+</script> 
