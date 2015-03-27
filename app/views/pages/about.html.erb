@@ -1,30 +1,12 @@
 <div class="container">
 
 <div class="jumbotron">
-<h1>About Page</h1> 
-<h2>Second example text</h2>
-<p>You can be better than that</p>
+<h2>About TopDog Trivia </h2> 
+<h3>It all started in a casino.</h3>
+<p>This is who we are. We are aiming to build the most dynamic, exciting online gaming experience for trivia fans.</p>
 </div>
 
-<div id="example"></div>
+
 
 </div>
 
-<script> 
-
-
-$.getJSON('/trivia_demos.json', function(data) {
-var items = [] 
-$.each(data, function (item, i) {
-items.push('<p id="' + i.order + '">' + i.question + ' - ' + i.correcta +  '</p>');
-});
-
-$('<p/>', {
-    'class': 'my-new-list',
-    html: items.join('')
- 	}).appendTo('#example');
-
-  });
-
-	
-</script> 
