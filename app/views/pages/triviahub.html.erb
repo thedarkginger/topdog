@@ -27,7 +27,7 @@
 $.getJSON('/trivia_demos.json', function(data) {
 var items = [] 
 $.each(data, function (item, i) {
-items.push('<li id="' + i.order + '">' + i.question + ' - ' + i.correcta +  '</li>');
+items.push('<li id="' + i.order + '">' + i.order + ' - ' + i.question + ' - ' + ' A1: ' + ' - ' + i.answer1 + ' - ' + 'Correct Answer' + ' - ' + i.correcta +  '</li>');
 });
 
 $('<ul/>', {
