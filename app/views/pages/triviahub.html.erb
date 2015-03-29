@@ -15,16 +15,15 @@
 
   <%= link_to "History", history_path, class: "btn btn-primary btn-lg" %>
 
-<div id="example">
-</div>
 
-<p> Second Test </p> 
+<p> JSON Quiz V2</p> 
 
 <div id="example2">
 	</div>
 
 
-</div>
+</div> 
+
 
 <script> 
 
@@ -32,28 +31,14 @@
 $.getJSON('/trivia_demos.json', function(data) {
 var items = [] 
 $.each(data, function (item, i) {
-items.push('<li id="' + i.order + '">' + i.order + ' - ' + i.question + ' - ' + ' A1: ' + ' - ' + i.answer1 + ' - ' + 'Correct Answer' + ' - ' + i.correcta +  '</li>');
+items.push('<p id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
+items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A2: ' + i.answer2 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A3: ' + i.answer3 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A4: ' + i.answer4 + '</p>');
+items.push('<input type="checkbox" id="">' + ' Correct Answer: ' + ' - ' + i.correcta + '</p>');
 });
 
-$('<ul/>', {
-    'class': 'my-new-list',
-    html: items.join('')
- 	}).appendTo('#example');
-
-  });
-
-	
-</script> 
-
-<script> 
-
-
-$.getJSON('/trivia_demos.json', function(data) {
-var items = [] 
-$.each(data, function (item, i) {
-items.push('<p id="">' + i.order + ' - ' + i.question + '</p>');
-items.push('<p id="">' + i.order + ' - ' + ' A1: ' + ' - ' + i.answer1 + ' - ' + 'Correct Answer' + ' - ' + i.correcta +  '</p>');
-});
 
 $('<p/>', {
     'class': 'my-new-list2',
