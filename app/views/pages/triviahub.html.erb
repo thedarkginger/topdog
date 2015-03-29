@@ -18,6 +18,11 @@
 <div id="example">
 </div>
 
+<p> Second Test </p> 
+
+<div id="example2">
+	</div>
+
 
 </div>
 
@@ -40,8 +45,25 @@ $('<ul/>', {
 	
 </script> 
 
+<script> 
 
 
+$.getJSON('/trivia_demos.json', function(data) {
+var items = [] 
+$.each(data, function (item, i) {
+items.push('<p id="">' + i.order + ' - ' + i.question + '</p>');
+items.push('<p id="">' + i.order + ' - ' + ' A1: ' + ' - ' + i.answer1 + ' - ' + 'Correct Answer' + ' - ' + i.correcta +  '</p>');
+});
+
+$('<p/>', {
+    'class': 'my-new-list2',
+    html: items.join('')
+ 	}).appendTo('#example2');
+
+  });
+
+	
+</script> 
 
 
 
