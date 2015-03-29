@@ -31,7 +31,7 @@
 $.getJSON('/trivia_demos.json', function(data) {
 var items = [] 
 $.each(data, function (item, i) {
-items.push('<p id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
+items.push('<p style="font-weight: bold" id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
 items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
 items.push('<input type="checkbox" id="">' + ' A2: ' + i.answer2 + '</p>');
 items.push('<input type="checkbox" id="">' + ' A3: ' + i.answer3 + '</p>');
