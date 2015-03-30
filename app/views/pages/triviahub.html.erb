@@ -9,24 +9,29 @@
 
 		<h2>This is where you will be able to find the different games of the day.</h2>
 		<h4>Response to a question right here in smaller text. Here are some links about the business.</h4>
+	 <%= link_to "History", history_path, class: "btn btn-primary btn-lg" %>
 
 	</div>
 
 
-  <%= link_to "History", history_path, class: "btn btn-primary btn-lg" %>
+<p id="quiz"> JSON Quiz V2</p> 
 
-
-<p> JSON Quiz V2</p> 
 
 <div id="example2">
 	</div>
 
+<div id="button">
+<input type="submit" value="Check Answer" class="btn btn-primary btn-md">
+</div>
 
 </div> 
 
 
 <script> 
 
+$(document).ready(function() {
+	$('p #answers').hide(); 
+});
 
 $.getJSON('/trivia_demos.json', function(data) {
 var items = [] 
@@ -36,7 +41,8 @@ items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
 items.push('<input type="checkbox" id="">' + ' A2: ' + i.answer2 + '</p>');
 items.push('<input type="checkbox" id="">' + ' A3: ' + i.answer3 + '</p>');
 items.push('<input type="checkbox" id="">' + ' A4: ' + i.answer4 + '</p>');
-items.push('<input type="checkbox" id="">' + ' Correct Answer: ' + ' - ' + i.correcta + '</p>');
+items.push('<p style="color: red" id="answers">' + ' Correct Answer: ' + i.correcta + '</p>');
+
 });
 
 
@@ -46,9 +52,19 @@ $('<p/>', {
  	}).appendTo('#example2');
 
   });
+ 
 
+$(document).ready(function() {
+	$('#button').click(function () {
+    	$('p #answers').slideToggle('slow');
+});
+}); 
 	
 </script> 
+
+
+
+
 
 
 
