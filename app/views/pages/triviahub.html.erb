@@ -26,12 +26,7 @@
 
 </div> 
 
-
 <script> 
-
-$(document).ready(function() {
-	$('p #answers').hide(); 
-});
 
 $.getJSON('/trivia_demos.json', function(data) {
 var items = [] 
@@ -52,15 +47,23 @@ $('<p/>', {
  	}).appendTo('#example2');
 
   });
- 
 
-$(document).ready(function() {
-	$('#button').click(function () {
-    	$('p #answers').slideToggle('slow');
-});
-}); 
 	
 </script> 
+
+<script> 
+
+$(document).ready(function(){
+	$('p #answers').hide(); 
+	$('#button').on("click", function(){
+		$('p #answers').slideToggle();
+		});
+});
+
+</script>
+
+ 
+
 
 
 
