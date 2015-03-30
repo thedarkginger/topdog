@@ -88,7 +88,8 @@ body {
 }
 
 #frontbuttons {
-  margin: 5px;
+  margin: 15px;
+  vertical-align: center; 
 }
 
 /* Set the fixed height of the footer here */
@@ -324,6 +325,27 @@ body {
         text-align: center;
         float: center;
       }
+
+      #weakside {
+      float: left; 
+      width: 45%; 
+      vertical-align: center; 
+
+      }
+
+      #strongside {
+      float: right; 
+      width: 40%; 
+      margin-top: 10%; 
+      }
+
+.jumbotron {
+  height: 390px; 
+}
+
+
+
+
 
 
 
