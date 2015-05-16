@@ -1,6 +1,3 @@
-
-
-
 <div class="container">
 
 	<div class="jumbotron">
@@ -20,16 +17,18 @@
 <div id="example2">
 	</div>
 
-<div id="button">
-<input type="submit" value="Check Answer" class="btn btn-primary btn-md">
-</div>
+<form> 
+<input type="submit" id="triviabutton" value="Check Answer" class="btn btn-primary btn-md">
+</form>
 
 </div> 
 
 <script> 
 
+
 $.getJSON('/trivia_demos.json', function(data) {
 var items = []
+var allQuestions = []
 $.each(data, function (item, i) {
 items.push('<p style="font-weight: bold" id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
 items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
@@ -40,38 +39,28 @@ items.push('<p style="color: red" id="answers">' + ' Correct Answer: ' + i.corre
 
 });
 
+var allQuestions = [];
 
-$('<p/>', {
-    'class': 'my-new-list2',
-    html: items.join('')
- 	}).appendTo('#example2');
+allQuestions.push(items.join(''));
 
-  });
+}); 
 
+// $('<p/>', {
+//    'class': 'my-new-list2',
+//    html: items.join('')
+// 	}).appendTo('#example2');
+
+$('#example2').html(allQuestions[0]);
+
+var counter = 1;
+
+$(document).on("click", "#triviabutton", function() {
+  counter++;
+  
+  $("#example2").html(allQuestions[counter]);
+});
 	
 </script> 
-
-<script> 
-
-$(document).ready(function(){
-	$('p #answers').hide(); 
-	$('#button').on("click", function(){
-		$('p #answers').slideToggle();
-		});
-});
-
-</script>
-
- 
-
-
-
-
-
-
-
-
-
 
 
 	

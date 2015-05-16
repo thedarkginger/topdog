@@ -2,9 +2,10 @@
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:bold);
 @import url(http://fonts.googleapis.com/css?family=Cardo);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 
-$body-bg: white; 
+$body-bg: #ECF0F1; 
 $navbar-default-bg: #2c3e50;
 $navbar-default-link-color: #F2F1EF;
 $jumbotron-padding: 10px;
@@ -88,8 +89,7 @@ body {
 }
 
 #frontbuttons {
-  margin: 15px;
-  vertical-align: center; 
+  margin: 9px;
 }
 
 /* Set the fixed height of the footer here */
@@ -101,19 +101,19 @@ body {
 
 /* unvisited link */
 #footer a:link {
-    color: white;
+    color: #ECF0F1;
     font-size: 17px; 
 }
 
 /* visited link */
 #footer a:visited {
-    color: #bdc3c7;
+    color: #ECF0F1;
     font-size: 20px; 
 }
 
 #footer p {
-	color: #bdc3c7; 
-	font-weight: normal; 
+	color: #ECF0F1; 
+	font-weight: bold; 
 	font-size: 21px; 
 }
 #footer ul li {
@@ -338,6 +338,21 @@ body {
       width: 40%; 
       margin-top: 10%; 
       }
+
+      #hometext {
+        font-family: 'Oswald', sans-serif;
+        text-align: left; 
+        font-size: 3.1em; 
+      }
+
+       #hometext2 {
+        font-family: 'Oswald', sans-serif;
+        text-align: center; 
+        font-size: 2.3em; 
+        color: #7F8C8D; 
+      }
+
+     
 
 
 

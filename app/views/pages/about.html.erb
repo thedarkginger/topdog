@@ -10,7 +10,40 @@
 <p>TopDog was founded in 2015</p> 
 </div>
 
+<div id="trivia">
+
+  </div> 
+
+</div>
+
 
 
 </div>
+
+
+<script>
+ 
+
+$.getJSON('/trivia_demos.json', function(data) {
+var items = [];  
+$.each(data, function (item, i) {
+items.push('<p style="font-weight: bold" id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
+items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A2: ' + i.answer2 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A3: ' + i.answer3 + '</p>');
+items.push('<input type="checkbox" id="">' + ' A4: ' + i.answer4 + '</p>');
+items.push('<p style="color: red" id="answers">' + ' Correct Answer: ' + i.correcta + '</p>');
+
+});
+
+
+$('<p/>', {
+'class': 'my-new-list2',
+html: items.join('')
+}).appendTo('#trivia');
+
+}); 
+
+
+ </script>
 
