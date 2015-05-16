@@ -7,38 +7,10 @@
 			<p>We aim to offer exemplary customer service to be an elite gaming experience for our players. This guide will layout how to address any issues you may be experiencing.</p>
 	</div> 
 
-<div id="test"></div>
-
-<button id="next">next question</button>
 
 </div>
 
 <script> 
 
-
-var number = [0]
-
-(function () {
-	var q = $.getJSON('/trivia_demos.json', function(data) { 
-		$.each(data, function (item, i) {
-		items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
-	});
-	});
-	var display = q[number]; 
-	document.getElementById('test').innerHTML = display;
-    number++;
-
-
-
-}));
-
-document.getElementById('next').onclick=function () {
-    var q = $.each(data, function (item, i) {
-		items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
-	});
-    var display = q[number];
-    document.getElementById('test').innerHTML = display;
-    number++;
-}//function to jump to next item in array
 
 </script> 
