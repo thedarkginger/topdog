@@ -11,8 +11,17 @@
 	<div class="jumbotron center">
          <%= image_tag("logo.png", id: "logohome") %> 
       <h1 id="hometext-center">TopDog Trivia</h1>
-      <p id="homep">Playing trivia is not a new concept. Online quiz contests, live pub competitions, and testing yourself during TV game shows are standard fare for today's trivia expert. But why isn't there a way for you to win real cash from your knowledge?</p><br>
-      <p>That is the problem TopDog was designed to solve.</P> 
+
+      <p id="homep">Playing trivia is not a new concept. But why isn't there a way for you to <b>win real cash</b> from your knowledge?</p><br>
+      <p id="homep">That is the problem TopDog was designed to solve. Here are the basics:</P> 
+
+      <ul>
+        <li>Play daily trivia games against a pool of contestants</li>
+        <li>Win real cash instantly for entering games</li>
+        <li>Pick contests from your favorite categories</li>
+      </ul>
+
+
 		<% if user_signed_in? %>
           <a class="btn btn-primary btn-lg", id="frontbuttons", <%= link_to "Find Games", triviahub_path %> </a>
           <a class="btn btn-default btn-lg". id="frontbuttons" <%= link_to "Game Tokens", triviahub_path %> </a>

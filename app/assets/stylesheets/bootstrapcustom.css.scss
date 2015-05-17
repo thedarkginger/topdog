@@ -15,6 +15,13 @@ $navbar-border-radius: 0;
 
 @import 'bootstrap';
 
+ul {
+  text-align: left;  
+  font-size: 1.3em; 
+  margin-left: 30%;
+
+}
+
 .navbar-default {
   font-family: 'Ubuntu';
   font-size: 18px; 
@@ -384,7 +391,11 @@ body {
 
       #homep {
         text-align: left; 
+        margin-left: 30%;
       }
+
+  
+  
 
 
 
