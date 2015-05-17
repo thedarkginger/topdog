@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:bold);
 @import url(http://fonts.googleapis.com/css?family=Cardo);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
 $body-bg: #ECF0F1; 
@@ -17,8 +18,10 @@ $navbar-border-radius: 0;
 
 #jumbolist ul {
   text-align: left;  
-  font-size: 1.3em; 
+  font-size: 1.35em; 
   margin-left: 30%;
+  font-family: inherit; 
+  font-weight: normal;
 
 }
 
