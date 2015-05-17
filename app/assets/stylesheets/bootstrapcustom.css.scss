@@ -9,6 +9,7 @@ $body-bg: #ECF0F1;
 $navbar-default-bg: #2c3e50;
 $navbar-default-link-color: #F2F1EF;
 $jumbotron-padding: 10px;
+$jumbotron-bg: #C5EFF7; 
 $font-size-base: 16px; 
 $navbar-border-radius: 0;
 
@@ -22,6 +23,14 @@ $navbar-border-radius: 0;
 .navbar-brand {
   font-family: 'Ubuntu'; 
   font-size: 23px; 
+}
+
+
+.jumbotron {
+  border: 12px; 
+  border-color: #D64541;
+  border-style: solid;  
+  box-shadow: 4px 4px 7px #888888;
 }
 
 
@@ -73,9 +82,14 @@ body {
   border-color: #e74c3c;
 }
 
-#homelogo {
-  text-align: left; 
+
+
+/* STYLES FOR HOME PAGE */ 
+
+#firstlayer {
+  padding-bottom: 30px;
 }
+
 
 
 /* Wrapper for page content to push down footer */
@@ -177,6 +191,16 @@ body {
   width: 23%;
   float: right;
   margin-right: 7%;
+
+}
+
+#logohome {
+  height: 31%;
+  width: 33%;
+  float: left;
+  padding-bottom: 5px;
+  margin-left: -3.9%;
+  margin-top: -2.2%;
 
 }
 
@@ -352,17 +376,15 @@ body {
         color: #7F8C8D; 
       }
 
-     
-     
+      #hometext-center {
+        font-family: 'Oswald', sans-serif;
+        text-align: center; 
+        font-size: 3.5em; 
+      }
 
-
-
-
-
-
-
-
-
+      #homep {
+        text-align: left; 
+      }
 
 
 
