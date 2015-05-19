@@ -11,6 +11,7 @@ Topdog::Application.routes.draw do
   get "contact" => "pages#contact"
   get "triviahub" => "pages#triviahub"
   get "history" => "pages#history"
+  get "barker" => "pages#barker"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
