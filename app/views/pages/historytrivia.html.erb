@@ -33,7 +33,7 @@ $.getJSON('/histories.json', function (data)
             
             container.empty();
             
-            var q_topic_container = $('<div>').append((quiz_pass + 1) + ':' + q_topic);
+            var q_topic_container = $('<div>').append((quiz_pass + 1) + '.  ' + q_topic);
             
             container.append(q_topic_container);
             
@@ -41,7 +41,7 @@ $.getJSON('/histories.json', function (data)
             {
                 value = value.trim();
               
-                var q_ans_item = $('<button class="btn btn-primary btn-lg">').html(value).on('click', function (e)
+                var q_ans_item = $('<button class="btn btn-primary-questions">').html(value).on('click', function (e)
                 {
                     if (index == q_right)
                     {
