@@ -4,6 +4,10 @@
 
 <h1 id="triviah1">TopDog Trivia: History Battle</h1> 
 
+<p>When the Battle begins, click on your selected answer before the clock runs out, or you will move to the next question. <b>Remember:</b> there is no penalty for wrong answers.</p> 
+
+<hr />
+
 <div id="trivia">
     <!-- Question will appear here -->
 </div>
@@ -47,7 +51,7 @@ $.getJSON('/histories.json', function (data)
                 {
                     if (index == q_right)
                     {
-                        alert('Correct');
+                        alert('Good guess!');
                         
                         score += 1;
                     }
@@ -66,7 +70,7 @@ $.getJSON('/histories.json', function (data)
                     else
                     {
                         // end of quiz
-                        container.html('You score was ' + score + ' out ' + quiz_all + ' questions.');
+                        container.html('You score was ' + score + ' correct out of ' + quiz_all + ' questions.');
                     }
                 });
                 
