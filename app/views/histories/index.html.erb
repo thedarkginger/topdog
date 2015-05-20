@@ -1,0 +1,33 @@
+<h1>Listing histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Correcta</th>
+      <th>Quizdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.question %></td>
+        <td><%= history.answers %></td>
+        <td><%= history.correcta %></td>
+        <td><%= history.quizdate %></td>
+        <td><%= link_to 'Show', history %></td>
+        <td><%= link_to 'Edit', edit_history_path(history) %></td>
+        <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History', new_history_path %>

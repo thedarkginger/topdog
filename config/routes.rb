@@ -1,5 +1,7 @@
 Topdog::Application.routes.draw do
 
+  resources :histories
+
   resources :trivia_demos
 
   resources :high_scores
@@ -10,8 +12,9 @@ Topdog::Application.routes.draw do
   get "legal" => "pages#legal"
   get "contact" => "pages#contact"
   get "triviahub" => "pages#triviahub"
-  get "history" => "pages#history"
+  get "historytrivia" => "pages#historytrivia"
   get "barker" => "pages#barker"
+  get "examples"=> "pages#examples"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
