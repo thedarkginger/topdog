@@ -11,23 +11,38 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
     <%= f.label :question %><br>
-    <%= f.text_field :question %>
+    <%= f.text_field :question, class: "form-control" %>
   </div>
+</div>
+
+<div class="form-group">
   <div class="field">
     <%= f.label :answers %><br>
-    <%= f.text_field :answers %>
+    <%= f.text_field :answers, class: "form-control" %>
   </div>
+</div>
+
+<div class="form-group">
   <div class="field">
     <%= f.label :correcta %><br>
-    <%= f.number_field :correcta %>
+    <%= f.number_field :correcta, class: "form-control" %>
   </div>
+</div>
+
+<div class="form-group">
   <div class="field">
     <%= f.label :quizdate %><br>
-    <%= f.date_select :quizdate %>
+    <%= f.date_select :quizdate, class: "form-control"%>
   </div>
+</div>
+
+<div class="form-group">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
   </div>
+</div>
 <% end %>
+
