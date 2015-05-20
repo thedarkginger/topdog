@@ -1,7 +1,11 @@
 <div class="container">
 
+<div class="jumbotron">
+
 <div id="trivia">
     <!-- Question will appear here -->
+</div>
+
 </div>
 
 </div>
@@ -37,7 +41,7 @@ $.getJSON('/histories.json', function (data)
             {
                 value = value.trim();
               
-                var q_ans_item = $('<button>').html(value).on('click', function (e)
+                var q_ans_item = $('<button class="btn btn-primary btn-lg">').html(value).on('click', function (e)
                 {
                     if (index == q_right)
                     {
