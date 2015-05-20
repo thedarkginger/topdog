@@ -6,50 +6,12 @@
 
 		<h2>This is where you will be able to find the different games of the day.</h2>
 		<h4>Response to a question right here in smaller text. Here are some links about the business.</h4>
-	 <%= link_to "HistoryTrivia", historytrivia_path, class: "btn btn-primary btn-lg" %>
+	 <%= link_to "History Battle", historytrivia_path, class: "btn btn-primary btn-lg" %>
 
 	</div>
 
 </div> 
 
-<script> 
-
-
-$.getJSON('/trivia_demos.json', function(data) {
-var items = []
-var allQuestions = []
-$.each(data, function (item, i) {
-items.push('<p style="font-weight: bold" id="">' + ' Question ' + i.order + ' - ' + i.question + '</p>');
-items.push('<input type="checkbox" id="">' + ' A1: ' + i.answer1 + '</p>');
-items.push('<input type="checkbox" id="">' + ' A2: ' + i.answer2 + '</p>');
-items.push('<input type="checkbox" id="">' + ' A3: ' + i.answer3 + '</p>');
-items.push('<input type="checkbox" id="">' + ' A4: ' + i.answer4 + '</p>');
-items.push('<p style="color: red" id="answers">' + ' Correct Answer: ' + i.correcta + '</p>');
-
-});
-
-var allQuestions = [];
-
-allQuestions.push(items.join(''));
-
-}); 
-
-// $('<p/>', {
-//    'class': 'my-new-list2',
-//    html: items.join('')
-// 	}).appendTo('#example2');
-
-$('#example2').html(allQuestions[0]);
-
-var counter = 1;
-
-$(document).on("click", "#triviabutton", function() {
-  counter++;
-  
-  $("#example2").html(allQuestions[counter]);
-});
-	
-</script> 
 
 
 	
