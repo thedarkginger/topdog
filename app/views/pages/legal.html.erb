@@ -9,4 +9,26 @@
 		<h4>How Do I Get Paid?</h4>
 		<p>You can read more about our payment procedure here. In a nutshell, by linking your player's account to your bank, you can receive the fastest payments as long as you have a minimum of $10 in your account.</p>
 	</div>
+
+	<span id="countdown" class="timer"></span>
 </div>
+
+<script>
+var seconds = 10;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>

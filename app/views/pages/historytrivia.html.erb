@@ -2,6 +2,8 @@
 
 <div class="jumbotron">
 
+<h1 id="triviah1">TopDog Trivia: History Battle</h1> 
+
 <div id="trivia">
     <!-- Question will appear here -->
 </div>
@@ -51,7 +53,7 @@ $.getJSON('/histories.json', function (data)
                     }
                     else
                     {
-                        alert('Wrong!!!');
+                        alert('Wrong Answer');
                     }
                     
                     quiz_pass += 1;
@@ -64,7 +66,7 @@ $.getJSON('/histories.json', function (data)
                     else
                     {
                         // end of quiz
-                        container.html('You got ' + score + ' from ' + quiz_all + ' questions.');
+                        container.html('You score was ' + score + ' out ' + quiz_all + ' questions.');
                     }
                 });
                 
