@@ -14,17 +14,18 @@
 		 	<div id="divCircle">
 		 	
 		     <div id="middleBubble">
-		     	<p id="historybubble">History</p> 
+		     	<p id="historytext">History</p> 
+		     	<p id="sportstext">Sports</p> 
 		     </div>
-		     <%= image_tag("circle.png", id: "laboratory") %> 
-		     <%= image_tag("circle.png", id: "counseling-weight-loss") %> 
+		     <%= image_tag("circle.png", id: "sportsbubble") %> 
+		     <%= image_tag("circle.png", id: "other-thing") %> 
 		      <%= image_tag("circle.png", id: "quick-care") %> 
 		       <%= image_tag("circle.png", id: "specialist-coordination") %> 
 		     <%= image_tag("circle.png", id: "primary-preventative") %> 
 		      <%= image_tag("circle.png", id: "school-physicals") %> 
 		       <%= image_tag("circle.png", id: "perscriptions") %> 
 		  
-		        <%= link_to('historytrivia') do %> <%= image_tag("circle.png", id: "chronic-diseases", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
+		        <%= link_to('historytrivia') do %> <%= image_tag("circle.png", id: "historybubble", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
 		        <% end %> 
 
 		</div>
@@ -68,16 +69,27 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-	$("#historybubble").hide(); 
-	$("#chronic-diseases").mouseover(function(){
-		$("#historybubble").show(); 
+	// History Info 
+	$("#historytext").hide(); 
+	$("#historybubble").mouseover(function(){
+		$("#historytext").fadeIn('100'); 
 
 	});
-	$("#chronic-diseases").mouseout(function() {
-		$("#historybubble").fadeOut('fast'); 
+	$("#historybubble").mouseout(function() {
+		$("#historytext").fadeOut('900'); 
 		}); 
-	}); 
+	
+	// Sports Info
+	$("#sportstext").hide(); 
+	$("#sportsbubble").mouseover(function(){
+		$("#sportstext").fadeIn('100'); 
 
+	});
+
+	$("#sportsbubble").mouseout(function() {
+		$("#sportstext").fadeOut('900'); 
+		}); 
+	});
 
 
 </script> 

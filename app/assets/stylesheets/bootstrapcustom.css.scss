@@ -411,8 +411,9 @@ body {
   text-align:center;
 }
 
-#historybubble {
-  margin-top: 10%;
+#historytext, #sportstext {
+  margin-top: 15%;
+  font-weight: bold;
 }
 
 @media only screen and (max-device-width: 480px) {
