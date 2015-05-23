@@ -1,15 +1,12 @@
 <div class="container">
 
+	<h1 id="hubtext">Trivia Showdown: Staging</h1>
+	<h1 id="hubh2">Where Champions Are Found</h1>
+
 	<div class="jumbotron">
-		<h1>Trivia Headquarters</h1>
 
-
-		<h2>This is where you will be able to find the different games of the day.</h2>
-		<h4>Response to a question right here in smaller text. Here are some links about the business.</h4>
-	 <%= link_to "History Battle", historytrivia_path, class: "btn btn-primary btn-lg" %>
-
-
-	 <div class="hub">
+	 <!-- EXAMPLE BUTTON -->
+	 <!-- <%= link_to "History Battle", historytrivia_path, class: "btn btn-primary btn-lg" %> --> 
 
 		 	<div id="divCircle">
 		 	
@@ -29,13 +26,17 @@
 		        <% end %> 
 
 		</div>
-	</div> 
+
+
+	<p id="hubpara">Choose your trivia game category to find games starting soon.</P>
 
 	</div>
 
 </div> 
 
+
 <script>
+
 
 $(document).ready(function(){
      //Center the "info" bubble in the  "circle" div
@@ -72,22 +73,22 @@ $(document).ready(function(){
 	// History Info 
 	$("#historytext").hide(); 
 	$("#historybubble").mouseover(function(){
-		$("#historytext").fadeIn('100'); 
+		$("#historytext").fadeIn(); 
 
 	});
 	$("#historybubble").mouseout(function() {
-		$("#historytext").fadeOut('900'); 
+		$("#historytext").toggle('slide'); 
 		}); 
 	
 	// Sports Info
 	$("#sportstext").hide(); 
 	$("#sportsbubble").mouseover(function(){
-		$("#sportstext").fadeIn('100'); 
+		$("#sportstext").fadeIn(); 
 
 	});
 
 	$("#sportsbubble").mouseout(function() {
-		$("#sportstext").fadeOut('900'); 
+		$("#sportstext").toggle('slide'); 
 		}); 
 	});
 

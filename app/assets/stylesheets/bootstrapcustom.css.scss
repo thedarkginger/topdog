@@ -345,6 +345,8 @@ body {
         margin-left: 30%;
       }
 
+
+
 /* TRIVIA GAME STYLING */ 
 
       #trivia {
@@ -383,12 +385,54 @@ body {
         box-shadow: 1px 1px 2px #888888;
       }
 
+    /* TRIVIA HUB GENERAL */
+
+     #hubtext {
+        font-family: 'Oswald', sans-serif;
+        text-align: left; 
+        font-size: 3.5em; 
+        font-weight: bold;
+      }
+
+
+    #hubpara {
+      text-align: center;
+    }
+
+    #hubh2 {
+        font-family: 'Oswald', sans-serif;
+        text-align: center; 
+        font-size: 2.3em; 
+        color: #7F8C8D; 
+      
+      }
+
+    /* TRIVIA LOADING ANIMATION */ 
+
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+    .se-pre-con {
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+}
+
+
+
       /* Cool Circle Thing */
 
       #divCircle { 
     width: 500px;
     height: 500px;  
     position: relative;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
 }
  
 #divCircle img{
