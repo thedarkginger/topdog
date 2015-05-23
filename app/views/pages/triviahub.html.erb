@@ -8,9 +8,78 @@
 		<h4>Response to a question right here in smaller text. Here are some links about the business.</h4>
 	 <%= link_to "History Battle", historytrivia_path, class: "btn btn-primary btn-lg" %>
 
+
+	 <div class="hub">
+
+		 	<div id="divCircle">
+		 	
+		     <div id="middleBubble">	<p id="historybubble">History</p> </div>
+		     <%= image_tag("circle.png", id: "laboratory") %> 
+		     <%= image_tag("circle.png", id: "counseling-weight-loss") %> 
+		      <%= image_tag("circle.png", id: "quick-care") %> 
+		       <%= image_tag("circle.png", id: "specialist-coordination") %> 
+		     <%= image_tag("circle.png", id: "primary-preventative") %> 
+		      <%= image_tag("circle.png", id: "school-physicals") %> 
+		       <%= image_tag("circle.png", id: "perscriptions") %> 
+		  
+		        <%= link_to('historytrivia') do %> <%= image_tag("circle.png", id: "chronic-diseases", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
+		        <% end %> 
+
+		</div>
+	</div> 
+
 	</div>
 
 </div> 
+
+<script>
+
+$(document).ready(function(){
+     //Center the "info" bubble in the  "circle" div
+     var divTop = ($("#divCircle").height() - $("#middleBubble").height())/2;
+     var divLeft = ($("#divCircle").width() - $("#middleBubble").width())/2;
+     $("#middleBubble").css("top",divTop + "px");
+     $("#middleBubble").css("left",divLeft + "px");
+}); 
+
+$(document).ready(function(){
+     //Arrange the icons in a circle centered in the div
+     numItems = $( "#divCircle img" ).length; //How many items are in the circle?
+     start = 0.25; //the angle to put the first image at. a number between 0 and 2pi
+     step = (2*Math.PI)/numItems; //calculate the amount of space to put between the items.
+     
+     //Now loop through the buttons and position them in a circle
+     $( "#divCircle img" ).each(function( index ) {
+          radius = ($("#divCircle").width() - $(this).width())/2; //The radius is the distance from the center of the div to the middle of an icon
+          //the following lines are a standard formula for calculating points on a circle. x = cx + r * cos(a); y = cy + r * sin(a)
+          //We have made adjustments because the center of the circle is not at (0,0), but rather the top/left coordinates for the center of the div
+          //We also adjust for the fact that we need to know the coordinates for the top-left corner of the image, not for the center of the image.
+          tmpTop = (($("#divCircle").height()/2) + radius * Math.sin(start)) - ($(this).height()/2);
+          tmpLeft = (($("#divCircle").width()/2) + radius * Math.cos(start)) - ($(this).width()/2);
+          start += step; //add the "step" number of radians to jump to the next icon
+                 
+          //set the top/left settings for the image
+          $(this).css("top",tmpTop);
+          $(this).css("left",tmpLeft);
+     });
+}); 
+
+
+$(document).ready(function(){
+	$("#historybubble").hide(); 
+	$("#chronic-diseases").mouseover(function(){
+		$("#historybubble").show(); 
+
+	});
+	$("#chronic-diseases").mouseout(function() {
+		$("#historybubble").fadeOut('fast'); 
+		}); 
+	}); 
+
+
+
+</script> 
+
 
 
 
