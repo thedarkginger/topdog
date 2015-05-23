@@ -25,6 +25,15 @@ $navbar-border-radius: 0;
 
 }
 
+.jumbotron {
+  border: 12px; 
+  border-color: #D64541;
+  border-style: solid;  
+  box-shadow: 4px 4px 7px #888888;
+}
+
+/* NAVIGATION BAR */
+
 .navbar-default {
   font-family: 'Ubuntu';
   font-size: 18px; 
@@ -33,14 +42,6 @@ $navbar-border-radius: 0;
 .navbar-brand {
   font-family: 'Ubuntu'; 
   font-size: 23px; 
-}
-
-
-.jumbotron {
-  border: 12px; 
-  border-color: #D64541;
-  border-style: solid;  
-  box-shadow: 4px 4px 7px #888888;
 }
 
 
@@ -215,7 +216,6 @@ body {
 }
 
 
-
 .btn-stripe {
     color: #fff;
   background: #008cdd;
@@ -260,34 +260,6 @@ body {
 .btn-basecamp:hover {
   background: #fff;
 }
-
-/* New Quiz Style */
-
-
-/*
-      html, body, div, span, h1, h2, h3, h4, h5, h6, p, code, small, strike, strong, sub, sup, b, u, i {
-          border:0;
-          font-size:100%;
-          font:inherit;
-          vertical-align:baseline;
-          margin:0;
-          padding:0;
-      }
-
-      
-
-      article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-          display:block;
-      }
-      body {
-          line-height:1;
-          font:normal 0.9em/1em"Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      ol, ul {
-          list-style:none;
-      }
-
-      */
 
       strong {
           font-weight:700;
@@ -460,7 +432,9 @@ body {
   font-weight: bold;
 }
 
-@media only screen and (max-device-width: 480px) {
+
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px){
 
     /* Cool Circle Thing */
 
@@ -494,6 +468,64 @@ body {
   margin-top: 10%;
 }
 
+/* HOME FOR MOBILE */ 
+
+#logohome {
+ display: none;
+
+}
+
+#logomobile {
+  height: 58%;
+  width: 61%;
+  float: none;
+  padding-bottom: 5px;
+  margin-left: -3.9%;
+  margin-top: -2.2%;
+
+}
+
+ #homep {
+        text-align: left; 
+        margin-left: 3%;
+      }
+
+  #jumbolist ul {
+  text-align: left;  
+  font-size: 1.35em; 
+  margin-left: 3%;
+  font-family: inherit; 
+  font-weight: normal;
+
+}
+
+
+/* TRIVIA FOR MOBILE */ 
+
+.btn-primary-questions {
+      color: #ffffff;
+      background-color: #3498DB;
+      *background-color: #3498DB;
+      border-color: #0044cc #0044cc #002a80;
+      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      margin: 3px; 
+      width: 95%;
+      font-weight: bold;
+      text-align: center;
+    }
+
+}
+
+/* DESKTOP ONLY ELEMENTS */ 
+
+@media (min-width:481px) {
+   
+  #logomobile {
+    display: none; 
+  }
+
+
+/* END DESKTOP ONLY CLASS */
 }
 
 
