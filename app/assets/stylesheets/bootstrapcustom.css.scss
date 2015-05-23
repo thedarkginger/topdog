@@ -415,6 +415,41 @@ body {
   margin-top: 10%;
 }
 
+@media only screen and (max-device-width: 480px) {
+
+    /* Cool Circle Thing */
+
+    #divCircle { 
+    width: 80%;
+    height: 80%;  
+    position: relative;
+}
+ 
+#divCircle img{
+    position: absolute;
+    width: 21%;
+    height: 21%;
+}
+ 
+#middleBubble {
+  text-align:center;
+  vertical-align:top;
+  background: asset-data-url("bubble2.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #252525; 
+  height:50%;       
+  width: 50%;   
+  margin: auto;
+  position: absolute;
+  text-align:center;
+}
+
+#historybubble {
+  margin-top: 10%;
+}
+
+}
 
 
 
