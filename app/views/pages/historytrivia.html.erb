@@ -53,13 +53,13 @@ $.getJSON('/histories.json', function (data)
                 {
                     if (index == q_right)
                     {
-                        alert('Good guess!');
+                        alert('And boom goes the dynamite! You are right!');
                         
                         score += 1;
                     }
                     else
                     {
-                        alert('Wrong Answer');
+                        alert('Come on. Wrong answer.');
                     }
                     
                     quiz_pass += 1;
@@ -72,7 +72,7 @@ $.getJSON('/histories.json', function (data)
                     else
                     {
                         // end of quiz
-                        container.html('You score was ' + score + ' correct out of ' + quiz_all + ' questions.');
+                        container.html('Your score was ' + score + ' correct out of ' + quiz_all + ' questions.' + '<br>' + '<br>' + "See where you rank below" + '<br>' + '<br>' + "Return to the lobby to start another TopDog battle and test your wits.");
                     }
                 });
                 
