@@ -19,36 +19,27 @@
 
       <div id="jumbolist">
 
-            <div class="buttoncenter">
+          <% if user_signed_in? %>
+         <div class="buttoncenter">
               <div class="button-wrap">
                    <%= button_to "trivia", triviahub_path, :class => "rad-button wwt flat", :method => :get %>
               </div>
           </div>
-
+            
+    <% else %>
+       <div class="buttoncenter">
+              <div class="button-wrap">
+                   <%= button_to "Sign Up Today", new_user_registration_path, :class => "rad-button wwt flat", :method => :get %>
+              </div>
+         </div>
+  <% end %> 
 
       <ul>
         <li>Play daily trivia games against a pool of contestants</li>
-        <li>Win real cash instantly for entering games</li>
+        <li>Win real cash instantly for entering tournaments.</li>
         <li>Pick contests from your favorite categories and play to win</li>
         <li>Choose from different entry fees for each game</li>
       </ul>
-
-
-<!--
-		<% if user_signed_in? %>
-          <a class="btn btn-primary btn-lg", id="frontbuttons", <%= link_to "Trivia Lobby", triviahub_path %> </a>
-           <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", histories_path %> </a>
-         </div>
-      
-    <% else %>
-       <p>
-         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-       </p>
-  <% end %> 
-
--->
-
 
 	</div>
 
@@ -80,6 +71,8 @@
        </div>
 
    </div>
+
+    <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", histories_path %> </a>
 
 
      
