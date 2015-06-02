@@ -18,14 +18,23 @@
 
 
       <div id="jumbolist">
+
+            <div class="buttoncenter">
+              <div class="button-wrap">
+                   <%= button_to "trivia", triviahub_path, :class => "rad-button wwt flat", :method => :get %>
+              </div>
+          </div>
+
+
       <ul>
         <li>Play daily trivia games against a pool of contestants</li>
         <li>Win real cash instantly for entering games</li>
         <li>Pick contests from your favorite categories and play to win</li>
         <li>Choose from different entry fees for each game</li>
       </ul>
-    </div>
 
+
+<!--
 		<% if user_signed_in? %>
           <a class="btn btn-primary btn-lg", id="frontbuttons", <%= link_to "Trivia Lobby", triviahub_path %> </a>
            <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", histories_path %> </a>
@@ -37,7 +46,12 @@
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
        </p>
   <% end %> 
+
+-->
+
+
 	</div>
+
 
 </div>
 
