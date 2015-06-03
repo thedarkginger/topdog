@@ -13,18 +13,19 @@
 		 	<div id="divCircle">
 		 	
 		     <div id="middleBubble">
-		     	<p id="historytext">History</p> 
-		     	<p id="sportstext">Sports</p> 
+		     	<p id="historytext">History: <br> Countdown Until Next Game (Placeholder)</p> 
+		     	<p id="sportstext">Sports: <br>Coming Soon</p> 
+		     	<p id="businesstext">Business: <br>Coming Soon</p>
 		     </div>
-		     <%= image_tag("circle.png", id: "sportsbubble") %> 
-		     <%= image_tag("circle.png", id: "other-thing") %> 
-		      <%= image_tag("geov3.png", id: "quick-care") %> 
-		       <%= image_tag("circle.png", id: "specialist-coordination") %> 
-		     <%= image_tag("circle.png", id: "primary-preventative") %> 
-		      <%= image_tag("circle.png", id: "school-physicals") %> 
-		       <%= image_tag("circle.png", id: "perscriptions") %> 
+		     <%= image_tag("sportsv1.png", id: "sportsbubble") %> 
+		     <%= image_tag("businessv1.png", id: "businessbubble") %> 
+		      <%= image_tag("popculturev1.png", id: "quick-care") %> 
+		       <%= image_tag("sciencev1.png", id: "specialist-coordination") %> 
+		     <%= image_tag("randomv1.png", id: "primary-preventative") %> 
+		      <%= image_tag("geov3.png", id: "school-physicals") %> 
+		       <%= image_tag("moviesv1.png", id: "perscriptions") %> 
 		  
-		        <%= link_to('historytrivia') do %> <%= image_tag("geov3.png", id: "historybubble", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
+		        <%= link_to('historytrivia') do %> <%= image_tag("historyv2.png", id: "historybubble", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
 		        <% end %> 
 
 		</div>
@@ -97,6 +98,19 @@ $(document).ready(function(){
 	$("#sportsbubble").mouseout(function() {
 		$("#sportstext").toggle('slide'); 
 		}); 
+
+	// Business Info
+	$("#businesstext").hide(); 
+	$("#businessbubble").mouseover(function(){
+		$("#businesstext").fadeIn(); 
+
+	});
+
+	$("#businessbubble").mouseout(function() {
+		$("#businesstext").toggle('slide'); 
+		}); 
+
+	// End Loop 
 	});
 
 
