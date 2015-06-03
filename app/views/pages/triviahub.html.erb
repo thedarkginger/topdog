@@ -16,10 +16,11 @@
 		     	<p id="historytext">History: <br> Countdown Until Next Game (Placeholder)</p> 
 		     	<p id="sportstext">Sports: <br>Coming Soon</p> 
 		     	<p id="businesstext">Business: <br>Coming Soon</p>
+		     	<p id="poptext">Pop Culture: <br>Coming Soon</p>
 		     </div>
 		     <%= image_tag("sportsv1.png", id: "sportsbubble") %> 
 		     <%= image_tag("businessv1.png", id: "businessbubble") %> 
-		      <%= image_tag("popculturev1.png", id: "quick-care") %> 
+		      <%= image_tag("popculturev1.png", id: "popbubble") %> 
 		       <%= image_tag("sciencev1.png", id: "specialist-coordination") %> 
 		     <%= image_tag("randomv1.png", id: "primary-preventative") %> 
 		      <%= image_tag("geov3.png", id: "school-physicals") %> 
@@ -108,6 +109,18 @@ $(document).ready(function(){
 
 	$("#businessbubble").mouseout(function() {
 		$("#businesstext").toggle('slide'); 
+		}); 
+
+	// Pop Culture 
+
+	$("#poptext").hide(); 
+	$("#popbubble").mouseover(function(){
+		$("#poptext").fadeIn(); 
+
+	});
+
+	$("#popbubble").mouseout(function() {
+		$("#poptext").toggle('slide'); 
 		}); 
 
 	// End Loop 
