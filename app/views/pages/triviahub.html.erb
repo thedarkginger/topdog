@@ -17,14 +17,18 @@
 		     	<p id="sportstext">Sports: <br>Coming Soon</p> 
 		     	<p id="businesstext">Business: <br>Coming Soon</p>
 		     	<p id="poptext">Pop Culture: <br>Coming Soon</p>
+		     	<p id="randomtext">Random: <br>Coming Soon</p>
+		     	<p id="geotext">Geography: <br>Coming Soon</p>
+		     	<p id="movietext">Movies <br> and TV: <br>Coming Soon</p>
+		     	<p id="sciencetext">Science: <br>Coming Soon</p>
 		     </div>
 		     <%= image_tag("sportsv1.png", id: "sportsbubble") %> 
 		     <%= image_tag("businessv1.png", id: "businessbubble") %> 
 		      <%= image_tag("popculturev1.png", id: "popbubble") %> 
-		       <%= image_tag("sciencev1.png", id: "specialist-coordination") %> 
-		     <%= image_tag("randomv1.png", id: "primary-preventative") %> 
-		      <%= image_tag("geov3.png", id: "school-physicals") %> 
-		       <%= image_tag("moviesv1.png", id: "perscriptions") %> 
+		       <%= image_tag("sciencev1.png", id: "sciencebubble") %> 
+		     <%= image_tag("randomv1.png", id: "randombubble") %> 
+		      <%= image_tag("geov3.png", id: "geobubble") %> 
+		       <%= image_tag("moviesv1.png", id: "moviebubble") %> 
 		  
 		        <%= link_to('historytrivia') do %> <%= image_tag("historyv2.png", id: "historybubble", class: "homepageGridDefault", :data => {bubble1: "example", bubble2: "example2"}) %>
 		        <% end %> 
@@ -82,7 +86,7 @@ $(document).ready(function(){
 	// History Info 
 	$("#historytext").hide(); 
 	$("#historybubble").mouseover(function(){
-		$("#historytext").fadeIn(); 
+		$("#historytext").delay('200').fadeIn(); 
 
 	});
 	$("#historybubble").mouseout(function() {
@@ -92,7 +96,7 @@ $(document).ready(function(){
 	// Sports Info
 	$("#sportstext").hide(); 
 	$("#sportsbubble").mouseover(function(){
-		$("#sportstext").fadeIn(); 
+		$("#sportstext").delay('200').fadeIn(); 
 
 	});
 
@@ -103,7 +107,7 @@ $(document).ready(function(){
 	// Business Info
 	$("#businesstext").hide(); 
 	$("#businessbubble").mouseover(function(){
-		$("#businesstext").fadeIn(); 
+		$("#businesstext").delay('200').fadeIn(); 
 
 	});
 
@@ -115,12 +119,60 @@ $(document).ready(function(){
 
 	$("#poptext").hide(); 
 	$("#popbubble").mouseover(function(){
-		$("#poptext").fadeIn(); 
+		$("#poptext").delay('200').fadeIn(); 
 
 	});
 
 	$("#popbubble").mouseout(function() {
 		$("#poptext").toggle('slide'); 
+		}); 
+
+	// Random
+
+	$("#randomtext").hide(); 
+	$("#randombubble").mouseover(function(){
+		$("#randomtext").delay('200').fadeIn(); 
+
+	});
+
+	$("#randombubble").mouseout(function() {
+		$("#randomtext").toggle('slide'); 
+		}); 
+
+	// Geo
+
+	$("#geotext").hide(); 
+	$("#geobubble").mouseover(function(){
+		$("#geotext").delay('200').fadeIn(); 
+
+	});
+
+	$("#geobubble").mouseout(function() {
+		$("#geotext").toggle('slide'); 
+		}); 
+
+	// Movie
+
+	$("#movietext").hide(); 
+	$("#moviebubble").mouseover(function(){
+		$("#movietext").delay('200').fadeIn(); 
+
+	});
+
+	$("#moviebubble").mouseout(function() {
+		$("#movietext").toggle('slide'); 
+		}); 
+
+	// Science
+
+	$("#sciencetext").hide(); 
+	$("#sciencebubble").mouseover(function(){
+		$("#sciencetext").delay('200').fadeIn(); 
+
+	});
+
+	$("#sciencebubble").mouseout(function() {
+		$("#sciencetext").toggle('slide'); 
 		}); 
 
 	// End Loop 
