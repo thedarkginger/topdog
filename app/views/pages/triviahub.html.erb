@@ -10,6 +10,8 @@
 	 <!-- EXAMPLE BUTTON -->
 	 <!-- <%= link_to "History Battle", historytrivia_path, class: "btn btn-primary btn-lg" %> --> 
 
+		 	<div class="lobbydesktop">
+
 		 	<div id="divCircle">
 		 	
 		     <div id="middleBubble">
@@ -34,11 +36,21 @@
 
 		        <!-- Had class: "homepageGridDefault", to create default bubble but removed --> 
 		        <% end %> 
-
+				</div>
+				<!-- END DESKTOP LOBBY --> 
 		</div>
 
-
 	<p id="hubpara">Choose your trivia game category to find games starting soon.</P>
+
+			<div class="mobilelobby">
+		
+					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "History", historytrivia_path %> </a>
+
+					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Sports", historytrivia_path %> </a>
+
+					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Movies & TV", historytrivia_path %> </a>
+
+		</div>
 
 	</div>
 

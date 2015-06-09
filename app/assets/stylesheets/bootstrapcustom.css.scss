@@ -531,6 +531,10 @@ body {
   display: none;
 }
 
+.lobbydesktop {
+  display: none;
+}
+
 #logomobile {
   height: 58%;
   width: 61%;
@@ -570,7 +574,19 @@ body {
       text-align: center;
     }
 
-/* END MOBILE */
+.mobilelobby {
+  text-align: center;
+}
+
+.btn-primary.mobile { 
+    width: 90%;
+    margin-bottom: 3%;
+    font-size: 1.35em;
+    font-weight: bold;
+    }
+
+
+/* END MOBILE SECTION */
 
 }
 
@@ -628,6 +644,10 @@ body {
   }
 
   .mobilebutton {
+    display: none;
+  }
+
+  .mobilelobby {
     display: none;
   }
 
