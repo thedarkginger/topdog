@@ -8,6 +8,10 @@
 
 <p><b>Remember:</b> There is no penalty for wrong answers.</p>
 
+<div class='timer'>
+    Time left: <strong></strong> <br><br>
+</div>
+
 <!-- Commenting out horizontal line <hr /> --> 
 
 <div id="trivia">
@@ -28,6 +32,8 @@ $.getJSON('/histories.json', function (data)
     var quiz_all = data.length;
     var quiz_pass = 0;
     var score = 0;
+    var seconds = 10;
+    var timing = seconds;
 
     var container = $('#trivia');
 
@@ -54,12 +60,14 @@ $.getJSON('/histories.json', function (data)
                     if (index == q_right)
                     {
                         alert('And boom goes the dynamite! You are right!');
-                        
+                        timing = seconds;
                         score += 1;
                     }
                     else
                     {
                         alert('Come on. Wrong answer.');
+                        timing = seconds;
+
                     }
                     
                     quiz_pass += 1;
@@ -82,7 +90,28 @@ $.getJSON('/histories.json', function (data)
             });
     }
 
+    var timer = function(){
+        $('div.timer strong').text(timing)
+        var interval= window.setInterval(function(){
+            timing--;
+            console.log(quiz_pass,quiz_all);
+            if (quiz_pass >= quiz_all){
+                window.clearInterval(interval)
+                container.html('Your score was ' + score + ' correct out of ' + quiz_all + ' questions.' + '<br>' + '<br>' + "See where you rank below" + '<br>' + '<br>' + "Return to the lobby to start another TopDog battle and test your wits.");
+                $('div.timer').hide()
+            }else if(timing<=0){
+                quiz_pass += 1;
+                update_quiz(quiz_pass);
+                timing = time;
+            }
+            $('div.timer strong').text(timing)
+        },1000)
+    }
+
     update_quiz(0);
-}); 
+    timer();
+
+
+});
 
 </script>
