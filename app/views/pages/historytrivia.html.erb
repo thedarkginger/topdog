@@ -32,7 +32,7 @@ $.getJSON('/histories.json', function (data)
     var quiz_all = data.length;
     var quiz_pass = 0;
     var score = 0;
-    var seconds = 7;
+    var seconds = 10;
     var timing = seconds;
 
     var container = $('#trivia');
@@ -91,7 +91,7 @@ $.getJSON('/histories.json', function (data)
     }
 
     var timer = function(){
-        $('div.timer strong').text(timing)
+        $('div.timer strong').text(seconds)
         var interval= window.setInterval(function(){
             timing--;
             console.log(quiz_pass,quiz_all);
@@ -102,7 +102,7 @@ $.getJSON('/histories.json', function (data)
             }else if(timing<=0){
                 quiz_pass += 1;
                 update_quiz(quiz_pass);
-                timing = time;
+                timing = seconds;
             }
             $('div.timer strong').text(timing)
         },1000)
@@ -112,6 +112,7 @@ $.getJSON('/histories.json', function (data)
     timer();
 
 
-});
+}); 
+
 
 </script>
