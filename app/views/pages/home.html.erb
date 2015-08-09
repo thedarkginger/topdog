@@ -1,12 +1,6 @@
 <div class="container">
  
 
-  <div id="firstlayer">
-
-  <h1 id="hometext">TopDog: Trivia's First Pro Tour</h1> 
-  <h2 id="hometext2">Be Smart. Win Cash. Become TopDog.</h2>
-
-</div>
  
 	<div class="jumbotron center">
       <%= image_tag("logo.png", id: "logohome") %> 
@@ -53,37 +47,57 @@
 
           <% end %> 
       </div>
+</div>
+</div> <!-- ENDS TOP CONTAINER --> 
+
 
 
 </div>
 
-</div>
 
-     
-	 <div class="container">
 
-      <!-- Example row of columns -->
+
+   <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="marketing">
+
+      <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4">
+          <%= image_tag("randomv2.png", class: "image-circle") %> 
           <h2>Cash for Trivia</h2>
           <p>It's time that trivia takes the step to the next level. For the first time ever, you can play against other people for real cash prizes. The best part? It's legal too. This is where pub trivia experts <b>go professional</b>. Buy your chips, find games, and start your trivia career today.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+           <%= image_tag("geov3.png", class: "image-circle") %> 
           <h2>Pick Showdowns</h2>
-          <p>Select from eight major question categories ranging from sports to science. Master of everything? Play <b>TopDog Elite</b> mode to compete using questions from all categories. And of course, you can play a mix of both. Pick your battles.</p>
+          <p>Select from eight major question categories ranging from sports to science. Master of everything? Play <b>TopDog Elite</b> mode to compete using questions from all categories. And of course, you can play a mix of both. Pick your battles to win the best prize of all: <b>cold, hard cash.</b></p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+           <%= image_tag("sportsv1.png", class: "image-circle") %> 
           <h2>Become TopDog</h2>
           <p>Don't just win games. Crush the competition. Track your overall success on the weekly <b>TopDog Rankings</b>. You can also follow your rankings in real-time as you answer questions within the Trivia Showdown. The road to TopDog starts here.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-       </div>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div>
+
+  <!-- CONTAINER UNDER FULL WIDTH FEATURE --> 
+	 <div class="container">
+
+    <div id="firstlayer">
+
+          <h1 id="hometext">TopDog: Trivia's First Pro Tour</h1> 
+          <h2 id="hometext2">Be Smart. Win Cash. Become TopDog.</h2>
+
+    </div> 
+  
 
    </div>
-
-    <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", histories_path %> </a>
 
 
      
