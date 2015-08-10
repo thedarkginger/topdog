@@ -602,6 +602,7 @@ body {
     }
 
 
+
 /* END MOBILE SECTION */
 
 }
@@ -692,6 +693,7 @@ body {
   margin-right: 10px;
   margin-left: 10px;
   color: #F2F1EF; 
+  font-size: 1.1em;
 }
 
 .marketing {
@@ -709,6 +711,17 @@ body {
 
 .image-circle {
   width: 28%; 
+}
+
+.row.featurette {
+  margin-top: 2%;
+}
+
+#leftimg {
+  width: 100%;
+  border: 3px solid #D64541; 
+  box-shadow: 4px 4px 7px #888888;
+
 }
 
 
