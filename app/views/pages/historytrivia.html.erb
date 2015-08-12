@@ -40,7 +40,7 @@ $.getJSON('/histories.json', function (data)
     var quiz_all = data.length;
     var quiz_pass = 0;
     var score = 0;
-    var seconds = 4;
+    var seconds = 6;
     var timing = seconds;
 
     var container = $('#trivia');
@@ -51,7 +51,7 @@ $.getJSON('/histories.json', function (data)
             
             var q_topic = quiz.question;
             var q_ans = quiz.answers.split(',');
-            var q_right = parseInt(quiz.correcta, 5) - 1;
+            var q_right = parseInt(quiz.correcta, 10) - 1;
             
             container.empty();
             
