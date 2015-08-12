@@ -23,7 +23,7 @@
         Time Left: <strong></strong> <br>
     </div>
 </div> 
-</div>
+</div> 
 
 
 </div>
@@ -51,7 +51,7 @@ $.getJSON('/histories.json', function (data)
             
             var q_topic = quiz.question;
             var q_ans = quiz.answers.split(',');
-            var q_right = parseInt(quiz.correcta, 10) - 1;
+            var q_right = parseInt(quiz.correcta, 4) - 1;
             
             container.empty();
             
@@ -73,7 +73,7 @@ $.getJSON('/histories.json', function (data)
                     }
                     else
                     {
-                        alert('Come on. Wrong answer.');
+                        alert('Negative. Not the right answer. On to the next one.');
                         timing = seconds;
 
                     }
