@@ -83,6 +83,14 @@ body {
 	border-color: black; 
 }
 
+
+ul.nav a:hover { color: #fff !important; }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+     color: white;
+}
+
 .submitquestion {
   background: #c0392b;
   border-color: #c0392b; 
