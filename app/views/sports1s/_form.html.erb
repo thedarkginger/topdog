@@ -1,0 +1,38 @@
+<!-- rails generate scaffold Sports1 question:string answers:string correcta:integer quizdate:date -->
+
+<!-- remember to remove new css files after generating new scaffold --> 
+
+
+<%= form_for(@sports1) do |f| %>
+  <% if @sports1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sports1.errors.count, "error") %> prohibited this sports1 from being saved:</h2>
+
+      <ul>
+      <% @sports1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :answers %><br>
+    <%= f.text_field :answers %>
+  </div>
+  <div class="field">
+    <%= f.label :correcta %><br>
+    <%= f.number_field :correcta %>
+  </div>
+  <div class="field">
+    <%= f.label :quizdate %><br>
+    <%= f.date_select :quizdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

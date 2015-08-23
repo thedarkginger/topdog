@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @sports1.question %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+  <%= @sports1.answers %>
+</p>
+
+<p>
+  <strong>Correcta:</strong>
+  <%= @sports1.correcta %>
+</p>
+
+<p>
+  <strong>Quizdate:</strong>
+  <%= @sports1.quizdate %>
+</p>
+
+<%= link_to 'Edit', edit_sports1_path(@sports1) %> |
+<%= link_to 'Back', sports1s_path %>

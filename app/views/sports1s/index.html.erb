@@ -1,0 +1,33 @@
+<h1>Listing sports1s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Correcta</th>
+      <th>Quizdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sports1s.each do |sports1| %>
+      <tr>
+        <td><%= sports1.question %></td>
+        <td><%= sports1.answers %></td>
+        <td><%= sports1.correcta %></td>
+        <td><%= sports1.quizdate %></td>
+        <td><%= link_to 'Show', sports1 %></td>
+        <td><%= link_to 'Edit', edit_sports1_path(sports1) %></td>
+        <td><%= link_to 'Destroy', sports1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sports1', new_sports1_path %>

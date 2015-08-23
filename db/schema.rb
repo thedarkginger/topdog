@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520010837) do
+ActiveRecord::Schema.define(version: 20150823215438) do
 
   create_table "demo_questions", force: true do |t|
     t.integer  "order"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150520010837) do
   create_table "histories", force: true do |t|
     t.string   "question"
     t.string   "answers"
+    t.integer  "correcta"
+    t.date     "quizdate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sports1s", force: true do |t|
+    t.text     "question"
+    t.text     "answers"
     t.integer  "correcta"
     t.date     "quizdate"
     t.datetime "created_at"

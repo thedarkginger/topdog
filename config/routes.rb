@@ -1,6 +1,8 @@
 Topdog::Application.routes.draw do
 
   resources :histories
+  
+  resources :sports1s
 
   resources :trivia_demos
 
