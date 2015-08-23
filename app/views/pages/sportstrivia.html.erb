@@ -1,0 +1,126 @@
+<div class="container">
+
+<div class="jumbotron">
+
+<h1 id="triviah1">TopDog Trivia: Sports Battle</h1> 
+
+<p>When the Sports Battle begins, click on your selected answer before the clock runs out, or you will move to the next question.</p>
+
+<p><b>Remember:</b> There is no penalty for wrong answers.</p>
+
+<div class="row">
+<div class="col-md-8">
+    <!-- Commenting out horizontal line <hr /> --> 
+        <div id="trivia">
+    <!-- Question will appear here -->
+    </div>
+
+
+</div> 
+
+<div class="col-md-4">
+    <div class='timer'>
+        Time Left: <strong></strong> <br>
+    </div>
+</div> 
+</div> 
+
+
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$.getJSON('/histories.json', function (data)
+
+{
+    var quiz_all = data.length;
+    var quiz_pass = 0;
+    var score = 0;
+    var seconds = 7;
+    var timing = seconds;
+
+    var container = $('#trivia');
+
+    function update_quiz(index)
+    {
+            var quiz = data[index];
+            
+            var q_topic = quiz.question;
+            var q_ans = quiz.answers.split(',');
+            var q_right = parseInt(quiz.correcta, 10) - 1;
+            
+            container.empty();
+            
+            var q_topic_container = $('<div>').append((quiz_pass + 1) + '.  ' + q_topic);
+            
+            container.append(q_topic_container);
+            
+            $.each(q_ans, function (index, value)
+            {
+                value = value.trim();
+              
+                var q_ans_item = $('<button class="btn btn-primary-questions">').html(value).on('click', function (e)
+                {
+                    if (index == q_right)
+                    {
+                        alert('And boom goes the dynamite! You are right!');
+                        timing = seconds;
+                        score += 1;
+                    }
+                    else
+                    {
+                        alert('Negative. Not the right answer. On to the next one.');
+                        timing = seconds;
+
+                    }
+                    
+                    quiz_pass += 1;
+                    
+                    if (quiz_pass < quiz_all)
+                    {
+                        // load next quiz
+                        update_quiz(quiz_pass);
+                    }
+                    else
+                    {
+                        // end of quiz
+                        container.html('Your score was ' + score + ' correct out of ' + quiz_all + ' questions.' + '<br>' + '<br>' + "See where you rank below" + '<br>' + '<br>' + "Return to the lobby to start another TopDog battle and test your wits.");
+                    }
+                });
+                
+                var q_ans_container = $('<div>').html(q_ans_item);
+                
+                container.append(q_ans_container);
+            });
+    }
+
+    var timer = function(){
+        $('div.timer strong').text(seconds)
+        var interval= window.setInterval(function(){
+            timing--;
+            console.log(quiz_pass,quiz_all);
+            if (quiz_pass >= quiz_all){
+                window.clearInterval(interval)
+                container.html('Your score was ' + score + ' correct out of ' + quiz_all + ' questions.' + '<br>' + '<br>' + "See where you rank below" + '<br>' + '<br>' + "Return to the lobby to start another TopDog battle and test your wits.");
+                $('div.timer').hide()
+            }else if(timing<=0){
+                quiz_pass += 1;
+                update_quiz(quiz_pass);
+                timing = seconds;
+            }
+            $('div.timer strong').text(timing)
+        },1000)
+    }
+
+    update_quiz(0);
+    timer();
+
+
+}); 
+
+
+</script>
