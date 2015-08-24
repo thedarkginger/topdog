@@ -1,7 +1,7 @@
 Topdog::Application.routes.draw do
 
   resources :histories
-  
+
   resources :sports1s
 
   resources :trivia_demos
@@ -13,6 +13,7 @@ Topdog::Application.routes.draw do
   get "about" => "pages#about"
   get "legal" => "pages#legal"
   get "contact" => "pages#contact"
+  get "triviamaker" => "pages#triviamaker"
   get "triviahub" => "pages#triviahub"
   get "historytrivia" => "pages#historytrivia"
   get "sportstrivia" => "pages#sportstrivia"

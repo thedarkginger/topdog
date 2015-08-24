@@ -16,6 +16,7 @@ $navbar-border-radius: 0;
 
 @import 'bootstrap';
 
+
 #jumbolist ul {
   text-align: left;  
   font-size: 1.35em; 
@@ -54,7 +55,12 @@ html,
 body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
+    width: 100%;
 }
+
+html, body { overflow-x: hidden; }
+
+
 
 .navdivide {
 	height: 25px;
@@ -733,3 +739,4 @@ ul.nav a:hover { color: #fff !important; }
   box-shadow: 4px 4px 7px #888888;
 
 }
+
