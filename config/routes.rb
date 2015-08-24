@@ -17,6 +17,7 @@ Topdog::Application.routes.draw do
   get "triviahub" => "pages#triviahub"
   get "historytrivia" => "pages#historytrivia"
   get "sportstrivia" => "pages#sportstrivia"
+  get "sportsbattle" => "pages#sportsbattle"
   get "barker" => "pages#barker"
   get "examples"=> "pages#examples"
   # The priority is based upon order of creation: first created -> highest priority.
