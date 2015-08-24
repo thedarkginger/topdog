@@ -58,6 +58,8 @@ body {
     width: 100%;
 }
 
+/* removes space from right side of page */ 
+
 html, body { overflow-x: hidden; }
 
 
@@ -738,5 +740,11 @@ ul.nav a:hover { color: #fff !important; }
   border: 3px solid #D64541; 
   box-shadow: 4px 4px 7px #888888;
 
+}
+
+#maker {
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
 }
 
