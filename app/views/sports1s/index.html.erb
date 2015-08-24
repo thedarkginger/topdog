@@ -31,3 +31,45 @@
 <br>
 
 <%= link_to 'New Sports1', new_sports1_path %>
+
+<div class="container">
+
+<h1>Sports: Trivia Builder Interface</h1>
+
+<div class="jumbotron">
+  <p>This is a demo interface for creating sets of trivia questions for and answers for <b>Sports</b> that will be sent to the individual trivia views. The postgreSQL will generate an json file that we can pull from when a contestant reaches the trivia engine to prevent seeing the questions/answers in the source code.</p>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Correcta</th>
+      <th>Quizdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.question %></td>
+        <td><%= history.answers %></td>
+        <td><%= history.correcta %></td>
+        <td><%= history.quizdate %></td>
+        <td><%= link_to 'Show', history %></td>
+        <td><%= link_to 'Edit', edit_history_path(history) %></td>
+        <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History', new_history_path %>
+
+</div>

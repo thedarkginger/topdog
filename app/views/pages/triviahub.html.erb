@@ -24,7 +24,10 @@
 		     	<p id="movietext">Movies <br> and TV: <br>Coming Soon</p>
 		     	<p id="sciencetext">Science: <br>Coming Soon</p>
 		     </div>
-		     <%= image_tag("sportsv1.png", id: "sportsbubble") %> 
+
+<!-- MUST ADD END AFTER EACH CIRCLE BUBBLE --> 
+		  	<%= link_to('sportstrivia') do %> <%= image_tag("sportsv1.png", id: "sportsbubble", :data => {bubble1: "example", bubble2: "example2"}) %>
+		  		 <% end %> 
 		     <%= image_tag("businessv1.png", id: "businessbubble") %> 
 		      <%= image_tag("popculturev1.png", id: "popbubble") %> 
 		       <%= image_tag("sciencev1.png", id: "sciencebubble") %> 
@@ -33,6 +36,7 @@
 		       <%= image_tag("moviesv1.png", id: "moviebubble") %> 
 		  
 		        <%= link_to('historytrivia') do %> <%= image_tag("historyv2.png", id: "historybubble", :data => {bubble1: "example", bubble2: "example2"}) %>
+      
 
 		        <!-- Had class: "homepageGridDefault", to create default bubble but removed --> 
 		        <% end %> 
@@ -46,7 +50,7 @@
 		
 					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "History", historytrivia_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Sports", historytrivia_path %> </a>
+					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Sports", sportstrivia_path %> </a>
 
 					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Movies & TV", historytrivia_path %> </a>
 
