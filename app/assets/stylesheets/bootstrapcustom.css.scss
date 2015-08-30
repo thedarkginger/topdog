@@ -58,11 +58,6 @@ body {
     width: 100%;
 }
 
-/* removes space from right side of page */ 
-
-html, body { overflow-x: hidden; }
-
-
 
 .navdivide {
 	height: 25px;
@@ -625,6 +620,10 @@ ul.nav a:hover { color: #fff !important; }
 }
 
 @media (min-width: 1200px) {
+
+  /* removes space from right side of page */ 
+
+html, body { overflow-x: hidden; } 
 
 
 .rad-button {
