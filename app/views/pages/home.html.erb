@@ -5,6 +5,18 @@
       <h1 id="hometext-center">TopDog Trivia</h1>
        <%= image_tag("logo.png", id: "logomobile") %> 
 
+       <!-- mobile button above fold --> 
+        <div class="mobilebutton">
+                <% if user_signed_in? %>
+                   <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Enter TopDog Lobby", triviahub_path %> </a>
+          <% else %>
+             <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Sign Up Today", new_user_registration_path %> 
+             </a>
+
+          <% end %> 
+      </div>
+      <!-- end mobile button --> 
+
       <p id="homep">Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p><br>
       <p id="homep">That is the problem TopDog was designed to solve. Here are the basics:</P> 
 
@@ -35,16 +47,6 @@
 
 	</div>
 
-   <div class="mobilebutton">
-                <% if user_signed_in? %>
-                   <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "TopDog Lobby", triviahub_path %> </a>
-                  
-          <% else %>
-             <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Sign Up Today", new_user_registration_path %> 
-             </a>
-
-          <% end %> 
-      </div>
 </div>
 </div> <!-- ENDS TOP CONTAINER --> 
 
