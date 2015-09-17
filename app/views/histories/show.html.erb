@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="jumbotron">
 
-<p>
-  <strong>Question:</strong>
-  <%= @history.question %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Answers:</strong>
-  <%= @history.answers %>
-</p>
+	<p>
+	  <strong>Question:</strong>
+	  <%= @history.question %>
+	</p>
 
-<p>
-  <strong>Correcta:</strong>
-  <%= @history.correcta %>
-</p>
+	<p>
+	  <strong>Answers:</strong>
+	  <%= @history.answers %>
+	</p>
 
-<p>
-  <strong>Quizdate:</strong>
-  <%= @history.quizdate %>
-</p>
+	<p>
+	  <strong>Correcta:</strong>
+	  <%= @history.correcta %>
+	</p>
 
-<%= link_to 'Edit', edit_history_path(@history) %> |
-<%= link_to 'Back', histories_path %>
+	<p>
+	  <strong>Quizdate:</strong>
+	  <%= @history.quizdate %>
+	</p>
+
+	<%= link_to 'Edit', edit_history_path(@history) %> |
+	<%= link_to 'Back', histories_path %>
+</div>
+
+</div>

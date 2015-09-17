@@ -69,6 +69,6 @@ class HistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def history_params
-      params.require(:history).permit(:question, :answers, :correcta, :quizdate)
+      params.require(:history).permit(:question, :answers, :correcta, :quizdate, :category)
     end
 end

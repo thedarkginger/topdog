@@ -13,6 +13,7 @@
       <th>Answers</th>
       <th>Correcta</th>
       <th>Quiz Date</th>
+      <th>Category</th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,6 +27,7 @@
         <td><%= history.answers %></td>
         <td><%= history.correcta %></td>
         <td><%= history.quizdate %></td>
+        <td><%= history.category %></td>
         <td><%= link_to 'Show', history %></td>
         <td><%= link_to 'Edit', edit_history_path(history) %></td>
         <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
