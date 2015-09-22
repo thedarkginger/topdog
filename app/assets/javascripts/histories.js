@@ -4,14 +4,24 @@ Histories = function() {
   this.seconds = 7;
   this.timing = this.seconds;
   this.container = $('#trivia');
+  this.participationId = null;
 }
 
 Histories.prototype.init = function() {
   $('#trivia').on('click', '.btn.btn-primary-questions', this.checkAnswer.bind(this));
   $('div.timer strong').text(this.seconds)
-  this.interval = window.setInterval(this.timer.bind(this), 1000);
 
-  this.nextQuestion();
+  this.start();
+}
+
+Histories.prototype.start = function() {
+  var that = this;
+
+  $.getJSON('/api/start', function(participation) {
+    that.participationId = participation.id;
+    that.interval = window.setInterval(that.timer.bind(that), 1000);
+    that.nextQuestion();
+  })
 }
 
 Histories.prototype.nextQuestion = function() {
@@ -19,7 +29,7 @@ Histories.prototype.nextQuestion = function() {
   this.timing = this.seconds;
   var that = this;
 
-  $.getJSON('/api/show_question/' + this.quizCurrent, function(questionData) {
+  $.getJSON('/api/show_question/' + this.participationId, function(questionData) {
     if (questionData.finished) {
       that.finish();
       return;
@@ -39,7 +49,7 @@ Histories.prototype.checkAnswer = function(e) {
   var selectedIndex = $(e.target).data('index');
   var that = this;
 
-  $.getJSON('/api/validate_answer/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
+  $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
       alert('And boom goes the dynamite! You are right!');
       that.score += 1;

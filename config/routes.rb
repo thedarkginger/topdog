@@ -20,10 +20,12 @@ Topdog::Application.routes.draw do
   get "sportsbattle" => "pages#sportsbattle"
   get "barker" => "pages#barker"
   get "examples"=> "pages#examples"
+  get "scoreboard" => "scoreboard#index", as: :scoreboard
 
   namespace :api, defaults: { format: :json } do
-    get 'show_question/:index' => 'quiz#show_question'
-    get 'validate_answer/:index' => 'quiz#validate_answer'
+    get 'start' => 'quiz#start'
+    get 'show_question/:participation_id' => 'quiz#show_question'
+    get 'validate_answer/:participation_id/:index' => 'quiz#validate_answer'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

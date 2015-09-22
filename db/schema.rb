@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917023831) do
+ActiveRecord::Schema.define(version: 20150922225501) do
 
   create_table "demo_questions", force: true do |t|
     t.integer  "order"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150917023831) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
+  end
+
+  create_table "participations", force: true do |t|
+    t.integer  "user_id"
+    t.string   "category"
+    t.boolean  "finished",               default: false
+    t.integer  "current_question_index", default: 0
+    t.integer  "score",                  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sports1s", force: true do |t|
