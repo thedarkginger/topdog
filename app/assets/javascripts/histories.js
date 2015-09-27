@@ -72,6 +72,6 @@ Histories.prototype.timer = function() {
 
 Histories.prototype.finish = function() {
   window.clearInterval(this.interval);
-  this.container.html('Your score was ' + this.score + ' correct out of ' + (this.quizCurrent - 1) + ' questions.<br><br>See where you rank below<br><br>Return to the lobby to start another TopDog battle and test your wits.');
+  this.container.html('Your score was ' + this.score + ' correct out of ' + (this.quizCurrent - 1) + ' questions.<br><br>See where you rank in the <a href="/scoreboard">Scoreboard</a><br><br>Return to the lobby to start another TopDog battle and test your wits.');
   $('div.timer').hide();
 }
