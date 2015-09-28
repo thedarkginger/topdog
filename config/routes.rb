@@ -26,6 +26,7 @@ Topdog::Application.routes.draw do
     get 'start' => 'quiz#start'
     get 'show_question/:participation_id' => 'quiz#show_question'
     get 'validate_answer/:participation_id/:index' => 'quiz#validate_answer'
+    get 'skip_question/:participation_id' => 'quiz#skip_question'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
