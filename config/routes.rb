@@ -18,7 +18,7 @@ Topdog::Application.routes.draw do
   get "historytrivia" => "pages#historytrivia"
   get "sportstrivia" => "pages#sportstrivia"
   get "sportsbattle" => "pages#sportsbattle"
-  get "barker" => "pages#barker"
+  get "historyhub" => "pages#historyhub" 
   get "examples"=> "pages#examples"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
 
