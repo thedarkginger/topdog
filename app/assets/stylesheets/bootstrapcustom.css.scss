@@ -86,8 +86,21 @@ body {
 	border-color: black; 
 }
 
+#footerli {
+  font-weight: bolder;
+  letter-spacing: .03em;
+}
 
-ul.nav a:hover { color: #fff !important; }
+#footerli a:hover {
+  text-decoration: none;
+  color: #6BB9F0 !important;
+}
+
+
+ul.nav a:hover { 
+  color: #fff !important; 
+  text-decoration: none;
+}
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
