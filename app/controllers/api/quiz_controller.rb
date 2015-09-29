@@ -20,6 +20,11 @@ module API
       render json: { result: result }
     end
 
+    def skip_question
+      participation.increment! :current_question_index
+      render json: {}
+    end
+
     private
 
     def participation

@@ -63,11 +63,15 @@ Histories.prototype.checkAnswer = function(e) {
 
 
 Histories.prototype.timer = function() {
+  var that = this;
+
   this.timing--;
-  if (this.timing <= 0) {
-    this.nextQuestion();
-  }
   $('div.timer strong').text(this.timing);
+  if (this.timing <= 0) {
+    $.getJSON('/api/skip_question/' + this.participationId, function() {
+      that.nextQuestion();
+    })
+  }
 }
 
 Histories.prototype.finish = function() {
