@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:bold);
 @import url(http://fonts.googleapis.com/css?family=Cardo);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 
 $body-bg: #ECF0F1; 
@@ -87,13 +87,19 @@ body {
 }
 
 #footerli {
-  font-weight: bolder;
-  letter-spacing: .03em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3em;
 }
 
 #footerli a:hover {
   text-decoration: none;
   color: #6BB9F0 !important;
+}
+
+#footertext {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+
 }
 
 
