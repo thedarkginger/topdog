@@ -15,34 +15,23 @@
 		 	<div id="divCircle">
 		 	
 		     <div id="middleBubble">
-		     	<p id="historytext">History: <br> Countdown (Next Game)</p> 
-		     	<p id="sportstext">Sports: <br>Countdown (Next Game)</p> 
-		     	<p id="businesstext">Business: <br>Coming Soon</p>
-		     	<p id="poptext">Pop Culture: <br>Coming Soon</p>
-		     	<p id="randomtext">Random: <br>Coming Soon</p>
-		     	<p id="geotext">Geography: <br>Coming Soon</p>
-		     	<p id="movietext">Movies <br> and TV: <br>Coming Soon</p>
-		     	<p id="sciencetext">Science: <br>Coming Soon</p>
+		     	<p style="font-weight: bold;" class="icon-description js-icon-description"><!-- this is where your data-icon-text will be displayed --></p>	
+		    
 		     </div>
+		     	<%= link_to('sportsbattle') do %> <%= image_tag("sportsv1.png", :class => "icon js-icon", :data => { "icon-text" => "Sports Field" }) %>
+		  		 	<% end %> 
+		     	<%= image_tag("businessv1.png", :class => "icon js-icon", :data => { "icon-text" => "Business Park: Coming Soon" }) %>
+		      	<%= image_tag("popculturev1.png", :class => "icon js-icon", :data => { "icon-text" => "Pop Culture HQ: Coming Soon" }) %>
+		       	<%= image_tag("sciencev1.png", :class => "icon js-icon", :data => { "icon-text" => "The Science Lab: Coming Soon" }) %>
+		     	<%= image_tag("randomv1.png", :class => "icon js-icon", :data => { "icon-text" => "TopDog Battle: Coming Soon" }) %>
+		      	<%= image_tag("geov3.png", :class => "icon js-icon", :data => { "icon-text" => "Globetrotters: Coming Soon" }) %>
+		       	<%= image_tag("moviesv1.png", :class => "icon js-icon", :data => { "icon-text" => "Theater Room: Coming Soon" }) %>
+		       	<%= link_to('historyhub') do %> <%= image_tag("historyv2.png", :class => "icon js-icon", :data => { "icon-text" => "History Book" }) %>
+      				<% end %>  
 
-<!-- MUST ADD END AFTER EACH CIRCLE BUBBLE --> 
-		  	<%= link_to('sportsbattle') do %> <%= image_tag("sportsv1.png", id: "sportsbubble", :data => {bubble1: "example", bubble2: "example2"}) %>
-		  		 <% end %> 
-		     <%= image_tag("businessv1.png", id: "businessbubble") %> 
-		      <%= image_tag("popculturev1.png", id: "popbubble") %> 
-		       <%= image_tag("sciencev1.png", id: "sciencebubble") %> 
-		     <%= image_tag("randomv1.png", id: "randombubble") %> 
-		      <%= image_tag("geov3.png", id: "geobubble") %> 
-		       <%= image_tag("moviesv1.png", id: "moviebubble") %> 
-		  
-		        <%= link_to('historyhub') do %> <%= image_tag("historyv2.png", id: "historybubble", :data => {bubble1: "example", bubble2: "example2"}) %>
-      
-
-		        <!-- Had class: "homepageGridDefault", to create default bubble but removed --> 
-		        <% end %> 
 				</div>
 				<!-- END DESKTOP LOBBY --> 
-		</div>
+				</div>
 
 	<p id="hubpara">Choose your trivia game category to find games starting soon.</P>
 
@@ -100,101 +89,23 @@ $(document).ready(function(){
 }); 
 
 
-$(document).ready(function(){
-	// History Info 
-	$("#historytext").hide(); 
-	$("#historybubble").mouseover(function(){
-		$("#historytext").delay('350').fadeIn(); 
+$(function() {
+    var $iconDescription = $('.js-icon-description'); // store our text output container in a variable so it's available inside our hover function 
 
-	});
-	$("#historybubble").mouseout(function() {
-		$("#historytext").slideUp('fast'); 
-		}); 
-	
-	// Sports Info
-	$("#sportstext").hide(); 
-	$("#sportsbubble").mouseover(function(){
-		$("#sportstext").delay('350').fadeIn(); 
+    // for every .js-icon on the page, on hover do the following
+    $('.js-icon').hover(function() {
+        // on mouseenter, store the element's data-icon-text attribute in a variable.
+        var iconText = $(this).data('icon-text');
+        
+        //set the text to the correct value, and fade the description in. Stop() here prevents the fade animation from building up and running even when you're no longer hovering, so it will only play once per element. This does mean that hovering quickly from one button to the next will just show the text rather than fade in/out, but I think this is desirable.
+        $iconDescription.text(iconText).stop().fadeIn();
+        
+    }, function() {
+        // on mouseout, simply fade our description text out. It will be re-set once you hover over another icon
+        $iconDescription.stop().fadeOut();
+    });
 
-	});
-
-	$("#sportsbubble").mouseout(function() {
-		$("#sportstext").slideUp('fast'); 
-		}); 
-
-	// Business Info
-	$("#businesstext").hide(); 
-	$("#businessbubble").mouseover(function(){
-		$("#businesstext").delay('350').fadeIn(); 
-
-	});
-
-	$("#businessbubble").mouseout(function() {
-		$("#businesstext").slideUp('fast'); 
-		}); 
-
-	// Pop Culture 
-
-	$("#poptext").hide(); 
-	$("#popbubble").mouseover(function(){
-		$("#poptext").delay('350').fadeIn(); 
-
-	});
-
-	$("#popbubble").mouseout(function() {
-		$("#poptext").slideUp('fast'); 
-		}); 
-
-	// Random
-
-	$("#randomtext").hide(); 
-	$("#randombubble").mouseover(function(){
-		$("#randomtext").delay('350').fadeIn(); 
-
-	});
-
-	$("#randombubble").mouseout(function() {
-		$("#randomtext").slideUp('fast'); 
-		}); 
-
-	// Geo
-
-	$("#geotext").hide(); 
-	$("#geobubble").mouseover(function(){
-		$("#geotext").delay('350').fadeIn(); 
-
-	});
-
-	$("#geobubble").mouseout(function() {
-		$("#geotext").slideUp('fast'); 
-		}); 
-
-	// Movie
-
-	$("#movietext").hide(); 
-	$("#moviebubble").mouseover(function(){
-		$("#movietext").delay('350').fadeIn(); 
-
-	});
-
-	$("#moviebubble").mouseout(function() {
-		$("#movietext").slideUp('fast'); 
-		}); 
-
-	// Science
-
-	$("#sciencetext").hide(); 
-	$("#sciencebubble").mouseover(function(){
-		$("#sciencetext").delay('350').fadeIn(); 
-
-	});
-
-	$("#sciencebubble").mouseout(function() {
-		$("#sciencetext").slideUp('fast'); 
-		}); 
-
-	// End Loop 
-	});
+});
 
 
 </script> 

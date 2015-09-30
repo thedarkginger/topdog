@@ -765,3 +765,10 @@ html, body { overflow-x: hidden; }
   position: relative;
 }
 
+/* set our icon description to display: none so jquery fadeIn works the first time. If it's not set to display: none, it will just appear on page without the fade */
+
+.icon-description {
+    display: none;
+    margin-top: 35%;
+}
+
