@@ -14,7 +14,7 @@
       <% @participations.each_with_index do |participation, index| %>
         <tr>
           <td>#<%= index + 1 %></td>
-          <td><%= participation.user.email %></td>
+          <td><%= participation.user.username %></td>
           <td><%= participation.category %></td>
           <td><%= participation.score %></td>
         </tr>
