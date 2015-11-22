@@ -2,7 +2,15 @@
 
 <div class="container">
 
-	<h1 id="hubtext">TopDog Trivia Lobby: Game Selection</h1> 
+	<div class="lobbydesktop">
+
+		<h1 id="hubtext">TopDog Trivia Lobby: Game Selection</h1> 
+
+	</div> 
+
+	<div class="mobilelobby">
+		<h2 id="hubh2" style="margin-top: -2%">TopDog Trivia Lobby</h2> 
+	</div> 
 
 
  
@@ -44,21 +52,28 @@
 
 			<div class="mobilelobby">
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "History", historyhub_path %> </a>
+				<div class="row">
+        			<div class="col-md-4">
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Sports", sportsbattle_path %> </a>
+        				<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "History", historyhub_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Movies & TV", historytrivia_path %> </a>
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Sports", sportsbattle_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Business", historytrivia_path %> </a>
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Movies & TV", historytrivia_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture", historytrivia_path %> </a>
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Business", historytrivia_path %> </a>
+        			</div> 
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Science", historytrivia_path %> </a>
+        			<div class="col-md-4">
+        				<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture", historytrivia_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Geography", historytrivia_path %> </a>
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Science", historytrivia_path %> </a>
 
-					<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Random", historytrivia_path %> </a>
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Geography", historytrivia_path %> </a>
+
+						<a class="btn btn-primary mobile", id="mobilehistory" <%= link_to "Random", historytrivia_path %> </a>
+        			</div> 
+        		</div> 
 
 		</div>
 
