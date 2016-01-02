@@ -1,6 +1,8 @@
 module API
   class QuizController < ::ApplicationController
     def start
+
+      #! sets category from column for questions to show - can one controller allow multiple categories?
       @participation = current_user.participations.create(category: 'history')
     end
 
