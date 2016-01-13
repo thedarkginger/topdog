@@ -11,14 +11,15 @@
     </thead>
 
     <tbody>
-      <% @participations.each_with_index do |participation, index| %>
-        <tr>
-          <td>#<%= index + 1 %></td>
-          <td><%= participation.user.username %></td>
-          <td><%= participation.category %></td>
-          <td><%= participation.score %></td>
-        </tr>
-      <% end %>
+       <% @participations_history.each do |participation_history| %>
+    <tr>
+      <td>#<%= participation_history.id + 1 %></td>
+      <td><%= participation_history.user.username %></td>
+      <td><%= participation_history.category %></td>
+      <td><%= participation_history.score %></td>
+    </tr>
+  <% end %>
     </tbody>
   </table>
 </div>
+
