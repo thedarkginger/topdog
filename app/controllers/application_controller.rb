@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category
-    session[:category] ||= params[:category]
+    session[:category] = params[:category] if params[:category].present?
   end
 
 end
