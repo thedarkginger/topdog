@@ -16,5 +16,8 @@ class PagesController < ApplicationController
 
   def history
   end
+
+  def historytrivia
+  end
   
 end
