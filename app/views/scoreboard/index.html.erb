@@ -11,12 +11,12 @@
     </thead>
 
     <tbody>
-       <% @participations_history.each do |participation_history| %>
+       <% @participations.each do |participation| %>
     <tr>
-      <td>#<%= participation_history.id + 1 %></td>
-      <td><%= participation_history.user.username %></td>
-      <td><%= participation_history.category %></td>
-      <td><%= participation_history.score %></td>
+      <td>#<%= participation.id + 1 %></td>
+      <td><%= participation.user.username %></td>
+      <td><%= participation.category %></td>
+      <td><%= participation.score %></td>
     </tr>
   <% end %>
     </tbody>

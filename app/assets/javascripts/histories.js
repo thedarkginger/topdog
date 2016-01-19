@@ -79,6 +79,6 @@ Histories.prototype.finish = function() {
   $('div.timer').hide();
    var para = $('.temp_information').data('temp');
   console.log(para);  
-  this.container.html('Your score was ' + this.score + ' correct out of ' + (this.quizCurrent - 1) + ' questions.<br><br>Now see if you were TopDog in the' + '<a href="' + para + '"> SCOREBOARD</a>');
+  this.container.html('Your score was ' + this.score + ' correct out of ' + (this.quizCurrent - 1) + ' questions.<br><br>Now see if you were TopDog in the' + '<a style="text-decoration: none;" href="' + para + '"> Scoreboard</a>' + ' for this game.');
 }
 
