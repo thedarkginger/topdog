@@ -26,6 +26,9 @@
 </div>
 
 </div>
+<!-- hide dynamic content --> 
+<%= content_tag :div, class: "temp_information", data: {temp: scoreboard_path(category: "sports1")} do %>
+<% end %>
 
 <script type="text/javascript">
   $(function() {

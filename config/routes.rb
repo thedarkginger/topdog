@@ -17,6 +17,8 @@ Topdog::Application.routes.draw do
   get "triviahub" => "pages#triviahub"
   get "historytrivia" => "pages#historytrivia"
   get "historytrivia2" => "pages#historytrivia2"
+  get "historytrivia3" => "pages#historytrivia3"
+  get "historytrivia4" => "pages#historytrivia4"
   get "sportstrivia" => "pages#sportstrivia"
   get "sportshub" => "pages#sportshub"
   get "sports1trivia" => "pages#sports1trivia"
