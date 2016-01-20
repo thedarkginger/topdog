@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>History Scoreboard: Game One</h1>
+  <%= content_tag 'h1', session[:category] + ' scoreboard', class: "boardtitle" %> 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>#</th>
+        <th>Rank</th>
         <th>User</th>
         <th>Category</th>
         <th>Score</th>
@@ -13,7 +13,7 @@
     <tbody>
        <% @participations.each do |participation| %>
     <tr>
-      <td>#<%= participation.id + 1 %></td>
+      <td></td>
       <td><%= participation.user.username %></td>
       <td><%= participation.category %></td>
       <td><%= participation.score %></td>
@@ -22,4 +22,17 @@
     </tbody>
   </table>
 </div>
+
+<script>
+
+var table = document.getElementsByTagName('table')[0],
+    rows = table.getElementsByTagName('tr'),
+    text = 'textContent' in document ? 'textContent' : 'innerText';
+console.log(text);
+
+for (var i = 1, len = rows.length; i < len; i++){
+    rows[i].children[0][text] = i + rows[i].children[0][text];
+}
+
+</script>
 
