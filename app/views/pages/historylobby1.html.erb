@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="jumbotron">
+
+	<%= content_tag 'h1', session[:category] + ' Registration', id: "lobbytext" %> 
+
+	 <div class="row">
+	 	<div class="col-lg-6" style="padding-right:20px; border-right: 1px solid #ccc;">
+	 		<h2 style="text-align: center;">Game Registration</h2>
+	 		
+	 		<%= link_to "Reserve Spot".html_safe, historytrivia_path(category: 'history 1'), class: "btn btn-primary btn-lg" %>
+	 	</div>
+
+	 	<div class="col-lg-6">
+
+	 		<h2 style="text-align: center;">Game Information</h2>
+	 		<p>Category: [Dynamic]</p>
+	 		<p>Max Players: [Dyanmic]</p>
+	 		<p>Prize Info: [Dynamic]</p>
+
+	 	</div>
+
+	 </div> 
+	
+</div>
+
+</div>

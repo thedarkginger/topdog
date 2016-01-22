@@ -20,6 +20,9 @@ class PagesController < ApplicationController
   def historytrivia
   end
 
+  def historylobby1
+  end
+
   def sports1trivia
   end
   

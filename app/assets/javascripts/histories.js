@@ -1,3 +1,4 @@
+
 Histories = function() {
   this.quizCurrent = 0;
   this.score = 0;

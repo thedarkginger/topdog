@@ -18,6 +18,8 @@
     <div class='timer'>
         Time Left: <strong></strong> <br>
     </div>
+
+   
 </div> 
 </div>
 <p style="text-align: center"><b>Remember:</b> There is no penalty for wrong answers.</p> 
@@ -35,4 +37,29 @@
   $(function() {
     new Histories().init();
   })
+
 </script>
+
+<!--
+var height = 50;
+var timePassed = 0;
+var totalSeconds = 7;
+
+var reduceHeight = function(elem, totalSeconds){
+  timePassed++;
+  height = 100 - ( ( timePassed/totalSeconds ) * 100 )
+  elem.css({height: height + "%"});
+  if(height > 0){
+    window.setTimeout(function(){
+      reduceHeight(elem, totalSeconds)
+    }, 1000)
+  }
+}
+
+$(document).ready(function(){
+  var inner = $('#inner');
+  
+  reduceHeight(inner, 20);
+});
+
+--> 
