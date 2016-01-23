@@ -8,6 +8,7 @@
 	 		<h2 style="text-align: center;">Game Registration</h2>
 	 		
 	 		<%= link_to "Reserve Spot".html_safe, historytrivia_path(category: 'history 1'), class: "btn btn-primary btn-lg" %>
+	 		There are <%= User.count %> users.
 	 	</div>
 
 	 	<div class="col-lg-6">
@@ -15,7 +16,7 @@
 	 		<h2 style="text-align: center;">Game Information</h2>
 	 		<p>Category: [Dynamic]</p>
 	 		<p>Start Time: [Dynamic]</p>
-	 		<p>Max Players: [Dyanmic]</p>
+	 		<p>Max Players: [Dynamic]</p>
 	 		<p>Prize Info: [Dynamic]</p>
 
 	 	</div>

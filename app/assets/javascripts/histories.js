@@ -52,11 +52,12 @@ Histories.prototype.checkAnswer = function(e) {
 
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
-      alert('And boom goes the dynamite! You are right!');
+
+        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 3000, confirmButtonText: "Next" }); 
       that.score += 1;
     }
     else {
-      alert('Negative. Not the right answer. On to the next one.');
+      swal({ title: "Wolf!", text: "That wasn't correct...", type: "error", timer: 3000, confirmButtonText: "Next" }); 
     }
     that.nextQuestion();
   });
