@@ -2,7 +2,7 @@
 Histories = function() {
   this.quizCurrent = 0;
   this.score = 0;
-  this.seconds = 7;
+  this.seconds = 8;
   this.timing = this.seconds;
   this.container = $('#trivia');
   this.participationId = null;
@@ -53,20 +53,15 @@ Histories.prototype.checkAnswer = function(e) {
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
 
-        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 1000, confirmButtonText: "Next" }, 
-          function(isConfirm) {
-          that.nextQuestion();
-        }
+        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 1000, confirmButtonText: "Next" } 
           ); 
       that.score += 1;
     }
     else {
-      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", timer: 1000, confirmButtonText: "Next" }, 
-        function(isConfirm) {
-          that.nextQuestion();
-        }
+      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", timer: 1000, showConfirmButton: false } 
         ); 
     }
+          that.nextQuestion();
   });
 }
 
