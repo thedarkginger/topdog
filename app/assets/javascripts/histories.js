@@ -53,7 +53,7 @@ Histories.prototype.checkAnswer = function(e) {
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
 
-        swal({ title: "Good job!", text: "You were right!", type: "success", confirmButtonText: "Next" }, 
+        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 1000; confirmButtonText: "Next" }, 
           function(isConfirm) {
           that.nextQuestion();
         }
@@ -61,7 +61,7 @@ Histories.prototype.checkAnswer = function(e) {
       that.score += 1;
     }
     else {
-      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", confirmButtonText: "Next" }, 
+      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", timer: 1000, confirmButtonText: "Next" }, 
         function(isConfirm) {
           that.nextQuestion();
         }
