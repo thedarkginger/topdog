@@ -61,7 +61,7 @@ Histories.prototype.checkAnswer = function(e) {
       that.score += 1;
     }
     else {
-      swal({ title: "Wolf!", text: "That wasn't correct...", type: "error", confirmButtonText: "Next" }, 
+      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", confirmButtonText: "Next" }, 
         function(isConfirm) {
           that.nextQuestion();
         }
@@ -76,6 +76,7 @@ Histories.prototype.checkAnswer = function(e) {
    this.timing--;
    $('div.timer strong').text(this.timing);
    if (this.timing <= 0) {
+    self.stop(); 
    $.getJSON('/api/skip_question/' + this.participationId, function() {
     that.nextQuestion();
    })
