@@ -70,22 +70,17 @@ Histories.prototype.checkAnswer = function(e) {
   });
 }
 
+ Histories.prototype.timer = function() {
+    var that = this;
 
-Histories.prototype.timer = function() {
-  var that = this;
-
-  this.timing--;
-  $('div.timer strong').text(this.timing);
-  if (this.timing <= 0) {
-    $.getJSON('/api/skip_question/' + this.participationId, function() {
-       swal({ title: "Timeout!", text: "You ran out of time!", type: "warning", confirmButtonText: "Next" }, 
-        function(isConfirm) {
-          that.nextQuestion();
-        }
-        ); 
-    })
+   this.timing--;
+   $('div.timer strong').text(this.timing);
+   if (this.timing <= 0) {
+   $.getJSON('/api/skip_question/' + this.participationId, function() {
+    that.nextQuestion();
+   })
   }
-}
+ }
 
 Histories.prototype.finish = function() {
   window.clearInterval(this.interval);
