@@ -53,13 +53,20 @@ Histories.prototype.checkAnswer = function(e) {
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
 
-        swal({ title: "Good job!", text: "You were right!", type: "success", confirmButtonText: "Next" }); 
+        swal({ title: "Good job!", text: "You were right!", type: "success", confirmButtonText: "Next" }, 
+          function(isConfirm) {
+          that.nextQuestion();
+        }
+          ); 
       that.score += 1;
     }
     else {
-      swal({ title: "Wolf!", text: "That wasn't correct...", type: "error", confirmButtonText: "Next" }); 
+      swal({ title: "Wolf!", text: "That wasn't correct...", type: "error", confirmButtonText: "Next" }, 
+        function(isConfirm) {
+          that.nextQuestion();
+        }
+        ); 
     }
-    that.nextQuestion();
   });
 }
 
@@ -71,7 +78,11 @@ Histories.prototype.timer = function() {
   $('div.timer strong').text(this.timing);
   if (this.timing <= 0) {
     $.getJSON('/api/skip_question/' + this.participationId, function() {
-      that.nextQuestion();
+       swal({ title: "Timeout!", text: "You ran out of time!", type: "warning", confirmButtonText: "Next" }, 
+        function(isConfirm) {
+          that.nextQuestion();
+        }
+        ); 
     })
   }
 }
