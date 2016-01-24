@@ -53,12 +53,12 @@ Histories.prototype.checkAnswer = function(e) {
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {
 
-        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 1000, showConfirmButton: false } 
+        swal({ title: "Good job!", text: "You were right!", type: "success", timer: 1200, showConfirmButton: false } 
           ); 
       that.score += 1;
     }
     else {
-      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", timer: 1000, showConfirmButton: false } 
+      swal({ title: "Woof!", text: "That wasn't correct...", type: "error", timer: 1200, showConfirmButton: false } 
         ); 
     }
           that.nextQuestion();
