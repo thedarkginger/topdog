@@ -2,7 +2,7 @@
 Histories = function() {
   this.quizCurrent = 0;
   this.score = 0;
-  this.seconds = 8;
+  this.seconds = 10;
   this.timing = this.seconds;
   this.container = $('#trivia');
   this.participationId = null;
