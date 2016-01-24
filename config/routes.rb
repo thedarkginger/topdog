@@ -8,6 +8,8 @@ Topdog::Application.routes.draw do
 
   resources :high_scores
 
+  resource :my_top_dog
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
@@ -27,6 +29,7 @@ Topdog::Application.routes.draw do
   get "historyhub" => "pages#historyhub" 
   get "examples"=> "pages#examples"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
+  get "mytd" => "my_td#index", as: :mytd
 
   namespace :api, defaults: { format: :json } do
     get 'start' => 'quiz#start'

@@ -1,0 +1,26 @@
+ <div class="container">
+ 	<h1 class="boardtitle">My Results</h1>
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>Rank</th>
+	        <th>User</th>
+	        <th>Category</th>
+	        <th>Score</th>
+	      </tr>
+	    </thead>
+
+	    <tbody>
+	       <% @participations.each do |participation| %>
+	    <tr>
+	      <td></td>
+	      <td><%= participation.user.username %></td>
+	      <td><%= participation.category %></td>
+	      <td><%= participation.score %></td>
+	    </tr>
+	  <% end %>
+	    </tbody>
+	  </table>
+
+</div>
+
