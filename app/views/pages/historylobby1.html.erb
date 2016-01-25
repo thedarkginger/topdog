@@ -15,8 +15,6 @@
 	 			<%= link_to "Reserve Spot".html_safe, reservation_path(category: 'history 1'), class: "btn btn-primary btn-lg" %>
 			<% end %> 
 	 		
-	 	
-	 		<!-- <p>Players Registered: 	<%= Participation.get_number_of_user_for("history 1") %></p> -->
 	 		<p>Players Registered: 	<%= SpotCounter.where(category: "history 1").first.count %></p> 
 	 		<p>Maximum Players: 25 Users</p>
 	 	</div>
