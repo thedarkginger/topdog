@@ -30,6 +30,7 @@ Topdog::Application.routes.draw do
   get "examples"=> "pages#examples"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
   get "mytd" => "my_td#index", as: :mytd
+  get "reservation" => "pages#reservation"
 
   namespace :api, defaults: { format: :json } do
     get 'start' => 'quiz#start'
