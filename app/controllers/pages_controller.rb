@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   def historylobby
   end
 
-  def sports1trivia
+  def sportstrivia
   end
 
   def reservation

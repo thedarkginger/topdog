@@ -377,6 +377,7 @@ ul.nav a:hover {
         font-size: 2.7em; 
         margin-top: -.75%;
         margin-bottom: 1%;
+        text-transform: capitalize
       }
 
 
@@ -943,9 +944,7 @@ html, body { overflow-x: hidden; }
       background-color: #449d61;
       border-color: #2d6840; }
 
-      .boardtitle {
-      text-transform: capitalize
-      }
+    
 
 
       #lobbybutton {

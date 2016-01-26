@@ -4,9 +4,8 @@
 
           <h1 id="hometext">Congratulations! You're In.</h1> 
           <h2 id="hometext2">Head Back to the Lobby. Become TopDog.</h2>
-          <h1 style="text-align: right;" id="hometext">Fate Favors the Bold.</h1> 
       </div>
 
-<%= link_to "Back to Lobby".html_safe, historylobby_path(category: session[:category]), id: "lobbybutton", class: "btn btn-danger btn-lg" %>
+<%= link_to "Back to Lobby".html_safe, lobby_path(category: session[:category]), id: "lobbybutton", class: "btn btn-danger btn-lg" %>
 
 </div>

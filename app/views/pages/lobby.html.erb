@@ -11,7 +11,7 @@
 	 		<p>Maximum Players: 25 Users</p>
 
 	 			<% if Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
-  				<%= link_to "Enter Game".html_safe, historytrivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
+  				<%= link_to "Enter Game".html_safe, trivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
 
 			<% else %>
 	 			<%= link_to "Reserve Spot".html_safe, reservation_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
