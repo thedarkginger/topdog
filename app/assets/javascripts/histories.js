@@ -36,7 +36,7 @@ Histories.prototype.nextQuestion = function() {
       return;
     }
 
-    var questionElem = $('<div>').html((that.quizCurrent) + '.  ' + questionData.question + '</div>');
+    var questionElem = $('<div class="questiontext">').html((that.quizCurrent) + '.  ' + questionData.question + '</div>');
     var answersElems = questionData.answers.map(function(answer, index) {
       answerElem = $('<button class="btn btn-primary-questions" data-index="' + (index + 1) + '">').html(answer);
       return answerElem;

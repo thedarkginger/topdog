@@ -3,6 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:bold);
 @import url(http://fonts.googleapis.com/css?family=Cardo);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 
@@ -360,15 +361,22 @@ ul.nav a:hover {
         margin-top: 2%;
       }
 
+    .btn-primary {
+      background-color: #32699b;
+      *background-color: #32699b;
+
+    }
+
     .btn-primary-questions {
       color: #ffffff;
-      background-color: #2980b9;
-      *background-color: #34495e;
+      background-color: #32699b;
+      *background-color: #32699b;
       border-color: #0044cc #0044cc #002a80;
       border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
       margin: 4px; 
       width: 80%;
       font-weight: bold;
+      font-size: 1.05em;
     }
 
      #triviah1 {
@@ -621,8 +629,8 @@ ul.nav a:hover {
 
 .btn-primary-questions {
       color: #ffffff;
-      background-color: #3498DB;
-      *background-color: #3498DB;
+      background-color: #32699b;
+      *background-color: #32699b;
       border-color: #0044cc #0044cc #002a80;
       border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
       margin: 4px; 
@@ -638,7 +646,7 @@ ul.nav a:hover {
 .btn-primary.mobile { 
     width: 49%;
     margin-bottom: 3%;
-    font-size: 1.09em;
+    font-size: 1.20em;
     font-weight: bold;
     }
 
@@ -953,6 +961,11 @@ html, body { overflow-x: hidden; }
         text-align: right;
         float: right;
         font-weight: bold;
+      }
+
+      .questiontext {
+      font-family: 'Open Sans';
+      color: #141414;
       }
 
 
