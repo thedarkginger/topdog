@@ -1,3 +1,5 @@
+<div class="se-pre-con"></div> 
+
 <div class="container">
 
 <div class="jumbotron">
@@ -38,11 +40,27 @@
 <%= content_tag :div, class: "temp_information", data: {temp: scoreboard_path(category: session[:category])} do %>
 <% end %>
 
+  
+<script>
+
+$(document).ready(function() {
+   window.setTimeout("fadeMyDiv();", 2100); //call fade in 3 seconds
+ }
+)
+
+function fadeMyDiv() {
+   $(".se-pre-con").fadeOut('slow');
+}
+
+  </script>
+
 <script type="text/javascript">
+
   $(function() {
     new Histories().init();
   })
 
+ 
 </script>
 
 <!--
