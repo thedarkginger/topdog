@@ -1,5 +1,7 @@
 Topdog::Application.routes.draw do
 
+  resources :chipzs
+
   resources :histories
 
   resources :sports1s

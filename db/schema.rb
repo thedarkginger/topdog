@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125021048) do
+ActiveRecord::Schema.define(version: 20160131083707) do
+
+  create_table "chips", force: true do |t|
+    t.string   "category"
+    t.integer  "rank"
+    t.integer  "winnings"
+    t.datetime "update"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "chipzs", force: true do |t|
+    t.string   "category"
+    t.integer  "rank"
+    t.integer  "prize"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "demo_questions", force: true do |t|
     t.integer  "order"

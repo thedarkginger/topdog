@@ -42,5 +42,8 @@ class PagesController < ApplicationController
   end
 
   end
+
+  def chips
+  end
   
 end
