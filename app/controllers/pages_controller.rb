@@ -23,6 +23,9 @@ class PagesController < ApplicationController
   def historylobby
   end
 
+  def culturehub
+  end
+
   def sportstrivia
   end
 
@@ -41,9 +44,6 @@ class PagesController < ApplicationController
     Reservation.create(user_id: user_id, category: category)
   end
 
-  end
-
-  def chips
   end
   
 end

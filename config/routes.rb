@@ -22,7 +22,8 @@ Topdog::Application.routes.draw do
   get "lobby" => "pages#lobby"
   get "trivia" => "pages#trivia"
   get "sportshub" => "pages#sportshub"
-  get "historyhub" => "pages#historyhub" 
+  get "historyhub" => "pages#historyhub"
+  get "culturehub" => "pages#culturehub" 
   get "examples"=> "pages#examples"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
   get "mytd" => "my_td#index", as: :mytd
