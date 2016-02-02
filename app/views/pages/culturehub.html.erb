@@ -6,6 +6,8 @@
 
   <p>The table for today's <b>Pop Culture Battles</b> is listed below with corresponding start times (in Eastern Standard Time). Register as early as you would like, but all trivia battles will start at the time listed below.</p> 
 
+  <div class="lobbydesktop">
+
 	<table class="table table-striped">
   <thead>
     <tr>
@@ -59,5 +61,60 @@
         </tr>
   </tbody>
 </table>
+
+</div> 
+
+  <div class="mobilelobby">
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>Topic</th>
+      <th>Fee</th>
+      <th>Trophy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>5:00 PM</td>
+        <td>Culture 1</td>
+        <td>5 Points</td>
+        <td>100 Points</td>
+        <td><%= link_to "Play Game 1 &raquo;".html_safe, lobby_path(category: 'pop culture 1'), class: "btn btn-primary btn-md" %></td>
+
+      </tr>
+      <!-- end game 1 --> 
+
+        <tr>
+        <td>6:00 PM</td>
+        <td>Culture 2</td>
+        <td>2 Points</td>
+        <td>50 Points</td>
+        <td><%= link_to "Play Game 2 &raquo;".html_safe, lobby_path(category: 'pop culture 2'), class: "btn btn-primary btn-md" %></td>
+      </tr>
+      <!-- end game 2 --> 
+
+        <tr>
+        <td>7:30 PM</td>
+        <td>Culture 3</td>
+        <td>1 Point</td>
+        <td>150 Points</td>
+        <td><%= link_to "Play Game 3 &raquo;".html_safe, lobby_path(category: 'pop culture 3'), class: "btn btn-primary btn-md" %></td>
+      </tr>
+      <!-- end game 3 --> 
+
+        <tr>
+        <td>8:40 PM</td>
+        <td>Culture 4</td>
+        <td>2 Points</td>
+        <td>1000 Points</td>
+        <td><%= link_to "Play Game 4 &raquo;".html_safe, lobby_path(category: 'pop culture 4'), class: "btn btn-primary btn-md" %></td>
+        </tr>
+  </tbody>
+</table>
+
+</div> 
 
 </div> 
