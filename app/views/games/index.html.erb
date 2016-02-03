@@ -12,6 +12,7 @@
         <th>Entry Fee</th>
         <th>Purse</th>
         <th>Champion</th>
+        <th>Max Players</th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
             <td> <%= quiz.entry %></td>
             <td> <%= quiz.purse %></td>
             <td> <%= quiz.first %></td>
+            <td> <%= quiz.max %></td>
             <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %></td>
             <% end %> 
         </tr>
