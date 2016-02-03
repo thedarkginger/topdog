@@ -11,43 +11,61 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
     <%= f.label :topic %><br>
-    <%= f.text_field :topic %>
+    <%= f.text_field :topic, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :game_start %><br>
-    <%= f.datetime_select :game_start %>
+    <%= f.datetime_select :game_start, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :entry %><br>
-    <%= f.number_field :entry %>
+    <%= f.number_field :entry, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :purse %><br>
-    <%= f.number_field :purse %>
+    <%= f.number_field :purse, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :first %><br>
-    <%= f.number_field :first %>
+    <%= f.number_field :first, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :second %><br>
-    <%= f.number_field :second %>
+    <%= f.number_field :second, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :third %><br>
-    <%= f.number_field :third %>
+    <%= f.number_field :third, class: "form-control" %>
   </div>
+</div>
+<div class="form-group">
   <div class="field">
     <%= f.label :fourth %><br>
-    <%= f.number_field :fourth %>
+    <%= f.number_field :fourth, class: "form-control" %>
   </div>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
   </div>
 <% end %>

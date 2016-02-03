@@ -1,43 +1,46 @@
-<h1>Listing quizzes</h1>
+<div class="container">
+      <h1>Quiz List</h1>
+      <p>This is the main center for uploading content on quizzes, entry fees, and prizes. This controls what will show in the dynamic lobby view for the player.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Category</th>
-      <th>Game start</th>
-      <th>Entry</th>
-      <th>Purse</th>
-      <th>First</th>
-      <th>Second</th>
-      <th>Third</th>
-      <th>Fourth</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Category</th>
+            <th>Game start</th>
+            <th>Entry</th>
+            <th>Purse</th>
+            <th>#1</th>
+            <th>#2</th>
+            <th>#3</th>
+            <th>#4</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @quizzes.each do |quiz| %>
-      <tr>
-        <td><%= quiz.topic %></td>
-        <td><%= quiz.category %></td>
-        <td><%= quiz.game_start %></td>
-        <td><%= quiz.entry %></td>
-        <td><%= quiz.purse %></td>
-        <td><%= quiz.first %></td>
-        <td><%= quiz.second %></td>
-        <td><%= quiz.third %></td>
-        <td><%= quiz.fourth %></td>
-        <td><%= link_to 'Show', quiz %></td>
-        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @quizzes.each do |quiz| %>
+            <tr>
+              <td><%= quiz.topic %></td>
+              <td><%= quiz.category %></td>
+              <td><%= quiz.game_start %></td>
+              <td><%= quiz.entry %></td>
+              <td><%= quiz.purse %></td>
+              <td><%= quiz.first %></td>
+              <td><%= quiz.second %></td>
+              <td><%= quiz.third %></td>
+              <td><%= quiz.fourth %></td>
+              <td><%= link_to 'Show', quiz %></td>
+              <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+              <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br>
-
-<%= link_to 'New Quiz', new_quiz_path %>
+      <br>
+       <a class="btn btn-primary btn-lg" <%= link_to "Enter New Quiz", new_quiz_path %> </a>
+      <h5>Remember: When a new quiz ID is created, a new record needs to be uploaded from the Rails console.</h5>
+  </div>
