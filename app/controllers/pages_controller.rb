@@ -45,5 +45,9 @@ class PagesController < ApplicationController
   end
 
   end
+
+  def lobby
+    @quizzes = Quiz.where(category: params[:category])
+  end
   
 end

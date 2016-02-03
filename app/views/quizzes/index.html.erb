@@ -14,6 +14,7 @@
             <th>#2</th>
             <th>#3</th>
             <th>#4</th>
+            <th>Max</th>
             <th></th>
             <th></th>
             <th></th>
@@ -32,6 +33,7 @@
               <td><%= quiz.second %></td>
               <td><%= quiz.third %></td>
               <td><%= quiz.fourth %></td>
+              <td><%= quiz.max %></td>
               <td><%= link_to 'Show', quiz %></td>
               <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
               <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>

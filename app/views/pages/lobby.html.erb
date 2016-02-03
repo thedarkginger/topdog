@@ -23,13 +23,13 @@
 	 	</div>
 
 	 	<div class="col-md-6">
-
+	 		<% @quizzes.each do |quiz| %>
 	 		<h2 style="text-align: center;">Game Information</h2>
-	 		<p>Category: [Dynamic]</p>
-	 		<p>Start Time: [Dynamic]</p>
-	 		<p>Max Players: [Dynamic]</p>
-	 		<p>Prize Info: [Dynamic]</p>
-
+	 		<p>Category: <%= quiz.topic %></p>
+	 		<p>Start Time: <%= quiz.game_start %></p>
+	 		<p>Max Players: [Dynamic Limit]</p>
+	 		<p>Prize Info: <%= quiz.purse %></p>
+	 		<% end %>
 	 	</div>
 
 	 </div> 
