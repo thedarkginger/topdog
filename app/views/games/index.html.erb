@@ -1,35 +1,33 @@
-<!-- upcoming history battles --> 
-
 <div class="container">
+  <%= content_tag 'h1', session[:topic] + ' Registration', id: "lobbytext" %> 
 
-  <h1 id="hubtext">History Battles: Today's Table</h1> 
-
-  <p>The table for today's <b>History Battles</b> is listed below with corresponding start times (in Eastern Standard Time). Register as early as you would like, but all trivia battles will start at the time listed below.</p> 
+  <p>The table for today's <b><%= session[:topic] %> battle</b> is listed below with corresponding start times. Register as early as you would like, but all trivia battles will start at the time listed below.</p> 
 
   <div class="table-responsive">
-
-	<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Start Time</th>
-      <th>Entry Fee</th>
-      <th>Trophy</th>
-    </tr>
-  </thead>
-  <tbody>
-     <% @quizzes.each do |quiz| %>
+  	<table class="table table-striped">
+    <thead>
       <tr>
-           <td> <%= quiz.topic %></td>
-           <td> <%= quiz.game_start %></td>
-           <td> <%= quiz.entry %></td>
-          <td> <%= quiz.purse %></td>
-          <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %></td>
-          <% end %> 
+        <th>Topic</th>
+        <th>Start Time</th>
+        <th>Entry Fee</th>
+        <th>Purse</th>
+        <th>Champion</th>
       </tr>
+    </thead>
+    <tbody>
+       <% @quizzes.each do |quiz| %>
+        <tr>
+            <td id="firstcol"> <%= quiz.topic %></td>
+            <td> <%= quiz.game_start %></td>
+            <td> <%= quiz.entry %></td>
+            <td> <%= quiz.purse %></td>
+            <td> <%= quiz.first %></td>
+            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %></td>
+            <% end %> 
+        </tr>
 
-  </tbody>
-</table>
-</div>
+    </tbody>
+  </table>
+  </div>
 
 </div> 
