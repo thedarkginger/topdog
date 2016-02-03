@@ -1,16 +1,12 @@
 Topdog::Application.routes.draw do
 
-  resources :chipzs
+  resources :quizzes
 
   resources :histories
 
-  resources :sports1s
-
-  resources :trivia_demos
-
-  resources :high_scores
-
   resource :my_top_dog
+
+  resources :games
 
   devise_for :users
   root "pages#home"

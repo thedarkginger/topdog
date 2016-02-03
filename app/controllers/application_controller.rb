@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :set_category
+  before_action :set_topic
 
   protected
 
@@ -13,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def set_category
     session[:category] = params[:category] if params[:category].present?
+  end
+
+  def set_topic
+    session[:topic] = params[:topic] if params[:topic].present?
   end
 
 end

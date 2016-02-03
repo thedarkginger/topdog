@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203030606) do
+ActiveRecord::Schema.define(version: 20160203053051) do
 
   create_table "chips", force: true do |t|
     t.string   "category"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20160203030606) do
 
   create_table "games", force: true do |t|
     t.string   "topic"
-    t.date     "start_time"
+    t.datetime "start_time"
     t.integer  "entry"
     t.integer  "prize"
     t.string   "category"
@@ -75,6 +75,20 @@ ActiveRecord::Schema.define(version: 20160203030606) do
     t.boolean  "finished",               default: false
     t.integer  "current_question_index", default: 0
     t.integer  "score",                  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quizzes", force: true do |t|
+    t.string   "topic"
+    t.string   "category"
+    t.datetime "game_start"
+    t.integer  "entry"
+    t.integer  "purse"
+    t.integer  "first"
+    t.integer  "second"
+    t.integer  "third"
+    t.integer  "fourth"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

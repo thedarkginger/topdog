@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: MyString
+  category: MyString
+  topic: MyString
+  game_start: 2016-02-02 21:30:51
+  entry: 1
+  purse: 1
+  first: 1
+  second: 1
+  third: 1
+  fourth: 1
+
+two:
+  topic: MyString
+  category: MyString
+  topic: MyString
+  game_start: 2016-02-02 21:30:51
+  entry: 1
+  purse: 1
+  first: 1
+  second: 1
+  third: 1
+  fourth: 1

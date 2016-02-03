@@ -30,14 +30,14 @@
 		     	<p style="font-weight: bold;" class="icon-description js-icon-description"><!-- this is where your data-icon-text will be displayed --></p>	
 		    
 		     </div>
-		     	<%= link_to('sportshub') do %> <%= image_tag("sportsv1.png", :class => "icon js-icon", :data => { "icon-text" => "Sports Field" }) %>
+		     	<%= link_to('games') do %> <%= image_tag("sportsv1.png", :class => "icon js-icon", :data => { "icon-text" => "Sports Field" }) %>
 		  		 	<% end %> 
 		     	<%= image_tag("businessv1.png", :class => "icon js-icon", :data => { "icon-text" => "Business Park: Coming Soon" }) %>
 		       	<%= image_tag("sciencev1.png", :class => "icon js-icon", :data => { "icon-text" => "The Science Lab: Coming Soon" }) %>
 		     	<%= image_tag("randomv1.png", :class => "icon js-icon", :data => { "icon-text" => "TopDog Battle: Coming Soon" }) %>
 		      	<%= image_tag("geov3.png", :class => "icon js-icon", :data => { "icon-text" => "Globetrotters: Coming Soon" }) %>
 		       	<%= image_tag("moviesv1.png", :class => "icon js-icon", :data => { "icon-text" => "Theater Room: Coming Soon" }) %>
-		       	<%= link_to('historyhub') do %> <%= image_tag("historyv2.png", :class => "icon js-icon", :data => { "icon-text" => "History Book" }) %>
+		       	<%= link_to games_path(topic: 'history') do %> <%= image_tag("historyv2.png", :class => "icon js-icon", :data => { "icon-text" => "History Book" }) %>
 		       		<% end %> 
 		       	<%= link_to('culturehub') do %> <%= image_tag("popculturev1.png", :class => "icon js-icon", :data => { "icon-text" => "Pop Culture" }) %>
       				<% end %>  
@@ -54,7 +54,7 @@
 	
         			<div class="col-md-4">
 
-        				<a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History", historyhub_path %> </a>
+        				<a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History", games_path(topic: 'history') %> </a>
 
 						<a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports", sportshub_path %> </a>
 
