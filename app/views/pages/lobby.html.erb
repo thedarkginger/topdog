@@ -7,11 +7,13 @@
 	 	<div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
 	 		<h2 style="text-align: center;">Game Registration</h2>
 	 		
-	 		<p>Players Registered: 	<%= SpotCounter.where(category: session[:category]).first.count %></p> 
-	 		<p>Maximum Players: 25 Users</p>
+	 		<p>Players Registered: 	<%= SpotCounter.where(category: session[:category]).first.count %></p>
+	 		<% @quizzes.each do |quiz| %> 
+	 		<p>Max Players: <%= quiz.max %></p>
+	 		<% end %> 
 
 	 		<% if Time.now > Quiz.where(category: session[:category]).first.game_start %>
-			 <p>This is closed!</p>
+			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 
 	 		<% elsif Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
