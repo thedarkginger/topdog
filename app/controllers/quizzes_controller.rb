@@ -69,6 +69,6 @@ class QuizzesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
-      params.require(:quiz).permit(:topic, :category, :topic, :game_start, :entry, :purse, :first, :second, :third, :fourth, :max)
+      params.require(:quiz).permit(:topic, :category, :name, :game_start, :entry, :purse, :first, :second, :third, :fourth, :max)
     end
 end

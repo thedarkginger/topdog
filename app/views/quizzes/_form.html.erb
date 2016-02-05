@@ -25,6 +25,12 @@
 </div>
 <div class="form-group">
   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
     <%= f.label :game_start %><br>
     <%= f.datetime_select :game_start, class: "form-control" %>
   </div>

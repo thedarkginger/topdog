@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203083144) do
+ActiveRecord::Schema.define(version: 20160205084822) do
 
   create_table "chips", force: true do |t|
     t.string   "category"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160203083144) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "max"
+    t.string   "name"
   end
 
   create_table "reservations", force: true do |t|

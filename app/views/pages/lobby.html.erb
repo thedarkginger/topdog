@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="jumbotron">
 
-	<%= content_tag 'h1', session[:category] + ' Registration', id: "lobbytext" %> 
+	<%= content_tag 'h1', Quiz.where(category: session[:category]).first.name + ' Lobby', id: "lobbytext" %> 
 
 	 <div class="row">
 	 	<div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
