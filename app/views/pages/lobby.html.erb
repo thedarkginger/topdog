@@ -12,12 +12,11 @@
 	 		<p>Max Players: <%= quiz.max %></p>
 	 		<% end %> 
 
-	 		<% if Time.now > Quiz.where(category: session[:category]).first.game_start %>
-			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
-
-
-	 		<% elsif Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+	 		<% if Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
   				<%= link_to "Enter Game".html_safe, trivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
+
+	 		<% elsif Time.now > Quiz.where(category: session[:category]).first.game_start or Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max %>
+			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 			<% else %>
 	 			<%= link_to "Reserve Spot".html_safe, reservation_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
