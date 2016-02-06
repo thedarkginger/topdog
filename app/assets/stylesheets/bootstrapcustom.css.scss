@@ -147,6 +147,8 @@ ul.nav a:hover {
 
 #frontbuttons {
   margin: 9px;
+  width: 80%;
+  text-align: center;
 }
 
 /* Set the fixed height of the footer here */
@@ -550,7 +552,7 @@ ul.nav a:hover {
 }
 
 
-@media only screen and (max-width: 668px), only screen and (max-device-width: 668px){
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px){
 
     /* Cool Circle Thing */
 
@@ -600,59 +602,165 @@ ul.nav a:hover {
   display: none;
 }
 
-#logomobile {
-  height: 58%;
-  width: 61%;
-  float: none;
-  padding-bottom: 5px;
-  margin-left: -3.9%;
-  margin-top: -2.2%;
+    #logomobile {
+      height: 58%;
+      width: 61%;
+      float: none;
+      padding-bottom: 5px;
+      margin-left: -3.9%;
+      margin-top: -2.2%;
 
-}
+    }
 
- #homep {
-        text-align: left; 
-        margin-left: 3%;
-      }
+     #homep {
+            display: none;
+          }
 
-  #jumbolist ul {
-  text-align: left;  
-  font-size: 1.35em; 
-  margin-left: 3%;
-  font-family: inherit; 
-  font-weight: normal;
+      #jumbolist ul {
+      text-align: left;  
+      font-size: 1.35em; 
+      margin-left: 3%;
+      font-family: inherit; 
+      font-weight: normal;
 
-}
-
-
+    }
 /* TRIVIA FOR MOBILE */ 
 
-.btn-primary-questions {
-      color: #ffffff;
-      background-color: #32699b;
-      *background-color: #32699b;
-      border-color: #0044cc #0044cc #002a80;
-      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-      margin: 4px; 
-      width: 95%;
-      font-weight: bold;
+    .btn-primary-questions {
+        color: #ffffff;
+        background-color: #32699b;
+        *background-color: #32699b;
+        border-color: #0044cc #0044cc #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        margin: 4px; 
+        width: 95%;
+        font-weight: bold;
+        text-align: center;
+      }
+
+    .mobilelobby {
       text-align: center;
     }
 
-.mobilelobby {
-  text-align: center;
-}
+    .btn-primary.mobile { 
+        width: 49%;
+        margin-bottom: 3%;
+        font-size: 1.20em;
+        font-weight: bold;
+        }
 
-.btn-primary.mobile { 
-    width: 49%;
-    margin-bottom: 3%;
-    font-size: 1.20em;
-    font-weight: bold;
+    #jumbolist {
+      display: none;
     }
+
+     #mobilep {
+      margin-left: 3%;
+      text-align: left;
+    }
+
+    #mobilelist {
+      text-align: left;  
+      font-size: 1.17em; 
+      margin-left: 3%;
+      font-family: inherit; 
+      font-weight: normal;
+      }
+
+    #specialbutton {
+      text-align: center;
+      }
 
 
 /* END MOBILE SECTION */
 
+}
+
+/* tablet section */ 
+
+  @media (min-width: 500px) and (max-width: 1000px) {
+
+    .desktopbutton {
+      display: none;
+    }
+
+    #logomobile {
+      display: none; 
+    }   
+
+    #homep {
+      display: none;
+    }
+
+    #mobilep {
+      margin-left: 3%;
+      text-align: left;
+    }
+
+    #jumbolist {
+      display: none;
+    }
+
+    #mobilelist {
+      text-align: left;  
+      font-size: 1.17em; 
+      margin-left: 3%;
+      font-family: inherit; 
+      font-weight: normal;
+      }
+
+    .mobilelobby {
+      display: none;
+    }
+
+    .class {
+      display: none;
+    }
+
+    .point {
+      display: none;
+    }
+
+    .arrow {
+      display: none;
+    }
+
+    #specialbutton {
+      display: block;
+      text-align: center;
+    }
+
+  }
+
+/* DESKTOP ONLY ELEMENTS */ 
+
+@media (min-width:1001px) {
+
+  #mobilelist {
+    display: none;
+  }
+   
+  #logomobile {
+    display: none; 
+  }
+
+  .mobilebutton {
+    display: none;
+  }
+
+  #mobilep {
+    display: none;
+  }
+
+  .mobilelobby {
+    display: none;
+  }
+
+  .tabletbutton {
+    display: none;
+  }
+
+
+/* END DESKTOP ONLY CLASS */
 }
 
 @media (min-width: 1200px) {
@@ -704,26 +812,6 @@ html, body { overflow-x: hidden; }
 
 }
 
-/* DESKTOP ONLY ELEMENTS */ 
-
-@media (min-width:668px) {
-   
-  #logomobile {
-    display: none; 
-  }
-
-  .mobilebutton {
-    display: none;
-  }
-
-  .mobilelobby {
-    display: none;
-  }
-
-
-
-/* END DESKTOP ONLY CLASS */
-}
 
 /* MARKETING CONTENT HOME /* 
 

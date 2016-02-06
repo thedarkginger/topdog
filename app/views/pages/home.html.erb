@@ -5,18 +5,6 @@
       <h1 id="hometext-center">TopDog Trivia</h1>
        <%= image_tag("logo.png", id: "logomobile") %> 
 
-       <!-- mobile button above fold --> 
-        <div class="mobilebutton">
-                <% if user_signed_in? %>
-                   <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Enter TopDog Lobby", triviahub_path %> </a>
-          <% else %>
-             <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Sign Up Today", new_user_registration_path %> 
-             </a>
-
-          <% end %> 
-      </div>
-      <!-- end mobile button --> 
-
       <p id="homep">Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p><br>
       <p id="homep">That is the problem TopDog was designed to solve. Here are the basics:</P> 
 
@@ -37,16 +25,38 @@
           <% end %> 
       </div>
 
-      <div id="jumbolist">
-      <ul>
-        <li>Play daily trivia games against a pool of contestants</li>
-        <li>Win real prizes instantly for entering tournaments</li>
-        <li>Pick contests from your favorite categories and play to win</li>
-        <li>Choose from different entry times for each game</li>
-      </ul>
+      <p id="mobilep"><br>Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p>
+               <!-- mobile button above fold --> 
+        <div id="specialbutton">
+        <div class="mobilebutton">
+                <% if user_signed_in? %>
+                   <a class="btn btn-primary btn-lg" style="height: 75px; display: table-cell; vertical-align: middle;" id="frontbuttons" <%= link_to "Enter TopDog Lobby", triviahub_path %> </a>
+          <% else %>
+             <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Sign Up Today", new_user_registration_path %> 
+             </a>
 
-	</div>
+          <% end %>
+          </div> 
+      </div>
+      <!-- end mobile button --> 
+      <p id="mobilep">That is the problem TopDog was designed to solve. Here are the basics:</P>
 
+        <div id="jumbolist">
+        <ul>
+          <li>Play daily trivia games against a pool of contestants</li>
+          <li>Win real prizes instantly for entering tournaments</li>
+          <li>Pick contests from your favorite categories and play to win</li>
+          <li>Choose from different entry times for each game</li>
+        </ul>
+  	   </div>
+        <div id="mobilelist">
+        <ul>
+          <li>Play daily trivia games against a pool of contestants</li>
+          <li>Win real prizes instantly for entering tournaments</li>
+          <li>Pick contests from your favorite categories and play to win</li>
+          <li>Choose from different entry times for each game</li>
+        </ul>
+       </div>
 </div>
 </div> <!-- ENDS TOP CONTAINER --> 
 
@@ -71,24 +81,26 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-sm-4">
-          <%= image_tag("randomv2.png", class: "image-circle") %> 
-          <h2>Cash for Trivia</h2>
-          <p>It's time that trivia takes the step to the next level. For the first time ever, you can play against other people for real prizes. The best part? It's legal too. This is where pub trivia experts <b>go professional</b>. Get your tokens, find your favorite trivia categories, and start your trivia career today.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-sm-4">
-           <%= image_tag("geov3.png", class: "image-circle") %> 
-          <h2>Pick Showdowns</h2>
-          <p>Select from eight major question categories ranging from sports to science. Master of everything? Play <b>TopDog Elite</b> mode to compete using questions from all categories. And of course, you can play a mix of both. Pick your battles to win the best prize of all.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-sm-4">
-           <%= image_tag("sportsv1.png", class: "image-circle") %> 
-          <h2>Become TopDog</h2>
-          <p>Don't just win games. Crush the competition. Track your overall success on the weekly <b>TopDog Rankings</b>. You can also follow your rankings in real-time as you answer questions within the Trivia Showdown. The road to TopDog starts here.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+            <div class="col-sm-4">
+              <%= image_tag("randomv2.png", class: "image-circle") %> 
+              <h2>Cash for Trivia</h2>
+              <p>It's time that trivia takes the step to the next level. For the first time ever, you can play against other people for real prizes. The best part? It's legal too. This is where pub trivia experts <b>go professional</b>. Get your tokens, find your favorite trivia categories, and start your trivia career today.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-sm-4">
+               <%= image_tag("geov3.png", class: "image-circle") %> 
+              <h2>Pick Showdowns</h2>
+              <p>Select from eight major question categories ranging from sports to science. Master of everything? Play <b>TopDog Elite</b> mode to compete using questions from all categories. And of course, you can play a mix of both. Pick your battles to win the best prize of all.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-sm-4">
+               <%= image_tag("sportsv1.png", class: "image-circle") %> 
+              <h2>Become TopDog</h2>
+              <p>Don't just win games. Crush the competition. Track your overall success on the weekly <b>TopDog Rankings</b>. You can also follow your rankings in real-time as you answer questions within the Trivia Showdown. The road to TopDog starts here.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+
+
       </div><!-- /.row -->
     </div>
 
