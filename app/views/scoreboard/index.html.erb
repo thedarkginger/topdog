@@ -1,10 +1,16 @@
 <div class="container">
   <%= content_tag 'h1', session[:category] + ' scoreboard', id: "triviah1" %> 
+   <div class="row">
+             <div class="col-lg-12 text-center">
+                <hr class="star-game">
+              </div>
+              </div>
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Rank</th>
         <th>User</th>
+        <th>City</th>
         <th>Category</th>
         <th>Score</th>
       </tr>
@@ -15,6 +21,7 @@
     <tr>
       <td></td>
       <td><%= participation.user.username %></td>
+      <td><%= participation.user.city %></td>
       <td><%= participation.category %></td>
       <td><%= participation.score %></td>
        <% end %>

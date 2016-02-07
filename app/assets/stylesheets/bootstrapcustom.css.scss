@@ -20,6 +20,9 @@ $navbar-border-radius: 0;
 @import 'bootstrap';
 @import 'font-awesome';
 
+.alert {
+  margin-bottom: 40px;
+}
 
 #jumbolist ul {
   text-align: left;  
@@ -843,7 +846,7 @@ html, body { overflow-x: hidden; }
   margin-top: 2%;
 }
 
-#leftimg {
+.leftimg {
   width: 100%;
   border: 3px solid #D64541; 
   box-shadow: 4px 4px 7px #888888;
@@ -1144,11 +1147,6 @@ header .intro-text .skills {
   }
 }
 
-.img-responsive {
-  width: 60%;
-
-}
-
 .rad-button2 {
   top: -70px;
   position: inherit;
@@ -1185,5 +1183,15 @@ header .intro-text .skills {
   background-color: #255988;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
+
+.lefthome {
+  float: left;
+  width: 47%;
+  margin-bottom: 5px;
+  margin-right: 7px;
+  border: 2px solid #D64541; 
+}
+
+
 
 
