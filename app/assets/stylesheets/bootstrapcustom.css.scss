@@ -189,7 +189,7 @@ ul.nav a:hover {
 }
 
 .bottomthird {
-  margin-top: 40px; 
+  margin-top: 0px; 
 }
 
 
@@ -1194,6 +1194,29 @@ header .intro-text .skills {
   border: 2px solid #D64541; 
 }
 
+section.success {
+  background: #18bc9c;
+  color: white;
+}
+section.success a,
+section.success a:hover,
+section.success a:focus,
+section.success a:active,
+section.success a.active {
+  color: #2c3e50;
+  outline: none;
+}
+
+.middle {
+  display: block;
+  margin: 0 auto 20px;
+  width: 155px;
+  margin-top: 20px;
+}
+
+.table-hover {
+  border: black 1px;
+}
 
 
 

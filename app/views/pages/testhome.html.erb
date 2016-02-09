@@ -9,6 +9,8 @@
       <p id="homep">Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p><br>
       <p id="homep">That is the problem TopDog was designed to solve. Here are the basics:</P> 
 
+      <p>Players Registered:  <%= SpotCounter.where(category: session[:category]).first.count %></p>
+     
          <div class="desktopbutton">
                 <% if user_signed_in? %>
                <div class="buttoncenter">
@@ -56,6 +58,29 @@
           <li>Choose from different entry times for each game</li>
         </ul>
        </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Game</th>
+          <th>Time</th>
+          <th>Max</th>
+          <th>Entry</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @quizzes.each_with_index do |quiz, index| %>
+        <tr>
+          <td id="firstcol"><%= index + 1 %></td>
+          <td><%= quiz.topic %></td>
+           <td><%= quiz.game_start %></td>
+          <td><%= quiz.max %></td>
+          <td> <%= quiz.entry %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
 </div>
 </div> <!-- ENDS TOP CONTAINER --> 
 
