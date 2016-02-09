@@ -64,7 +64,6 @@ body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
     width: 100%;
-  overflow-x: hidden;
 }
 
 
@@ -405,6 +404,10 @@ ul.nav a:hover {
         text-align: left; 
         font-size: 3.5em; 
         font-weight: bold;
+      }
+
+      .hub {
+        overflow-x: hidden;
       }
 
 
@@ -1218,6 +1221,8 @@ section.success a.active {
 .table-hover {
   border: black 1px;
 }
+
+.clear{clear:both}
 
 
 
