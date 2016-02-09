@@ -50,7 +50,7 @@
                           <td> <%= quiz.entry %></td>
                           <td>
                              <% if user_signed_in? %>
-                                 <%= link_to "Play Game &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %>
+                                 <%= link_to "Join &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %>
                             <% else %>
                                 <%= link_to "Sign Up &raquo;".html_safe, new_user_registration_path, class: "btn btn-primary btn-md" %>
                             <% end %>
