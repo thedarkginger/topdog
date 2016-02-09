@@ -37,8 +37,6 @@
                           <th>Rank</th>
                           <th>Game</th>
                           <th>Start Time</th>
-                          <th>Max Players</th>
-                          <th>Entry</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -47,8 +45,6 @@
                           <td id="firstcol"><%= index + 1 %></td>
                           <td><%= quiz.name %></td>
                            <td><%= quiz.game_start %></td>
-                          <td><%= quiz.max %></td>
-                          <td> <%= quiz.entry %></td>
                           <td>
                              <% if user_signed_in? %>
                                  <%= link_to "Join &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %>
