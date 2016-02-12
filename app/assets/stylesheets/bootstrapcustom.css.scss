@@ -104,6 +104,16 @@ body {
 
 }
 
+.footer-below {
+  padding: 17px 0;
+  background-color: #233140;
+}
+
+#footerbottom {
+  text-align: center;
+  color: #FFFFFF;
+}
+
 
 ul.nav a:hover { 
   color: #fff !important; 
@@ -1038,10 +1048,12 @@ html, body { overflow-x: hidden; }
 
 
       #lobbybutton {
-        width: 35%; 
+        width: 40%; 
         text-align: right;
         float: right;
         font-weight: bold;
+        margin-right: 10px;
+        margin-bottom: 30px;
       }
 
       .questiontext {
