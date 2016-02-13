@@ -34,17 +34,21 @@
                     <table class="table table-striped table-hover">
                       <thead>
                         <tr>
-                          <th>Rank</th>
+                          <th class="mobiletablehide">Rank</th>
                           <th>Game</th>
                           <th>Start Time</th>
+                          <th>Game Entry</th>
+                          <th>Prize</th>
                         </tr>
                       </thead>
                       <tbody>
                       <% @quizzes.each_with_index do |quiz, index| %>
                         <tr>
-                          <td id="firstcol"><%= index + 1 %></td>
+                          <td class="mobiletablehide"><%= index + 1 %></td>
                           <td><%= quiz.name %></td>
                            <td><%= quiz.game_start %></td>
+                           <td>$<%= quiz.entry %></td>
+                           <td>$<%= quiz.purse %></td>
                           <td>
                              <% if user_signed_in? %>
                                  <%= link_to "Join &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %>
