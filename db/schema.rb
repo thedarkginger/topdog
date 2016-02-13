@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207064433) do
+ActiveRecord::Schema.define(version: 20160212074106) do
 
   create_table "chips", force: true do |t|
     t.string   "category"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160207064433) do
     t.integer  "score",                  default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "create"
   end
 
   create_table "quizzes", force: true do |t|

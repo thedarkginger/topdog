@@ -7,7 +7,7 @@ class CreateParticipations < ActiveRecord::Migration
       t.integer :current_question_index, default: 0
       t.integer :score, default: 0
 
-      t.timestamps
+      t.timestamps 
     end
   end
 end

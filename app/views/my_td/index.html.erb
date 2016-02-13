@@ -3,8 +3,6 @@
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
-	        <th>Game</th>
-	        <th>User</th>
 	        <th>Category</th>
 	        <th>Score</th>
 	      </tr>
@@ -13,7 +11,6 @@
 	    <tbody>
 	       <% @participations.each do |participation| %>
 	    <tr>
-	      <td><%= participation.user.username %></td>
 	      <td><%= participation.category %></td>
 	      <td><%= participation.score %></td>
 	    </tr>

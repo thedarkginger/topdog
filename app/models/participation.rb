@@ -8,4 +8,5 @@ class Participation < ActiveRecord::Base
    def self.number_of_spots_for(category)
   	Participation.where(category: category).where('created_at >= ?', Date.today).pluck(:user_id).uniq.count
   end
+
 end
