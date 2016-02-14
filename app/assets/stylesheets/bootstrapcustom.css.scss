@@ -129,17 +129,6 @@ ul.nav a:hover {
   border-color: #e74c3c;
 }
 
-
-
-/* STYLES FOR HOME PAGE */ 
-
-#firstlayer {
-  padding-bottom: 20px;
-  margin-left: 7%;
-}
-
-
-
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -148,12 +137,6 @@ ul.nav a:hover {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
-}
-
-#frontbuttons {
-  margin: 9px;
-  width: 80%;
-  text-align: center;
 }
 
 /* Set the fixed height of the footer here */
@@ -204,38 +187,6 @@ ul.nav a:hover {
   background-color: #c0392b;
 }
 
-/* Custom middle element from footer format */ 
-
-/* Currently not in use -- delete if we don't keep it for prod */ 
-
-/* Set the fixed height of the footer here */
-#middle {
-  height: 260px;
-  background-color: #2c3e50;
-  padding: 15px;
-}
-
-/* unvisited link */
-#middle a:link {
-    color: white;
-    font-size: 17px; 
-}
-
-/* visited link */
-#middle a:visited {
-    color: #bdc3c7;
-    font-size: 20px; 
-}
-
-#middle p {
-  color: #bdc3c7; 
-  font-weight: normal; 
-  font-size: 21px; 
-}
-#middle ul li {
-  color: black;
-}
-
 #logofooter {
   height: 21%;
   width: 23%;
@@ -253,53 +204,6 @@ ul.nav a:hover {
   margin-top: -2.2%;
 
 }
-
-
-.btn-stripe {
-    color: #fff;
-  background: #008cdd;
-  background-image: -webkit-linear-gradient(top, #7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -moz-linear-gradient(top, #7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -ms-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -o-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);     
-  background: linear-gradient(top, #7dc5ee, #008cdd 85%, #30a2e4);      
-  text-shadow: 0 1px 1px rgba(0,0,0,0.53);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-  -webkit-border-radius: 17px;
-  -moz-border-radius: 17px;
-  -ms-border-radius: 17px;
-  -o-border-radius: 17px;
-  border-radius: 17px;
-  border-color: #008cdd;
-  margin-right: 15px; 
-  padding-right: 12px; 
-  padding-left: 12px;  
-}
-.btn-stripe:hover {
-  color: #fff;
-  background-position: 0;
-}
-.btn-stripe:active {
-  background: #008cdd;
-}
-
-.btn-basecamp {
-    background-image: none;
-  background: #fff;
-  border: 1px solid #ccc;
-  -webkit-box-shadow: 0px 1px 0px #ddd;
-  -moz-box-shadow: 0px 1px 0px #ddd;
-  box-shadow: 0px 1px 0px #ddd;
-}
-.btn-basecamp:hover {
-  background: #fff;
-}
-
       strong {
           font-weight:700;
       }
@@ -315,19 +219,6 @@ ul.nav a:hover {
       #questioncreation {
         text-align: center;
         float: center;
-      }
-
-      #weakside {
-      float: left; 
-      width: 45%; 
-      vertical-align: center; 
-
-      }
-
-      #strongside {
-      float: right; 
-      width: 40%; 
-      margin-top: 10%; 
       }
 
 /* HOME PAGE STYLING */ 
@@ -355,8 +246,6 @@ ul.nav a:hover {
         text-align: left; 
         margin-left: 30%;
       }
-
-
 
 /* TRIVIA GAME STYLING */ 
 
@@ -447,24 +336,20 @@ ul.nav a:hover {
           height: 100%;
           z-index: 9999;
           background: asset-data-url("battery3.gif") center no-repeat #ECF0F1;
-      
 }
-
-
-
       /* Cool Circle Thing */
 
-      #divCircle { 
-    width: 500px;
-    height: 500px;  
-    position: relative;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+#divCircle { 
+      width: 500px;
+      height: 500px;  
+      position: relative;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
 
-}
+      }
  
-#divCircle img{
+ #divCircle img{
     position: absolute;
     width: 21%;
     height: 21%;
@@ -515,9 +400,7 @@ ul.nav a:hover {
 }
 
 .button-wrap {
-  text-align: center;
-
-  
+  text-align: center;  
 }
  
 .rad-button {
@@ -563,7 +446,7 @@ ul.nav a:hover {
 
     /* Cool Circle Thing */
 
-    #divCircle { 
+#divCircle { 
     width: 200px;
     height: 200px;  
     position: relative;
@@ -592,7 +475,6 @@ ul.nav a:hover {
 #historybubble {
   margin-top: 10%;
 }
-
 
 /* HOME FOR MOBILE */ 
 
@@ -813,36 +695,6 @@ html, body { overflow-x: hidden; }
 
 }
 
-
-/* MARKETING CONTENT HOME /* 
-
-  /* MARKETING CONTENT
-    -------------------------------------------------- */
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-sm-4 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: bold;
-  color: #F2F1EF; 
-}
-.marketing .col-sm-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
-  color: #F2F1EF; 
-  font-size: 1.1em;
-}
-
-.marketing {
-  background: #2c3e50;
-  margin-top: .5%;
-}
-
 .col-sm-4 {
   margin-top: 1.5%;
 }
@@ -1042,10 +894,7 @@ html, body { overflow-x: hidden; }
       background-color: #449d61;
       border-color: #2d6840; }
 
-    
-
-
-      #lobbybutton {
+#lobbybutton {
         width: 40%; 
         text-align: right;
         float: right;
@@ -1054,17 +903,17 @@ html, body { overflow-x: hidden; }
         margin-bottom: 30px;
       }
 
-      .questiontext {
+.questiontext {
       color: #141414;
       font-size: 1.19em;
       }
 
-      #firstcol {
+#firstcol {
       text-transform: capitalize;
 
       }
 
-      #category {
+#category {
       text-transform: capitalize;
       }
 

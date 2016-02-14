@@ -21,6 +21,8 @@ gem 'font-awesome-rails', '~> 4.5.0'
 
 gem 'devise', '~> 3.2.4'
 
+gem 'heroku-deflater', :group => :production
+
 group :development, :test do
 	gem 'sqlite3'
 	gem 'pry'
