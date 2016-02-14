@@ -15,7 +15,5 @@ class User < ActiveRecord::Base
         where(conditions.to_hash).first
       end
     end
-
-  has_many :trivia_demos
   has_many :participations
 end

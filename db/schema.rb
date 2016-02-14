@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212074106) do
+ActiveRecord::Schema.define(version: 20160214001341) do
 
   create_table "chips", force: true do |t|
     t.string   "category"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 20160212074106) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "city"
+    t.string   "timezone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
