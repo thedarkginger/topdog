@@ -13,11 +13,27 @@
 	 		<p>Max Players: <%= quiz.max %></p>
 	 		<% end %> 
 
-	 		<% if Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
-  				<%= link_to "Enter Game".html_safe, trivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
+	 		<!-- if lobby full, show error --> 
+	 		<% if Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max %>
+			 <p>Sorry, this game lobby is <b>full</b>. Try again tomorrow!</p>
 
-	 		<% elsif Time.now > Quiz.where(category: session[:category]).first.game_start or Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max %>
+  			<!-- if time is past game start or lobby full, show error --> 
+	 		<% elsif Time.now > Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
+
+			 <!-- if user registered but game has not started yet --> 
+			<% elsif Time.now + 4.minutes < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+				<p>Come back at
+					<% @quizzes.each do |quiz| %> 
+	 					<%= quiz.game_start %>
+	 				<% end %> to start the game. You'll be able to access the quiz then.</p>
+
+			<% elsif Time.now - 4.minutes > Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+				<p>Sorry yo! The game has already started, and you'll have to try again tomorrow.</p>
+
+			<!-- player registered and within 4 min of start --> 
+	 		<% elsif Reservation.where(user_id: current_user.id, category: session[:category]).exists? and Time.now - 4.minutes < Quiz.where(category: session[:category]).first.game_start and Time.now + 4.minutes > Quiz.where(category: session[:category]).first.game_start  %>
+  				<%= link_to "Enter Game".html_safe, trivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
 
 			<% else %>
 	 			<%= link_to "Reserve Spot".html_safe, reservation_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
@@ -31,7 +47,7 @@
 	 		<p id="category">Category: <%= quiz.topic %></p>
 	 		<p>Start Time: <%= quiz.game_start %></p>
 	 		<p>Max Players: <%= quiz.max %></p>
-	 		<p>Prize Info: <%= quiz.purse %></p>
+	 		<p>Prize Info: $<%= quiz.purse %></p>
 	 		<% end %>
 	 	</div>
 
