@@ -1,3 +1,3 @@
-Time::DATE_FORMATS[:default] = set_timezone("%I:%M %p")
+Time::DATE_FORMATS[:default] = "%I:%M %p"
 
 
