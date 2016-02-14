@@ -18,6 +18,10 @@ class PagesController < ApplicationController
   def triviahub
   end
 
+  def quizmaker
+      @histories = History.where(category: session[:category])
+  end
+
   def reservation
     user_id = current_user.id
     category = params[:category]

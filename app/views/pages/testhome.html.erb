@@ -1,5 +1,11 @@
 
         <div class="container">
+
+      <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.question %></td>
+      </tr>
+      <% end %>
  
 	<div class="jumbotron center">
       <%= image_tag("logo.png", id: "logohome") %> 
@@ -8,37 +14,8 @@
 
       <p id="homep">Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p><br>
       <p id="homep">That is the problem TopDog was designed to solve. Here are the basics:</P> 
-
-      <p>Players Registered:  <%= SpotCounter.where(category: session[:category]).first.count %></p>
      
-         <div class="desktopbutton">
-                <% if user_signed_in? %>
-               <div class="buttoncenter">
-                    <div class="button-wrap">
-                         <%= button_to "Enter TopDog Lobby", triviahub_path, :class => "rad-button wwt flat", :method => :get %>
-                    </div>
-                </div>
-                  
-          <% else %>
-             <div class="buttoncenter">
-                    <div class="button-wrap">
-                         <%= button_to "Sign Up Today", new_user_registration_path, :class => "rad-button wwt flat", :method => :get %>
-                    </div>
-               </div>
-          <% end %> 
-      </div>
 
-      <p id="mobilep"><br>Playing trivia is not a new concept. But why isn't there a way for you to <b>compete for prizes</b> from your knowledge?</p>
-               <!-- mobile button above fold -->
-        <div class="mobilebutton">
-                <% if user_signed_in? %>
-                   <a class="btn btn-primary btn-lg" style="height: 75px; display: table-cell; vertical-align: middle;" id="frontbuttons" <%= link_to "Enter TopDog Lobby", triviahub_path %> </a>
-                </div>
-          <% else %>
-             <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Sign Up Today", new_user_registration_path %> 
-             </a>
-
-          <% end %>
       <!-- end mobile button --> 
       <p id="mobilep">That is the problem TopDog was designed to solve. Here are the basics:</P>
 
@@ -58,29 +35,7 @@
           <li>Choose from different entry times for each game</li>
         </ul>
        </div>
-  
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Game</th>
-          <th>Time</th>
-          <th>Max</th>
-          <th>Entry</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @quizzes.each_with_index do |quiz, index| %>
-        <tr>
-          <td id="firstcol"><%= index + 1 %></td>
-          <td><%= quiz.topic %></td>
-           <td><%= quiz.game_start %></td>
-          <td><%= quiz.max %></td>
-          <td> <%= quiz.entry %></td>
-          <% end %>
-        </tr>
-      </tbody>
-    </table>
+
 </div>
 </div> <!-- ENDS TOP CONTAINER --> 
 

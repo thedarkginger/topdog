@@ -14,13 +14,10 @@ Topdog::Application.routes.draw do
   get "legal" => "pages#legal"
   get "contact" => "pages#contact"
   get "triviamaker" => "pages#triviamaker"
+  get "quizmaker" => "pages#quizmaker"
   get "triviahub" => "pages#triviahub"
   get "lobby" => "pages#lobby"
   get "trivia" => "pages#trivia"
-  get "sportshub" => "pages#sportshub"
-  get "historyhub" => "pages#historyhub"
-  get "culturehub" => "pages#culturehub" 
-  get "examples"=> "pages#examples"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
   get "mytd" => "my_td#index", as: :mytd
   get "reservation" => "pages#reservation"
