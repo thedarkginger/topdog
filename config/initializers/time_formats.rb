@@ -1,3 +1,3 @@
-Time::DATE_FORMATS[:default] = "%I:%M %p"
+Time::DATE_FORMATS[:default] = .in_time_zone("%I:%M %p")
 
 
