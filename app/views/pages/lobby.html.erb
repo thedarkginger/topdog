@@ -23,10 +23,10 @@
 
 			 <!-- if user registered but game has not started yet --> 
 			<% elsif Time.now + 4.minutes < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
-				<p>Come back at
+				<p>The game lobby will open at
 					<% @quizzes.each do |quiz| %> 
-	 					<%= quiz.game_start %>
-	 				<% end %> to start the game. You'll be able to access the quiz then.</p>
+	 					<b><%= quiz.game_start %></b>
+	 				<% end %> for registered players. You will have three minutes to begin the game. Good luck.</p>
 
 			<% elsif Time.now - 4.minutes > Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
 				<p>Sorry yo! The game has already started, and you'll have to try again tomorrow.</p>

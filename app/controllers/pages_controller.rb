@@ -18,21 +18,6 @@ class PagesController < ApplicationController
   def triviahub
   end
 
-  def history
-  end
-
-  def historytrivia
-  end
-
-  def historylobby
-  end
-
-  def culturehub
-  end
-
-  def sportstrivia
-  end
-
   def reservation
     user_id = current_user.id
     category = params[:category]
