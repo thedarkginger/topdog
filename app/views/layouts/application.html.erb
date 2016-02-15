@@ -39,8 +39,10 @@
       		<li id="footerli"><%= link_to "Contact Us", contact_path %></li> 
         </ul>
 
-       <!-- ADMIN LINK (REMOVE FOR PROD) --> 
-       <!--  <a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", triviamaker_path %> </a>   --> 
+<% if current_user.try(:admin?) %>
+  	<a class="btn btn-primary btn-lg". id="frontbuttons" <%= link_to "Trivia Admin", triviamaker_path %> </a>  
+<% end %>
+ 
       </div>
 	 </div>
 	  	<div class="footer-below">
