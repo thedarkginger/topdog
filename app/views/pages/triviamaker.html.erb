@@ -1,22 +1,27 @@
-<div class="container">
+<% if current_user.try(:admin?) %>  	  
+	<div class="container">
 
-	<h1>Trivia Maker Portal</h1>
+		<h1>Trivia Maker Portal</h1>
 
-		<div class="jumbotron">
-  			<p>This is the main access point for the demo to build trivia quiz json files using our interface. Each quiz will output a json file that corresponds to a game.</p>
+			<div class="jumbotron">
+	  			<p>This is the main access point for the demo to build trivia quiz json files using our interface. Each quiz will output a json file that corresponds to a game.</p>
 
-  			<p style="text-align: center"><b>Master Trivia Builder</b></p>
-  				<a class="btn btn-primary btn-lg" <%= link_to "The Quiz Builder (Histories)", histories_path %> </a> <br><br>
-				<a class="btn btn-primary btn-lg" <%= link_to "Model Dashboard (Quizzes)", quizzes_path %> </a>
+	  			<p style="text-align: center"><b>Master Trivia Builder</b></p>
+	  				<a class="btn btn-primary btn-lg" <%= link_to "The Quiz Builder (Histories)", histories_path %> </a> <br><br>
+					<a class="btn btn-primary btn-lg" <%= link_to "Model Dashboard (Quizzes)", quizzes_path %> </a>
 
-  		<!-- for two column button display, removed
-		<div class="row">
-			<div class="col-md-6">
-			</div>
-		</div> 
-		<!-- end grid row --> 
+				</div>
+				</div>
+
+<% else %>
+
+	<div class="container">
+
+		<h1 id="hubtext">Danger, Will Robinson. You do not have access to this page.</h1>
+
+		<p>If you have questions, shoot us an email.</p>
+		<%= link_to "To Home &raquo;".html_safe, root_path, id: "lobbybutton", class: "btn btn-danger btn-lg" %>
 
 	</div>
-	<!-- end jumbo-->
-</div>
-<!-- end container --> 
+
+<% end %>

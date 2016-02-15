@@ -1,35 +1,51 @@
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Question</th>
-        <th>Answers</th>
-        <th>Correcta</th>
-        <th>Quiz Date</th>
-        <th>Category</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @histories.each do |history| %>
+<% if current_user.try(:admin?) %>  
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= history.question %></td>
-          <td><%= history.answers %></td>
-          <td><%= history.correcta %></td>
-          <td><%= history.quizdate %></td>
-          <td><%= history.category %></td>
-          <td><%= link_to 'Show', history %></td>
-          <td><%= link_to 'Edit', edit_history_path(history) %></td>
-          <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Question</th>
+          <th>Answers</th>
+          <th>Correcta</th>
+          <th>Quiz Date</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-    <a class="btn btn-primary btn-lg" <%= link_to "Enter New Questions", new_history_path %> </a>
-</div>
+      </thead>
 
-<br>
+      <tbody>
+        <% @histories.each do |history| %>
+          <tr>
+            <td><%= history.question %></td>
+            <td><%= history.answers %></td>
+            <td><%= history.correcta %></td>
+            <td><%= history.quizdate %></td>
+            <td><%= history.category %></td>
+            <td><%= link_to 'Show', history %></td>
+            <td><%= link_to 'Edit', edit_history_path(history) %></td>
+            <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+      <a class="btn btn-primary btn-lg" <%= link_to "Enter New Questions", new_history_path %> </a>
+  </div>
+
+  <br>
+
+<% else %>
+
+  <div class="container">
+
+    <h1 id="hubtext">Danger, Will Robinson. You do not have access to this page.</h1>
+
+    <p>If you have questions, shoot us an email.</p>
+
+    <%= link_to "To Lobby &raquo;".html_safe, home_path, id: "lobbybutton", class: "btn btn-danger btn-lg" %>
+
+  </div>
+  <br>
+
+<% end %>

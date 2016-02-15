@@ -1,72 +1,86 @@
-<div class="container">
+<% if current_user.try(:admin?) %>  
+  <div class="container">
 
-<h1>Trivia Builder Interface: All Categories</h1>
+  <h1>Trivia Builder Interface: All Categories</h1>
 
-<div class="jumbotron">
-  <p>This is a demo interface for creating sets of trivia questions and answers that will be sent to the individual trivia views. The postgreSQL will generate an json file that we can pull from when a contestant reaches the trivia engine to prevent seeing the questions/answers in the source code.</p>
-</div>
+  <div class="jumbotron">
+    <p>This is a demo interface for creating sets of trivia questions and answers that will be sent to the individual trivia views. The postgreSQL will generate an json file that we can pull from when a contestant reaches the trivia engine to prevent seeing the questions/answers in the source code.</p>
+  </div>
 
-<table class="table table-striped"> 
-  <thead>
+  <table class="table table-striped"> 
+    <thead>
+      <tr>
+        <th>Game</th>
+    </thead>
+  <tbody>
     <tr>
-      <th>Game</th>
-  </thead>
-<tbody>
-  <tr>
-    <td>History</td>
+      <td>History</td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 1", quizmaker_path(category: 'history 1') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 1", quizmaker_path(category: 'history 1') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 2", quizmaker_path(category: 'history 2') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 2", quizmaker_path(category: 'history 2') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 3", quizmaker_path(category: 'history 3') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 3", quizmaker_path(category: 'history 3') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 4", quizmaker_path(category: 'history 4') %> </a></td>
-</tr>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 4", quizmaker_path(category: 'history 4') %> </a></td>
+  </tr>
 
-  <tr>
-    <td>Sports</td>
+    <tr>
+      <td>Sports</td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 1", quizmaker_path(category: 'sports 1') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 1", quizmaker_path(category: 'sports 1') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 2", quizmaker_path(category: 'sports 2') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 2", quizmaker_path(category: 'sports 2') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 3", quizmaker_path(category: 'sports 3') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 3", quizmaker_path(category: 'sports 3') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 4", quizmaker_path(category: 'sports 4') %> </a></td>
-</tr>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 4", quizmaker_path(category: 'sports 4') %> </a></td>
+  </tr>
 
-  <tr>
-    <td>Movies</td>
+    <tr>
+      <td>Movies</td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 1", quizmaker_path(category: 'movies 1') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 1", quizmaker_path(category: 'movies 1') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 2", quizmaker_path(category: 'movies 2') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 2", quizmaker_path(category: 'movies 2') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 3", quizmaker_path(category: 'movies 3') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 3", quizmaker_path(category: 'movies 3') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 4", quizmaker_path(category: 'movies 4') %> </a></td>
-</tr>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 4", quizmaker_path(category: 'movies 4') %> </a></td>
+  </tr>
 
-  <tr>
-    <td>Pop Culture</td>
+    <tr>
+      <td>Pop Culture</td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 1", quizmaker_path(category: 'pop culture 1') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 1", quizmaker_path(category: 'pop culture 1') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 2", quizmaker_path(category: 'pop culture 2') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 2", quizmaker_path(category: 'pop culture 2') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 3", quizmaker_path(category: 'pop culture 3') %> </a></td>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 3", quizmaker_path(category: 'pop culture 3') %> </a></td>
 
-    <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 4", quizmaker_path(category: 'pop culture 4') %> </a></td>
-</tr>
+      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 4", quizmaker_path(category: 'pop culture 4') %> </a></td>
+  </tr>
 
 
-</tbody>
-</table>
+  </tbody>
+  </table>
 
-<br>
+  <br>
 
- <a class="btn btn-primary btn-lg" <%= link_to "Enter New Questions", new_history_path %> </a>
-</div>
+   <a class="btn btn-primary btn-lg" <%= link_to "Enter New Questions", new_history_path %> </a>
+  </div>
 
-<br>
+  <br>
+
+
+<% else %>
+
+  <div class="container">
+    <h1 id="hubtext">Danger, Will Robinson. You do not have access to this page.</h1>
+    <p>If you have questions, shoot us an email.</p>
+
+    <%= link_to "To Lobby &raquo;".html_safe, home_path, id: "lobbybutton", class: "btn btn-danger btn-lg" %>
+
+  </div>
+
+<% end %>
