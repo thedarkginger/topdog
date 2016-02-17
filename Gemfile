@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass'
 
+gem 'gioco'
+
 gem 'font-awesome-rails', '~> 4.5.0'
 
 gem 'devise', '~> 3.2.4'
