@@ -14,7 +14,7 @@
 	 		<% end %> 
 
 	 		<!-- if lobby full, show error --> 
-	 		<% if Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max %>
+	 		<% if Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max and Reservation.where(user_id: current_user.id, category: session[:category]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>full</b>. Try again tomorrow!</p>
 
   			<!-- if time is past game start or lobby full, show error --> 
@@ -50,6 +50,11 @@
 	 		<p>Prize Info: $<%= quiz.purse %></p>
 	 		<% end %>
 	 	</div>
+
+	 	<p><%= (Quiz.where(category: session[:category]).first.game_start - Time.now)/60 %> </p>
+
+
+	 	
 
 	 </div> 
 	
