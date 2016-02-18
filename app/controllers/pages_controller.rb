@@ -41,6 +41,7 @@ class PagesController < ApplicationController
 
   def lobby
     @quizzes = Quiz.where(category: params[:category])
+    @tempquiz = Quiz.where(category: session[:category]).first.game_start
   end
   
 end
