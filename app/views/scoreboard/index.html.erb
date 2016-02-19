@@ -13,28 +13,39 @@
         <th>City</th>
         <th>Category</th>
         <th>Score</th>
+        <th>Prize</th>
       </tr>
     </thead>
 
     <tbody>
-       <% @top_ten.each do |participation| %>
+       <% @participations.each_with_index do |participation, index| %>
     <tr>
       <td></td>
       <td><%= participation.user.username %></td>
       <td><%= participation.user.city %></td>
       <td><%= participation.category %></td>
       <td><%= participation.score %></td>
-      <% end %>
-
-      <% @top_ten.each_with_index do |quiz, index| %>
-        <% if index == 10 %>
-            <td>You Win</td>
+        <% if index == 0 %>
+            <% @quizzes.each do |quiz| %>
+            <td>$<%= quiz.first %></td>
+            <% end %>
+        <% elsif index == 1 %>
+          <% @quizzes.each do |quiz| %>
+            <td>$<%= quiz.second %></td>
+            <% end %>
+         <% elsif index == 2 %>
+          <% @quizzes.each do |quiz| %>
+            <td>$<%= quiz.third %></td>
+            <% end %>
+         <% elsif index == 3 %>
+          <% @quizzes.each do |quiz| %>
+            <td>$<%= quiz.fourth %></td>
+            <% end %>
          <% else %>
             <td>You lose</td>
         <% end %>
-        <% end %>
-    </tr>
-
+      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
