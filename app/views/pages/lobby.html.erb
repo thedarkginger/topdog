@@ -22,7 +22,7 @@
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 			 <!-- if user registered but game has not started yet --> 
-			<% elsif Time.now  < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+			<% elsif Time.now < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
 				<p>The game lobby will open at
 					<% @quizzes.each do |quiz| %> 
 	 					<b><%= quiz.game_start %></b>
@@ -33,10 +33,16 @@
 
 			<!-- player registered and within 4 min of start --> 
 	 		<% elsif Reservation.where(user_id: current_user.id, category: session[:category]).exists? and Time.now - 4.minutes < Quiz.where(category: session[:category]).first.game_start and Time.now + 4.minutes > Quiz.where(category: session[:category]).first.game_start  %>
+	 			<div class="button-wrap">
+	 			<br>
   				<%= link_to "Enter Game".html_safe, trivia_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
+  				</div>
 
 			<% else %>
+				<div class="button-wrap">
+				<br>
 	 			<%= link_to "Reserve Spot".html_safe, reservation_path(category: session[:category]), class: "btn btn-primary btn-lg" %>
+	 			</div>
 			<% end %> 
 	 	</div>
 
@@ -52,7 +58,7 @@
 	 		<% end %>
 	 		<% @quizzes.each do |quiz| %>
 	 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
-	 			<p>Countdown to Start: <%= ((quiz.game_start - Time.now).to_i)/60 %></p>
+	 			<p>Countdown to Start: <%= (((quiz.game_start - Time.now).to_i)/60) %></p>
 	 		<% else %>
 	 		
 	  		<% end %>
@@ -75,6 +81,7 @@
 
 $(document).ready(function() {
 	var temp = $('.temp_information').data('temp');
+	var equal = temp * 60
 }); 
 	
 </script>
