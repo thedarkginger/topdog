@@ -22,7 +22,7 @@
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 			 <!-- if user registered but game has not started yet --> 
-			<% elsif Time.now + 4.minutes < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+			<% elsif Time.now  < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
 				<p>The game lobby will open at
 					<% @quizzes.each do |quiz| %> 
 	 					<b><%= quiz.game_start %></b>
@@ -49,7 +49,13 @@
 	 		<p>Start Time: <%= quiz.game_start %></p>
 	 		<p>Max Players: <%= quiz.max %></p>
 	 		<p>Prize Info: $<%= quiz.purse %></p>
-	 		<p>Countdown to Start: <%= ((quiz.game_start - Time.now).to_i)/60 %></p>
+	 		<% end %>
+	 		<% @quizzes.each do |quiz| %>
+	 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
+	 			<p>Countdown to Start: <%= ((quiz.game_start - Time.now).to_i)/60 %></p>
+	 		<% else %>
+	 		
+	  		<% end %>
 	 		<% end %>
 	 		</div>
 	 	</div>
@@ -60,9 +66,6 @@
 	 </div> 
 	
 	<div id="timer"></div>
-
-
-
 	
 </div>
 
@@ -71,9 +74,7 @@
 <script>
 
 $(document).ready(function() {
-	var datdog = $('.temp_information').data('temp');
-	alert(datdog);
-
+	var temp = $('.temp_information').data('temp');
 }); 
 	
 </script>

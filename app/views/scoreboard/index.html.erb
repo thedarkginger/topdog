@@ -17,14 +17,22 @@
     </thead>
 
     <tbody>
-       <% @participations.each do |participation| %>
+       <% @top_ten.each do |participation| %>
     <tr>
       <td></td>
       <td><%= participation.user.username %></td>
       <td><%= participation.user.city %></td>
       <td><%= participation.category %></td>
       <td><%= participation.score %></td>
-       <% end %>
+      <% end %>
+
+      <% @top_ten.each_with_index do |quiz, index| %>
+        <% if index == 10 %>
+            <td>You Win</td>
+         <% else %>
+            <td>You lose</td>
+        <% end %>
+        <% end %>
     </tr>
 
     </tbody>
