@@ -16,13 +16,41 @@
     <tr>
       <td>History</td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 1", quizmaker_path(category: 'history 1') %> </a></td>
+      
+      <td>
+          <% if History.where(category: "history 1").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 1", quizmaker_path(category: 'history 1') %> </a>
+      </td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 2", quizmaker_path(category: 'history 2') %> </a></td>
+      <td>
+          <% if History.where(category: "history 2").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+        <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 2", quizmaker_path(category: 'history 2') %> </a>
+      </td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 3", quizmaker_path(category: 'history 3') %> </a></td>
+      <td>
+        <% if History.where(category: "history 3").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 3", quizmaker_path(category: 'history 3') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 4", quizmaker_path(category: 'history 4') %> </a></td>
+      <td>
+        <% if History.where(category: "history 4").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "History 4", quizmaker_path(category: 'history 4') %>
+       </a></td>
   </tr>
 
     <tr>
