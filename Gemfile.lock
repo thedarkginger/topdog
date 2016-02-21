@@ -141,6 +141,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  countdown
   devise (~> 3.2.4)
   font-awesome-rails (~> 4.5.0)
   heroku-deflater

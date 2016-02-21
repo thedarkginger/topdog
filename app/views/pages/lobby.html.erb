@@ -55,11 +55,10 @@
 	 		<p>Prize Info: $<%= quiz.purse %></p>
 	 		<% end %>
 	 		<% @quizzes.each do |quiz| %>
-	 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
-	 			<p>Countdown to Start: <%= (((quiz.game_start - Time.now).to_i)/60) %> minutes</p>
-	 		<% else %>
-	 		
-	  		<% end %>
+		 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
+		 			<p>Countdown to Start: <%= (((quiz.game_start - Time.now).to_i)/60) %> minutes</p>
+		 		<% else %>
+		  		<% end %>
 	 		<% end %>
 	 		</div>
 	 	</div>
