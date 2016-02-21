@@ -56,37 +56,115 @@
     <tr>
       <td>Sports</td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 1", quizmaker_path(category: 'sports 1') %> </a></td>
+      <td>
+         <% if History.where(category: "sports 1").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 2", quizmaker_path(category: 'sports 2') %> </a></td>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 1", quizmaker_path(category: 'sports 1') %> </a>
+      </td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 3", quizmaker_path(category: 'sports 3') %> </a></td>
+      <td>
+      <% if History.where(category: "sports 2").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 2", quizmaker_path(category: 'sports 2') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 4", quizmaker_path(category: 'sports 4') %> </a></td>
+      <td>
+      <% if History.where(category: "sports 3").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 3", quizmaker_path(category: 'sports 3') %> </a></td>
+      <td>
+      <% if History.where(category: "sports 4").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Sports 4", quizmaker_path(category: 'sports 4') %> </a></td>
   </tr>
 
     <tr>
       <td>Movies</td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 1", quizmaker_path(category: 'movies 1') %> </a></td>
+      <td>
+       <% if History.where(category: "movies 1").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 2", quizmaker_path(category: 'movies 2') %> </a></td>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 1", quizmaker_path(category: 'movies 1') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 3", quizmaker_path(category: 'movies 3') %> </a></td>
+      <td>
+        <% if History.where(category: "movies 2").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 2", quizmaker_path(category: 'movies 2') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 4", quizmaker_path(category: 'movies 4') %> </a></td>
+      <td>
+
+        <% if History.where(category: "movies 3").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 3", quizmaker_path(category: 'movies 3') %> </a></td>
+
+      <td>
+        <% if History.where(category: "movies 4").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Movies 4", quizmaker_path(category: 'movies 4') %> </a></td>
   </tr>
 
     <tr>
       <td>Pop Culture</td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 1", quizmaker_path(category: 'pop culture 1') %> </a></td>
+      <td>
+        <% if History.where(category: "pop culture 1").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 1", quizmaker_path(category: 'pop culture 1') %> </a></td>
+      <td>
+          <% if History.where(category: "pop culture 2").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 2", quizmaker_path(category: 'pop culture 2') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 2", quizmaker_path(category: 'pop culture 2') %> </a></td>
+      <td>
+          <% if History.where(category: "pop culture 3").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 3", quizmaker_path(category: 'pop culture 3') %> </a></td>
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 3", quizmaker_path(category: 'pop culture 3') %> </a></td>
 
-      <td><a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 4", quizmaker_path(category: 'pop culture 4') %> </a></td>
+      <td>
+          <% if History.where(category: "pop culture 4").last.updated_at > (Time.now - 24.hours) %>
+          <i class="fa fa-check-square-o fa-lg"></i>
+        <% else %>
+          <i class="fa fa-times fa-lg"></i>
+        <% end %>
+
+      <a class="btn btn-flat btn-primary mobile", id="mobilehistory" <%= link_to "Pop Culture 4", quizmaker_path(category: 'pop culture 4') %> </a></td>
   </tr>
 
 
