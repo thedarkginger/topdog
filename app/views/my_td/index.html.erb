@@ -1,11 +1,26 @@
  <div class="container">
  	<h1 class="boardtitle">Upcoming Games</h1>
 
- 	<% @reservations.each do |reservation| %>
+ 	<table class="table table-striped">
+ 		<thead>
+ 			<tr>
+ 				<th>Category</th>
+ 				<th>Game Time</th>
+ 				<th>Lobby</th>
+ 			</tr>
+ 		</thead>
+
+ 		<tbody>
+			<% @reservations.each do |reservation| %>
 	    <tr>
 	      <td><%= reservation.category %></td>
+	      	  <% end %>
+	      <% @quizzes.each do |quiz| %>
+	     	<td><%= quiz.game_start %></td>
+	      	<% end %> 
 	    </tr>
-	  <% end %>
+	  </tbody>
+	  </table>
 
  	<h1 class="boardtitle">My Results</h1>
 	  <table class="table table-striped">
