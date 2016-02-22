@@ -1,6 +1,12 @@
  <div class="container">
  	<h1 class="boardtitle">Upcoming Games</h1>
 
+ 	<% @reservations.each do |reservation| %>
+	    <tr>
+	      <td><%= reservation.category %></td>
+	    </tr>
+	  <% end %>
+
  	<h1 class="boardtitle">My Results</h1>
 	  <table class="table table-striped">
 	    <thead>

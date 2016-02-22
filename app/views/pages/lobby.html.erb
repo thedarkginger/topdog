@@ -56,19 +56,32 @@
 	 		<% end %>
 	 		<% @quizzes.each do |quiz| %>
 		 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
-		 			<p>Countdown to Start: <%= (((quiz.game_start - Time.now).to_i)/60) %> minutes</p>
+		 			<div id="main-example"><p>Countdown to</p><p id="timer"></p></div>
 		 		<% else %>
 		  		<% end %>
 	 		<% end %>
 	 		</div>
 	 	</div>
 
-	 	<%= content_tag :div, class: "temp_information", data: {temp: @tempquiz} do %>
+	 	<%= content_tag :div, class: "temp_information", data: {temp: @tempquiz.to_i} do %>
 		<% end %>
 
 	 </div> 
 	
 	<div id="timer"></div>
+
+<div id="getting-started"></div>
+<script type="text/javascript">
+	var utcSeconds = $('.temp_information').data('temp');
+	var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+	d.setUTCSeconds(utcSeconds);
+
+	/// 	var today = Math.round(new Date().getTime()/1000.0);
+
+  $('#timer').countdown(d, function(event) {
+    $(this).html(event.strftime('%d days %H:%M:%S'));
+  });
+</script>
 	
 </div>
 
