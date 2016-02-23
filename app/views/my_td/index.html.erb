@@ -1,23 +1,23 @@
  <div class="container">
- 	<h1 class="boardtitle">Upcoming Games</h1>
+ 	<h1 class="boardtitle">Your Next Games</h1>
 
  	<table class="table table-striped">
  		<thead>
  			<tr>
  				<th>Category</th>
  				<th>Game Time</th>
- 				<th>Lobby</th>
+ 				<th>Purse</th>
  			</tr>
  		</thead>
 
  		<tbody>
 			<% @reservations.each do |reservation| %>
 	    <tr>
-	      <td><%= reservation.category %></td>
+	      <td id="firstcol"><%= reservation.category %></td>
+	      <td><%= reservation.game_start %></td>
+	      <td>$<%= reservation.purse %></td>
+	      <td><%= link_to "Play &raquo;".html_safe, lobby_path(category: reservation.category), class: "btn btn-primary btn-md" %></td>
 	      	  <% end %>
-	      <% @quizzes.each do |quiz| %>
-	     	<td><%= quiz.game_start %></td>
-	      	<% end %> 
 	    </tr>
 	  </tbody>
 	  </table>
@@ -34,7 +34,7 @@
 	    <tbody>
 	       <% @participations.each do |participation| %>
 	    <tr>
-	      <td><%= participation.category %></td>
+	      <td id="firstcol"><%= participation.category %></td>
 	      <td><%= participation.score %></td>
 	    </tr>
 	  <% end %>
