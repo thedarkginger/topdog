@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-     @quizzes = Quiz.where("game_start >= ?", Time.now).order(game_start: :asc).limit(4)
+     @quizzes = Quiz.where("game_start >= ?", Time.now - 2.minutes).order(game_start: :asc).limit(4)
   end
 
   def testhome
