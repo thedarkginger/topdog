@@ -16,4 +16,5 @@ class User < ActiveRecord::Base
       end
     end
   has_many :participations
+  has_many :reservations
 end
