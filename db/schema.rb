@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215085300) do
+ActiveRecord::Schema.define(version: 20160224031331) do
 
   create_table "chips", force: true do |t|
     t.string   "category"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160215085300) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "game_start"
   end
 
   create_table "sports1s", force: true do |t|
