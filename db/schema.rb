@@ -11,140 +11,111 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224031331) do
+ActiveRecord::Schema.define(version: 20160302224026) do
 
-  create_table "chips", force: true do |t|
-    t.string   "category"
-    t.integer  "rank"
-    t.integer  "winnings"
-    t.datetime "update"
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "answer_text",                    null: false
+    t.boolean  "correct_answer", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "chipzs", force: true do |t|
-    t.string   "category"
-    t.integer  "rank"
-    t.integer  "prize"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+
+  create_table "categories", force: true do |t|
+    t.integer  "topic_id"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "demo_questions", force: true do |t|
-    t.integer  "order"
-    t.string   "question1"
-    t.string   "question2"
-    t.string   "question3"
-    t.string   "question4"
-    t.string   "answer"
-    t.date     "creation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "categories", ["topic_id"], name: "index_categories_on_topic_id"
 
   create_table "games", force: true do |t|
-    t.string   "topic"
-    t.datetime "start_time"
-    t.integer  "entry"
-    t.integer  "prize"
-    t.string   "category"
+    t.integer  "quiz_id"
+    t.datetime "starts_at"
+    t.string   "name"
+    t.integer  "max_players"
+    t.decimal  "entry"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "high_scores", force: true do |t|
-    t.string   "game"
-    t.integer  "score"
+  add_index "games", ["quiz_id"], name: "index_games_on_quiz_id"
+
+  create_table "participation_answers", force: true do |t|
+    t.integer  "participation_id"
+    t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "histories", force: true do |t|
-    t.string   "question"
-    t.string   "answers"
-    t.integer  "correcta"
-    t.date     "quizdate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "category"
-    t.string   "topic"
-  end
+  add_index "participation_answers", ["answer_id"], name: "index_participation_answers_on_answer_id"
+  add_index "participation_answers", ["participation_id"], name: "index_participation_answers_on_participation_id"
 
   create_table "participations", force: true do |t|
     t.integer  "user_id"
-    t.string   "category"
-    t.boolean  "finished",               default: false
-    t.integer  "current_question_index", default: 0
-    t.integer  "score",                  default: 0
+    t.integer  "game_id"
+    t.integer  "ranking",    default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "create"
   end
+
+  add_index "participations", ["game_id"], name: "index_participations_on_game_id"
+  add_index "participations", ["user_id"], name: "index_participations_on_user_id"
+
+  create_table "points_allocations", force: true do |t|
+    t.integer  "game_id_id"
+    t.integer  "place",      null: false
+    t.integer  "points",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points_allocations", ["game_id_id"], name: "index_points_allocations_on_game_id_id"
+
+  create_table "questions", force: true do |t|
+    t.integer  "category_id"
+    t.string   "question_text", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["category_id"], name: "index_questions_on_category_id"
+
+  create_table "quiz_questions", force: true do |t|
+    t.integer  "quiz_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quiz_questions", ["question_id"], name: "index_quiz_questions_on_question_id"
+  add_index "quiz_questions", ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
 
   create_table "quizzes", force: true do |t|
-    t.string   "topic"
-    t.string   "category"
-    t.datetime "game_start"
-    t.integer  "entry"
-    t.integer  "purse"
-    t.integer  "first"
-    t.integer  "second"
-    t.integer  "third"
-    t.integer  "fourth"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "max"
-    t.string   "name"
-  end
-
-  create_table "reservations", force: true do |t|
-    t.integer  "user_id"
-    t.string   "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "game_start"
-  end
-
-  create_table "sports1s", force: true do |t|
-    t.text     "question"
-    t.text     "answers"
-    t.integer  "correcta"
-    t.date     "quizdate"
+    t.integer  "category_id"
+    t.string   "name",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "spot_counters", force: true do |t|
-    t.integer  "count",      default: 0
-    t.integer  "user_id"
-    t.string   "category"
+  add_index "quizzes", ["category_id"], name: "index_quizzes_on_category_id"
+
+  create_table "topics", force: true do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "trivia_demos", force: true do |t|
-    t.integer  "order"
-    t.string   "question"
-    t.string   "answer1"
-    t.string   "answer2"
-    t.string   "answer3"
-    t.string   "answer4"
-    t.string   "correcta"
-    t.date     "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "trivia_demos", ["user_id"], name: "index_trivia_demos_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -153,8 +124,6 @@ ActiveRecord::Schema.define(version: 20160224031331) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "city"
-    t.string   "timezone"
-    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
