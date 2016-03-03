@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160302224026) do
   add_index "participations", ["user_id"], name: "index_participations_on_user_id"
 
   create_table "points_allocations", force: true do |t|
-    t.integer  "game_id_id"
+    t.integer  "game_id"
     t.integer  "place",      null: false
     t.integer  "points",     null: false
     t.datetime "created_at"
