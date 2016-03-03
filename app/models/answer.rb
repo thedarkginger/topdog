@@ -1,4 +1,4 @@
-class Answer
+class Answer < ActiveRecord::Base
   
   has_many :participation_answers
   has_many :participations, through: :participation_answers
