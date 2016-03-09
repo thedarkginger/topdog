@@ -13,21 +13,26 @@ class Participation < ActiveRecord::Base
     Participation.where(category: category).where('created_at >= ?', Date.today).pluck(:user_id).uniq.count
   end
 
-  # quick test logic
+  def self.reservations
+    joins(:game).where("games.starts_at > ?", Time.now) # check joins vs includes again
+  end
 
-  # def self.for_user(user)
-  #   where(user_id: user.id)
-  # end
+  def self.for_user(user)
+    where(user_id: user.id)
+  end
 
-  # def self.points_allocations_for(user)
-  #   for_user(user).joins(:points_allocations).where("game_id = ? AND place = ?", game_id, ranking)
-  # end
+  def self.points_allocations_for(user)
+    for_user(user).joins("INNER JOIN points_allocations 
+                          ON (points_allocations.game_id = participations.game_id 
+                              AND points_allocations.place = participations.ranking)")
+  end
 
-  # def self.points_for(user)
-  #    points_allocations_for(user).sum(:points)
-  # end 
+  def self.points_for(user)
+     points_allocations_for(user).sum("points_allocations.points")#(:points)
+  end 
 
-
-
+  def correct_answers
+    answers.where(correct_answer: true)
+  end
 
 end
