@@ -28,7 +28,7 @@ class Participation < ActiveRecord::Base
   end
 
   def self.points_for(user)
-     points_allocations_for(user).sum("points_allocations.points")#(:points)
+     points_allocations_for(user).sum("points_allocations.points")
   end 
 
   def correct_answers

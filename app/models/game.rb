@@ -13,6 +13,9 @@ class Game < ActiveRecord::Base
 
   private
 
+    # to run manually from the console: Game.find(id_for_relevant_game).send(:set_rankings)
+    # that allows you to call private methods from outside the class
+
     def set_rankings # needs refactoring
       correct_answer_counts = participations.inject({}) do |r, e|
         correct_count = e.correct_answers.count
