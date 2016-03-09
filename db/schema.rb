@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160302224026) do
     t.datetime "updated_at"
   end
 
-  add_index "points_allocations", ["game_id_id"], name: "index_points_allocations_on_game_id_id"
+  add_index "points_allocations", ["game_id"], name: "index_points_allocations_on_game_id"
 
   create_table "questions", force: true do |t|
     t.integer  "category_id"
