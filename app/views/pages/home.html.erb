@@ -42,13 +42,12 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <% @quizzes.each_with_index do |quiz, index| %>
+                      <% @games.each_with_index do |game, index| %>
                         <tr>
                           <td class="mobiletablehide"><%= index + 1 %></td>
-                          <td><%= quiz.name %></td>
-                           <td><%= quiz.game_start %></td>
-                           <td>$<%= quiz.entry %></td>
-                           <td>$<%= quiz.purse %></td>
+                          <td><%= game.name %></td>
+                           <td><%= game.start_at %></td>
+                           <td><%= game.entry %></td>
                           <td>
                              <% if user_signed_in? %>
                                  <%= link_to "Join &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %>
