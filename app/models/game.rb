@@ -5,10 +5,29 @@ class Game < ActiveRecord::Base
   has_many :points_allocations
   belongs_to :quiz
 
+  delegate :category, to: :quiz
+
   # add a callback for #set_rankings after game completion
+
+  def self.upcoming
+    where("starts_at >= ?", Time.now)
+  end
+
+  def self.for_topic(topic)
+    quizzes = Quiz.for_topic(topic)
+    where("quiz_id in (?)", quizzes.pluck(:id))
+  end
+
+  def category_name
+    category.name
+  end
 
   def purse
     points_allocations.sum(:points)
+  end
+
+  def points_for_place(place)
+    PointsAllocation.points_for_place(place)
   end
 
   private
