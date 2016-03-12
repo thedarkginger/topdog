@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
 	def index
-		@quizzes = Quiz.where("game_start >= ?", Time.now).where(topic: params[:topic]).order(game_start: :asc)
+    topic = Topic.find_by_name(params[:topic])
+    @games = Game.for_topic(topic).upcoming.order(:starts_at)
 	end
 end
