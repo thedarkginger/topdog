@@ -9,10 +9,11 @@
   <p>The table for today's <b><%= session[:topic] %> battle</b> is listed below with corresponding start times. Register as early as you would like, but all trivia battles will start at the time listed below.</p> 
 
   <div class="table">
-  	<table class="table table-striped">
+    <table class="table table-striped">
     <thead>
       <tr>
-        <th>Topic</th>
+        <th>Category</th>
+        <th>Game</th>
         <th>Start Time</th>
         <th>Entry Fee</th>
         <th>Purse</th>
@@ -21,15 +22,16 @@
       </tr>
     </thead>
     <tbody>
-       <% @quizzes.each do |quiz| %>
+       <% @games.each do |game| %>
         <tr>
-            <td id="firstcol"> <%= quiz.name %></td>
-            <td> <%= quiz.game_start %></td>
-            <td>$<%= quiz.entry %></td>
-            <td>$<%= quiz.purse %></td>
-            <td>$<%= quiz.first %></td>
-            <td> <%= quiz.max %></td>
-            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: quiz.category), class: "btn btn-primary btn-md" %></td>
+            <td id="firstcol"> <%= game.category_name %></td>
+            <td><%= game.name %>
+            <td><%= game.starts_at %></td>
+            <td>$<%= game.entry %></td>
+            <td>$<%= game.purse %></td>
+            <td>$<%= game.points_for_place(1) %></td>
+            <td><%= game.max_players %></td>
+            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: game.category), class: "btn btn-primary btn-md" %></td>
             <% end %> 
         </tr>
         </div>
