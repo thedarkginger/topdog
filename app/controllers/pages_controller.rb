@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-     @games = Game.where("starts_at >= ?", Time.now - 2.minutes).order(starts_at: :asc).limit(4)
+    topic = Topic.find_by_name(params[:topic])
+    @games = Game.for_topic(topic).upcoming.order(:starts_at)
   end
 
   def testhome

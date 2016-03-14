@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   has_many :participations
   has_many :games, through: :participations
 
+  # removes req for confirmable
+  protected
+  def confirmation_required?
+    false
+  end
+
   attr_accessor :login
 
   def self.find_for_database_authentication(warden_conditions)
