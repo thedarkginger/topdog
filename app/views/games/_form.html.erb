@@ -1,0 +1,47 @@
+  <%= form_for(@game) do |f| %>
+    <% if @game.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+        <ul>
+        <% @game.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<div class="form-group">
+     <div class="field">
+      <%= f.label :quiz_id %><br>
+      <%= f.number_field :quiz_id, class: "form-control" %>
+    </div>
+  </div>
+<div class="form-group">
+    <div class="field">
+      <%= f.label :starts_at %><br>
+      <%= f.datetime_select :starts_at, class: "form-control" %>
+    </div>
+    </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control", placeholder: "Quiz Name | Ex: College Football, American History" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :max_players %><br>
+      <%= f.number_field :max_players, class: "form-control" %>
+    </div>
+    </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :entry %><br>
+      <%= f.text_field :entry, class: "form-control" %>
+    </div>
+  </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
+    </div>
+  <% end %>

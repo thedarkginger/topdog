@@ -4,6 +4,10 @@ Topdog::Application.routes.draw do
 
   resources :histories
 
+  resources :topics
+
+  resources :categories
+
   resource :my_top_dog
 
   resources :games
@@ -16,6 +20,7 @@ Topdog::Application.routes.draw do
   get "triviamaker" => "pages#triviamaker"
   get "quizmaker" => "pages#quizmaker"
   get "triviahub" => "pages#triviahub"
+  get "gameshome" => "gameshome#index"
   get "lobby" => "pages#lobby"
   get "trivia" => "pages#trivia"
   get "scoreboard" => "scoreboard#index", as: :scoreboard

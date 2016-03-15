@@ -1,0 +1,13 @@
+<div class="container">
+	<h3>You Entered:</h3>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @category.name %>
+	  <%= @category.topic_id %>
+	</p>
+
+	<%= link_to 'Edit', edit_category_path(@category) %> |
+	<%= link_to 'Back', categories_path %>
+</div>

@@ -1,1 +1,1 @@
-json.extract! @quiz, :id, :topic, :category, :topic, :game_start, :entry, :purse, :first, :second, :third, :fourth, :created_at, :updated_at, :max
+json.extract! @quiz, :id, :name, :created_at, :updated_at, :category_id

@@ -40,9 +40,9 @@
       		<li id="footerli"><%= link_to "Contact Us", contact_path %></li> 
         </ul>
 
-		<% if current_user.try(:admin?) %>
+		<% if current_user.try(:admin?) %> 
 		  	<a class="btn btn-primary btn-lg" <%= link_to "Trivia Admin", triviamaker_path %> </a>  
-		<% end %>
+		<% end %> 
  
       </div>
 	 </div>

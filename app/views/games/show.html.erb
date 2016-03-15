@@ -1,0 +1,32 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Starts at:</strong>
+    <%= @game.starts_at %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @game.name %>
+  </p>
+
+  <p>
+    <strong>Max players:</strong>
+    <%= @game.max_players %>
+  </p>
+
+  <p>
+    <strong>Entry:</strong>
+    <%= @game.entry %>
+  </p>
+
+  <p>
+  	<strong>Quiz ID:</strong>
+  	<%= @game.quiz_id %>
+  </p>
+
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+  <%= link_to 'Back', games_path %>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <%= content_tag 'h1', session[:topic] + ' Registration', id: "lobbytext" %> 
+       <div class="row">
+             <div class="col-lg-12 text-center">
+                <hr class="star-game">
+              </div>
+              </div>
+
+  <p>The table for today's <b><%= session[:topic] %> battle</b> is listed below with corresponding start times. Register as early as you would like, but all trivia battles will start at the time listed below.</p> 
+
+  <div class="table">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Game</th>
+        <th>Start Time</th>
+        <th>Entry Fee</th>
+        <th>Purse</th>
+        <th>Champion</th>
+        <th>Max Players</th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @games.each do |game| %>
+        <tr>
+            <td id="firstcol"> <%= game.category_name %></td>
+            <td><%= game.name %>
+            <td><%= game.starts_at %></td>
+            <td>$<%= game.entry %></td>
+            <td>$<%= game.purse %></td>
+            <td>$<%= game.points_for_place(1) %></td>
+            <td><%= game.max_players %></td>
+            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: game.category), class: "btn btn-primary btn-md" %></td>
+            <% end %> 
+        </tr>
+        </div>
+
+    </tbody>
+  </table>
+  </div>
+
+</div> 
