@@ -12,7 +12,6 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th>Category</th>
         <th>Game</th>
         <th>Start Time</th>
         <th>Entry Fee</th>
@@ -24,8 +23,7 @@
     <tbody>
        <% @games.each do |game| %>
         <tr>
-            <td id="firstcol"> <%= game.category_name %></td>
-            <td><%= game.name %>
+            <td id="firstcol"> <%= game.name %></td>
             <td><%= game.starts_at %></td>
             <td>$<%= game.entry %></td>
             <td>$<%= game.purse %></td>

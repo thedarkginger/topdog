@@ -23,17 +23,17 @@
 		     	<p style="font-weight: bold;" class="icon-description js-icon-description"><!-- this is where your data-icon-text will be displayed --></p>	
 		    
 		     </div>
-		     	<%= link_to gameshome_path(topic: 'Sports') do %> <%= image_tag("Beer.png", :class => "icon js-icon", :data => { "icon-text" => "The Stadium" }) %>
+		     	<%= link_to gameshub_path(topic: 'Sports') do %> <%= image_tag("Beer.png", :class => "icon js-icon", :data => { "icon-text" => "The Stadium" }) %>
 		  		 	<% end %> 
-            <%= link_to games_path(topic: 'pop culture') do %> <%= image_tag("pop.png", :class => "icon js-icon", :data => { "icon-text" => "Pop Culture" }) %>
+            <%= link_to gameshub_path(topic: 'Pop Culture') do %> <%= image_tag("pop.png", :class => "icon js-icon", :data => { "icon-text" => "Pop Culture" }) %>
               <% end %> 
 		       	<%= image_tag("Spaceman.png", :class => "icon js-icon", :data => { "icon-text" => "The Science Lab: Coming Soon" }) %>
             <%= image_tag("medal.png", :class => "icon js-icon", :data => { "icon-text" => "TopDog Battle: Coming Soon" }) %>
 		      	<%= image_tag("Map.png", :class => "icon js-icon", :data => { "icon-text" => "Globetrotters: Coming Soon" }) %>
-		       	<%= link_to games_path(topic: 'movies') do %><%= image_tag("clapper.png", :class => "icon js-icon", :data => { "icon-text" => "The Studio" }) %>
+		       	<%= link_to gameshub_path(topic: 'Movies') do %><%= image_tag("clapper.png", :class => "icon js-icon", :data => { "icon-text" => "The Studio" }) %>
 		       		<% end %>
               <%= image_tag("Money.png", :class => "icon js-icon", :data => { "icon-text" => "Business Park: Coming Soon" }) %>
-		       	<%= link_to games_path(topic: 'history') do %> <%= image_tag("Book.png", :class => "icon js-icon", :data => { "icon-text" => "History Book" }) %>
+		       	<%= link_to gameshub_path(topic: 'History') do %> <%= image_tag("Book.png", :class => "icon js-icon", :data => { "icon-text" => "History Book" }) %>
 		       		<% end %>  
 
 				</div>
