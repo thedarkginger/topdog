@@ -22,12 +22,29 @@ class Game < ActiveRecord::Base
     category.name
   end
 
+  def self.for_category(category)
+  quizzes = Quiz.for_category(category)
+  where("quiz_id in (?)", quizzes.pluck(:id))
+end
+
   def purse
     points_allocations.sum(:points)
   end
 
   def points_for_place(place)
     PointsAllocation.points_for_place(place)
+  end
+
+  def participating_users
+    participations.map(&:user)
+  end
+
+  def participating_user_count
+    participating_users.count
+  end
+
+  def open_spots_left
+    max_players - participating_user_count
   end
 
   private

@@ -1,61 +1,62 @@
 <div class="container">
 	<div class="jumbotron">
 
-	<%= content_tag 'h1', Quiz.where(category: session[:category]).first.name + ' Lobby', id: "lobbytext" %> 
+	<%= content_tag 'h1', @game.quiz.name + ' Lobby', id: "lobbytext" %> 
 
 	 <div class="row">
 	 	<div class="col-sm-6">
 	 		<h2 style="text-align: center;">Game Registration</h2>
 	 		<hr class="star-lobby">
 	 		
-	 		<p>Players Registered: 	<%= SpotCounter.where(category: session[:category]).first.count %></p>
-	 		<% @quizzes.each do |quiz| %> 
-	 		<p>Max Players: <%= quiz.max %></p>
+	 		<p>Players Registered: 	<%= Participation.where(id: params[:id]).count %></p>
+	 		<% @games.each do |game| %> 
+	 		<p>Max Players: <%= game.max_players %></p>
 	 		<% end %> 
 
+
 	 		<!-- if lobby full, show error --> 
-	 		<% if Reservation.where(category: session[:category]).count >= Quiz.where(category: session[:category]).first.max and Reservation.where(user_id: current_user.id, category: session[:category]).exists?(false) %>
+	 		<% if Participation.where(id: params[:id]).count >= @games.first.entry and Participation.where(user_id: current_user.id, id: params[:id]).exists?(false) %>
 			 <p style="color: #D64541">Sorry, you got the doghouse. This lobby is already <b>full</b>, but you can play again tomorrow! Remember: you can register early to save your spot in games.</p>
 
   			<!-- if time is past game start or lobby full, show error --> 
-	 		<% elsif Time.now > Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists?(false) %>
+	 		<% elsif Time.now > @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 			 <!-- if user registered but game has not started yet --> 
-			<% elsif Time.now < Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+			<% elsif Time.now < @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists? %>
 				<p>The game lobby will open at
-					<% @quizzes.each do |quiz| %> 
-	 					<b><%= quiz.game_start %></b>
+					<% @games.each do |game| %> 
+	 					<b><%= game.starts_at %></b>
 	 				<% end %> for registered players. You will have three minutes to begin the game. Good luck.</p>
 
-			<% elsif Time.now - 4.minutes > Quiz.where(category: session[:category]).first.game_start and Reservation.where(user_id: current_user.id, category: session[:category]).exists? %>
+			<% elsif Time.now - 4.minutes > @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists? %>
 				<p style="color: #D64541; font-weight: bold; text-align: center;"><i class="fa fa-clock-o"></i>   D'oh!</p> <p> You're in the doghouse. The game already started!</p>
 
 			<!-- player registered and within 4 min of start --> 
-	 		<% elsif Reservation.where(user_id: current_user.id, category: session[:category]).exists? and Time.now - 4.minutes < Quiz.where(category: session[:category]).first.game_start and Time.now + 4.minutes > Quiz.where(category: session[:category]).first.game_start  %>
+	 		<% elsif Participation.where(user_id: current_user.id, id: params[:id]).exists? and Time.now - 4.minutes < @games.first.starts_at and Time.now + 4.minutes > @games.first.starts_at  %>
 	 			<div class="button-wrap">
-	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(category: session[:category]) %> </a>  
+	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(category_id: session[:category_id]) %> </a>  
 		 			</div>
 			<% else %>
 				<div class="button-wrap">
 				<br>
-	 			<a class="btn rad-button2 wwt flat vertical" <%= link_to "Reserve Spot", reservation_path(category: session[:category]) %> </a>  
+	 			<a class="btn rad-button2 wwt flat vertical" <%= link_to "Reserve Spot", reservation_path(category_id: params[:id]) %> </a>  
 	 			</div>
 			<% end %> 
 	 	</div>
 
 	 	<div class="col-sm-6" style="padding-left:15px; padding-right: 20px; border-left: 1px solid #ccc; height: 100%;">
-	 		<% @quizzes.each do |quiz| %>
+	 		<% @games.each do |game| %>
 	 		<div style="padding-left: 10px;">
 	 		<h2 style="text-align: center;">Game Information</h2>
 	 		<hr class="star-lobby">
-	 		<p id="category">Category: <%= quiz.topic %></p>
-	 		<p>Start Time: <%= quiz.game_start %></p>
-	 		<p>Max Players: <%= quiz.max %></p>
-	 		<p>Prize Info: $<%= quiz.purse %></p>
+	 		<p id="category">Category: <%= game.name %></p>
+	 		<p>Start Time: <%= game.starts_at %></p>
+	 		<p>Max Players: <%= game.max_players %></p>
+	 		<p>Prize Info: $<%= game.entry %></p>
 	 		<% end %>
-	 		<% @quizzes.each do |quiz| %>
-		 		<% if ((quiz.game_start - Time.now).to_i)/60 > 0 %>
+	 		<% @games.each do |game| %>
+		 		<% if ((game.starts_at - Time.now).to_i)/60 > 0 %>
 		 			<div id="main-example"><p>Countdown to</p><p id="timer"></p></div>
 		 		<% else %>
 		  		<% end %>
@@ -63,7 +64,7 @@
 	 		</div>
 	 	</div>
 
-	 	<%= content_tag :div, class: "temp_information", data: {temp: @tempquiz.to_i} do %>
+	 	<%= content_tag :div, class: "temp_information", data: {temp: @tempgame.to_i} do %>
 		<% end %>
 
 	 </div> 
