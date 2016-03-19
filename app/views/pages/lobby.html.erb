@@ -8,32 +8,31 @@
 	 		<h2 style="text-align: center;">Game Registration</h2>
 	 		<hr class="star-lobby">
 	 		
-	 		<p>Players Registered: 	<%= Participation.where(id: params[:id]).count %></p>
+	 		<p>Players Registered: 	<%= Participation.where(game_id: params[:id]).count %></p>
 	 		<% @games.each do |game| %> 
 	 		<p>Max Players: <%= game.max_players %></p>
 	 		<% end %> 
 
-
 	 		<!-- if lobby full, show error --> 
-	 		<% if Participation.where(id: params[:id]).count >= @games.first.entry and Participation.where(user_id: current_user.id, id: params[:id]).exists?(false) %>
+	 		<% if !(Participation.where(user_id: current_user.id, game_id: params[:id]).exists?) && Participation.where(game_id: params[:id]).count >= Game.where(id: params[:id]).first.max_players %>
 			 <p style="color: #D64541">Sorry, you got the doghouse. This lobby is already <b>full</b>, but you can play again tomorrow! Remember: you can register early to save your spot in games.</p>
 
   			<!-- if time is past game start or lobby full, show error --> 
-	 		<% elsif Time.now > @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists?(false) %>
+	 		<% elsif Time.now > @games.first.starts_at and Participation.where(user_id: current_user.id, game_id: params[:id]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
 			 <!-- if user registered but game has not started yet --> 
-			<% elsif Time.now < @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists? %>
+			<% elsif Time.now < @games.first.starts_at and Participation.where(user_id: current_user.id, game_id: params[:id]).exists? %>
 				<p>The game lobby will open at
 					<% @games.each do |game| %> 
 	 					<b><%= game.starts_at %></b>
 	 				<% end %> for registered players. You will have three minutes to begin the game. Good luck.</p>
 
-			<% elsif Time.now - 4.minutes > @games.first.starts_at and Participation.where(user_id: current_user.id, id: params[:id]).exists? %>
+			<% elsif Time.now - 4.minutes > @games.first.starts_at and Participation.where(user_id: current_user.id, game_id: params[:id]).exists? %>
 				<p style="color: #D64541; font-weight: bold; text-align: center;"><i class="fa fa-clock-o"></i>   D'oh!</p> <p> You're in the doghouse. The game already started!</p>
 
 			<!-- player registered and within 4 min of start --> 
-	 		<% elsif Participation.where(user_id: current_user.id, id: params[:id]).exists? and Time.now - 4.minutes < @games.first.starts_at and Time.now + 4.minutes > @games.first.starts_at  %>
+	 		<% elsif Participation.where(user_id: current_user.id, game_id: params[:id]).exists? and Time.now - 4.minutes < @games.first.starts_at and Time.now + 4.minutes > @games.first.starts_at  %>
 	 			<div class="button-wrap">
 	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(category_id: session[:category_id]) %> </a>  
 		 			</div>

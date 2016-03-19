@@ -24,12 +24,12 @@ class PagesController < ApplicationController
 
   def reservation
     user_id = current_user.id
-      Participation.create(user_id: user_id, id: params[:id])
 
+      Participation.create(user_id: user_id, game_id: params[:id])
+  
   end
 
   def lobby
-
     @game = Game.find(params[:id])
     @games = Game.where(id: params[:id])
     @tempgame = Game.where(id: params[:id]).first.starts_at
