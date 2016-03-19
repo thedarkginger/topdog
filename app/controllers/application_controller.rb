@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_category
   before_action :set_topic
   before_filter :set_timezone
+  before_filter :set_id
 
   protected
 
@@ -27,6 +28,10 @@ end
 
   def set_topic
     session[:topic] = params[:topic] if params[:topic].present?
+  end
+
+  def set_id
+    session[:id] = params[:id] if params[:id].present?
   end
 
   private

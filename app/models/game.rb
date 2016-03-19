@@ -35,12 +35,10 @@ end
     PointsAllocation.points_for_place(place)
   end
 
-  def participating_users
-    participations.map(&:user)
-  end
+  
 
   def participating_user_count
-    participating_users.count
+    users.count
   end
 
   def open_spots_left

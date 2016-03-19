@@ -24,17 +24,7 @@ class PagesController < ApplicationController
 
   def reservation
     user_id = current_user.id
-    id = params[:id]
-  
-  if (user_id && !Participation.where(user_id: user_id, id: id).exists?)
-    plus = Game.participating_users
-    plus = plus + 1
-    plus.save
-  end
-  
-  unless Participation.where(user_id: user_id, id: id).exists?
-    Participation.create(user_id: user_id, id: id)
-  end
+      Participation.create(user_id: user_id, id: params[:id])
 
   end
 

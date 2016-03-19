@@ -6,6 +6,6 @@
           <h2 id="hometext2">Head Back to the Lobby. Become TopDog.</h2> <br>
       </div>
 
-<%= link_to "To Lobby &raquo;".html_safe, lobby_path(category: session[:category]), id: "lobbybutton", class: "btn btn-danger btn-lg" %> <br>
+<%= link_to "To Lobby &raquo;".html_safe, lobby_path(id: params[:id]), id: "lobbybutton", class: "btn btn-danger btn-lg" %> <br>
 
 </div>
