@@ -18,6 +18,11 @@ class PagesController < ApplicationController
   def triviahub
   end
 
+  def testhome
+    @questions = Question.all
+    @answers = Answer.all
+  end
+
   def quizmaker
       @histories = History.where(category: session[:category])
   end
