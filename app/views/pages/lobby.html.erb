@@ -52,7 +52,7 @@
 	 		<p id="category">Category: <%= game.name %></p>
 	 		<p>Start Time: <%= game.starts_at %></p>
 	 		<p>Max Players: <%= game.max_players %></p>
-	 		<p>Prize Info: $<%= game.entry %></p>
+	 		<p>Prize Info: $<%= game.entry %>0</p>
 	 		<% end %>
 	 		<% @games.each do |game| %>
 		 		<% if ((game.starts_at - Time.now).to_i)/60 > 0 %>
