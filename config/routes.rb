@@ -11,8 +11,14 @@ Topdog::Application.routes.draw do
   resource :my_top_dog
 
   resources :games
+  
+  resources :answers
 
+  resources :triviabuilders
 
+  resources :questions do
+    get 'answers', on: :member
+  end
 
   devise_for :users
   root "pages#home"
@@ -23,8 +29,8 @@ Topdog::Application.routes.draw do
   get "quizmaker" => "pages#quizmaker"
   get "triviahub" => "pages#triviahub"
   get "gameshub" => "gameshub#index"
-  get "triviabuilder" => "triviabuilder#index"
-  get "new_triviabuilder" =>"triviabuilder#new"
+  get "triviabuilders" => "triviabuilders#index"
+  get "new_triviabuilders" =>"triviabuilders#new"
   get "lobby" => "pages#lobby"
   get "trivia" => "pages#trivia"
   get "scoreboard" => "scoreboard#index", as: :scoreboard
