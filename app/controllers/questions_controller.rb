@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    @games = Game.all
   end
 
   # GET /questions/1
@@ -21,6 +22,12 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
   end
+
+  def game
+    @questions = Question.where(category_id: params[:id])
+    @game = Game.find(params[:id])
+
+  end 
 
   # POST /questions
   # POST /questions.json
@@ -74,6 +81,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question_text, :answers_attributes => [:id, :answer_text])
+      params.require(:question).permit(:question_text, :category_id, :answers_attributes => [:id, :answer_text])
     end
 end

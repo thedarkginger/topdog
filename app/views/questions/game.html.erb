@@ -1,0 +1,29 @@
+<div class="container">
+	<%= content_tag 'h1', @game.quiz.name + ' Questions', id: "lobbytext" %> 
+	<%= content_tag 'h2', @game.starts_at, id: "lobbytext" %> 
+
+	<table class="table table-striped"> 
+  <thead>
+    <tr>
+      <th>Question text</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.question_text %></td>
+        <td><%= question.category_id %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Question', new_question_path %>
+</div>
