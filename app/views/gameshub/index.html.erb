@@ -29,7 +29,7 @@
             <td>$<%= game.purse %></td>
             <td>$<%= game.points_for_place(1) %></td>
             <td><%= game.max_players %></td>
-            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(category: game.category), class: "btn btn-primary btn-md" %></td>
+            <td><%= link_to "Play Game &raquo;".html_safe, lobby_path(id: game.id), class: "btn btn-primary btn-md" %></td>
             <% end %> 
         </tr>
         </div>
