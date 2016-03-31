@@ -23,10 +23,6 @@ class PagesController < ApplicationController
     @answers = Answer.all
   end
 
-  def quizmaker
-      @histories = History.where(category: session[:category])
-  end
-
   def reservation
     user_id = current_user.id
       Participation.create(user_id: user_id, game_id: params[:id])
@@ -38,6 +34,10 @@ class PagesController < ApplicationController
     @games = Game.where(id: params[:id])
     @tempgame = Game.where(id: params[:id]).first.starts_at
 
+  end
+
+  def trivia 
+    @game = Game.find(params[:id])
   end
   
 end

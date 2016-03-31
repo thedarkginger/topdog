@@ -1,1 +1,1 @@
-json.extract! @participation, :id, :category
+json.extract! @participation, :id, :game

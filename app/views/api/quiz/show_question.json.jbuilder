@@ -1,2 +1,2 @@
-json.extract! @current_question, :id, :question, :quizdate
+json.extract! @current_question, :id, :question
 json.set! :answers, @current_question.answers.split(',').map(&:strip)

@@ -1,7 +1,7 @@
 module API
   class QuizController < ::ApplicationController
     def start
-      @participation = current_user.participations.create(category: session[:category])
+      @participation = current_user.participations.create(id: params[:id])
 
     end
 
@@ -36,7 +36,7 @@ module API
     end
 
     def current_question
-      @current_question = History
+      @current_question = Question
         .where(category: participation.category)
         .order(id: :asc)[participation.current_question_index]
     end
