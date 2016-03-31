@@ -19,11 +19,12 @@
   </div>
 
 <div class="form-group">
-   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id, class: "form-control" %>
+    <div class="field">
+        <%= f.label :Select_Category %><br />
+        <%= f.collection_select :category_id, @categories, :id, :name, :prompt => "Select a Category", class: "form-control" %>
+    </div>
   </div>
-  </div>
+
   <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
   </div>

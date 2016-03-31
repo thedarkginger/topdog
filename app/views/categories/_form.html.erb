@@ -18,11 +18,11 @@
   </div>
 </div>
 
-<div class="form-group">
-  <div class="field">
-    <b>Relevant <%= f.label :topic_id %> ID</b><br>
-    <%= f.number_field :topic_id, class: "form-control" %>
-  </div>
+  <div class="form-group">
+    <div class="field">
+        <%= f.label :Select_Topic %><br />
+        <%= f.collection_select :topic_id, @topics, :id, :name, :prompt => "Select a Topic", class: "form-control" %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>

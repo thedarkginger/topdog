@@ -23,12 +23,14 @@
       <%= f.datetime_select :starts_at, class: "form-control" %>
     </div>
     </div>
+
   <div class="form-group">
     <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, class: "form-control", placeholder: "Quiz Name | Ex: College Football, American History" %>
+        <%= f.label :Select_Quiz %><br />
+        <%= f.collection_select :name, @quizzes, :name, :name, :prompt => "Select a Quiz", class: "form-control" %>
     </div>
   </div>
+
   <div class="form-group">
     <div class="field">
       <%= f.label :max_players %><br>

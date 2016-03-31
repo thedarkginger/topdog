@@ -37,7 +37,7 @@ module API
 
     def current_question
       @current_question = Question
-        .where(category: participation.category)
+        .where(id: participation.id)
         .order(id: :asc)[participation.current_question_index]
     end
   end

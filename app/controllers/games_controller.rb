@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+  def display_text
+    "#{name} - #{category.id}" 
+  end
+
   # GET /games
   # GET /games.json
   def index
@@ -15,16 +19,19 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    @quizzes = Quiz.all
   end
 
   # GET /games/1/edit
   def edit
+    @quizzes = Quiz.all
   end
 
   # POST /games
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    @quizzes = Quiz.all
 
     respond_to do |format|
       if @game.save
