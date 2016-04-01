@@ -1,3 +1,4 @@
+
 <%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
@@ -25,50 +26,41 @@
   </div>
 </div>
 
-   <h2>Answer Options</h2>
-      <%= f.fields_for :answers do |answer| %>
-          <div class="form-group">
-            <div class="answers">
-            <div class="field">
-             <%= answer.label :answer_1 %><br>
-              <%= answer.text_field :answer_text, class: "form-control" %>
-            </div>
-            </div>
-          </div>
-        <% end %>
-       <%= f.fields_for :answers do |answer| %>
-          <div class="form-group">
-            <div class="answers">
-            <div class="field">
-             <%= answer.label :answer_2 %><br>
-              <%= answer.text_field :answer_text, class: "form-control" %>
-            </div>
-            </div>
-          </div>
-      <% end %>
-          <%= f.fields_for :answers do |answer| %>
-          <div class="form-group">
-            <div class="answers">
-            <div class="field">
-             <%= answer.label :answer_3 %><br>
-              <%= answer.text_field :answer_text, class: "form-control" %>
-            </div>
-            </div>
-          </div>
-      <% end %>
-          <%= f.fields_for :answers do |answer| %>
-          <div class="form-group">
-            <div class="answers">
-            <div class="field">
-             <%= answer.label :answer_4 %><br>
-              <%= answer.text_field :answer_text, class: "form-control" %>
-            </div>
-            </div>
-          </div>
-      <% end %>
+  <% unless @question.new_record? %>
+   <% @question.answers.each_with_index do |ans,i| %>
+    <%= f.fields_for :answers, ans do |answer| %>
+        <%= answer.label "answer_#{i+1}" %><br>
+        <%= answer.text_field :answer_text, class: "form-control" %>
+    <% end %>
+  <% end %>
+ <% else %>
+
+  <h2>Answer Options</h2>
+  <%= f.fields_for :answers, Answer.new do |answer| %>
+      <%= answer.label :answer_1 %><br>
+      <%= answer.text_field :answer_text, class: "form-control" %>
+  <% end %>
+
+  <%= f.fields_for :answers,Answer.new do |answer| %>
+      <%= answer.label :answer_2 %><br>
+      <%= answer.text_field :answer_text, class: "form-control" %>
+  <% end %>
+
+  <%= f.fields_for :answers,Answer.new do |answer| %>
+       <%= answer.label :answer_3 %><br>
+       <%= answer.text_field :answer_text, class: "form-control" %>
+  <% end %>
+
+  <%= f.fields_for :answers,Answer.new do |answer| %>
+       <%= answer.label :answer_4 %><br>
+       <%= answer.text_field :answer_text, class: "form-control" %>
+  <% end %>
+ <% end %>
+
+ <br>
 
   <div class="actions">
-    <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
-  </div>
+ <%= f.submit @question.new_record? ? "Add" : "Update", class: "btn btn-primary btn-lg submitquestion" %>
+ </div>
 <% end %>
 
