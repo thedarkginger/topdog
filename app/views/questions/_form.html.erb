@@ -30,20 +30,42 @@
           <div class="form-group">
             <div class="answers">
             <div class="field">
-             <%= answer.label :answer_text %><br>
-              <%= answer.text_field :answer_text, class: "form-control" %>
-            </div>
-            </div>
-
-            <div class="form-group">
-            <div class="answers">
-            <div class="field">
-             <%= answer.label :answer_text %><br>
+             <%= answer.label :answer_1 %><br>
               <%= answer.text_field :answer_text, class: "form-control" %>
             </div>
             </div>
           </div>
-  <% end %>
+        <% end %>
+       <%= f.fields_for :answers do |answer| %>
+          <div class="form-group">
+            <div class="answers">
+            <div class="field">
+             <%= answer.label :answer_2 %><br>
+              <%= answer.text_field :answer_text, class: "form-control" %>
+            </div>
+            </div>
+          </div>
+      <% end %>
+          <%= f.fields_for :answers do |answer| %>
+          <div class="form-group">
+            <div class="answers">
+            <div class="field">
+             <%= answer.label :answer_3 %><br>
+              <%= answer.text_field :answer_text, class: "form-control" %>
+            </div>
+            </div>
+          </div>
+      <% end %>
+          <%= f.fields_for :answers do |answer| %>
+          <div class="form-group">
+            <div class="answers">
+            <div class="field">
+             <%= answer.label :answer_4 %><br>
+              <%= answer.text_field :answer_text, class: "form-control" %>
+            </div>
+            </div>
+          </div>
+      <% end %>
 
   <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
