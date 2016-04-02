@@ -21,41 +21,87 @@
 
 <div class="form-group">
    <div class="field">
-    <%= f.label :category_id %><br>
+    <%= f.label :Game_Number %><br>
     <%= f.number_field :category_id, class: "form-control" %>
   </div>
 </div>
 
-  <% unless @question.new_record? %>
-   <% @question.answers.each_with_index do |ans,i| %>
-    <%= f.fields_for :answers, ans do |answer| %>
-        <%= answer.label "answer_#{i+1}" %><br>
-        <%= answer.text_field :answer_text, class: "form-control" %>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Input Answer Options</th>
+        <th style="text-align: center">Select True</th>
+      </th>
+    </thead>
+  <tbody>
+
+    <% unless @question.new_record? %>
+     <% @question.answers.each_with_index do |ans,i| %>
+      <%= f.fields_for :answers, ans do |answer| %>
+        <tr>
+          <td>
+            <%= answer.label "answer_#{i+1}" %><br>
+            <%= answer.text_field :answer_text, class: "form-control" %>
+          </td>
+          <td style="text-align: center;">
+            <%= answer.check_box :correct_answer %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
-  <% end %>
- <% else %>
-
-  <h2>Answer Options</h2>
+   <% else %>
+ 
   <%= f.fields_for :answers, Answer.new do |answer| %>
-      <%= answer.label :answer_1 %><br>
-      <%= answer.text_field :answer_text, class: "form-control" %>
+    <tr>
+      <td>
+        <%= answer.label :answer_1 %>
+        <%= answer.text_field :answer_text, class: "form-control" %>
+      </td>
+        <td style="text-align: center;">
+        <%= answer.check_box :correct_answer %>
+       </td>
+    <% end %>
+    </tr>
+
+  <%= f.fields_for :answers,Answer.new do |answer| %>
+    <tr>
+      <td>
+         <%= answer.label :answer_2 %><br>
+          <%= answer.text_field :answer_text, class: "form-control" %>
+      </td>
+      <td style="text-align: center;">
+          <%= answer.check_box :correct_answer %>
+       </td>
+    </tr>
   <% end %>
 
   <%= f.fields_for :answers,Answer.new do |answer| %>
-      <%= answer.label :answer_2 %><br>
-      <%= answer.text_field :answer_text, class: "form-control" %>
+    <tr>
+      <td>
+          <%= answer.label :answer_3 %><br>
+          <%= answer.text_field :answer_text, class: "form-control" %>
+       </td>
+       <td style="text-align: center;">
+          <%= answer.check_box :correct_answer %>
+      </td>
+    </tr>
   <% end %>
 
   <%= f.fields_for :answers,Answer.new do |answer| %>
-       <%= answer.label :answer_3 %><br>
-       <%= answer.text_field :answer_text, class: "form-control" %>
-  <% end %>
-
-  <%= f.fields_for :answers,Answer.new do |answer| %>
-       <%= answer.label :answer_4 %><br>
-       <%= answer.text_field :answer_text, class: "form-control" %>
+    <tr>
+      <td>
+        <%= answer.label :answer_4 %><br>
+        <%= answer.text_field :answer_text, class: "form-control" %>
+      </td>
+        <td style="text-align: center">
+          <%= answer.check_box :correct_answer %>
+       </td>
+       </tr>
   <% end %>
  <% end %>
+
+ </tbody>
+       </table>
 
  <br>
 
