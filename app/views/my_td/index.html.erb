@@ -11,38 +11,17 @@
  		</thead>
 
  		<tbody>
-			<% @participations.each do |participation| %>
+			<% @games.each do |game| %>
 	    <tr>
-	      <td id="firstcol"><%= participation.game.category %></td>
-	      <td><%= participation.game.starts_at %>
-	      <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: reservation.id), class: "btn btn-primary btn-md" %></td>
+	      <td id="firstcol"><%= game.name %></td>
+	      <td><%= game.starts_at %>
+	      <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: game.id), class: "btn btn-primary btn-md" %></td>
 	      	  <% end %>
 	    </tr>
 	  </tbody>
 	  </table>
 
-	  <!-- Update After Scoring is Updated 
 
- 	<h1 class="boardtitle">My Results</h1>
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Category</th>
-	        <th>Score</th>
-	      </tr>
-	    </thead>
-
-	    <tbody>
-	       <% @participations.each do |participation| %>
-	    <tr>
-	      <td id="firstcol"><%= participation.category %></td>
-	      <td><%= participation.score %></td>
-	    </tr>
-	  <% end %>
-	    </tbody>
-	  </table>
-
-	  --> 
 
 </div>
 
