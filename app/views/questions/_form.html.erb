@@ -22,7 +22,7 @@
 <div class="form-group">
    <div class="field">
     <%= f.label :Game_Number %><br>
-    <%= f.number_field :category_id, class: "form-control" %>
+    <%= f.number_field :category_id, :value => params[:id].to_i, class: "form-control" %>
   </div>
 </div>
 
