@@ -5,7 +5,7 @@
 <div class="container">
 
 <div class="jumbotron">
-  <%= content_tag 'h2', @game.quiz.name + ' Questions', id: "triviah1" %> 
+  <%= content_tag 'h2', @game.name + ' Questions', id: "triviah1" %> 
 
 <div class="row">
 <div class="col-md-8">
@@ -38,7 +38,7 @@
 </div>
 
 <!-- hide dynamic content --> 
-<%= content_tag :div, class: "temp_information", data: {temp: scoreboard_path(category: session[:category])} do %>
+<%= content_tag :div, class: "temp_information", data: {temp: scoreboard_path(game_id: session[:game_id])} do %>
 <% end %>
 
   

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="jumbotron">
 
-	<%= content_tag 'h1', @game.quiz.name + ' Lobby', id: "lobbytext" %> 
+	<%= content_tag 'h1', @game.name + ' Lobby', id: "lobbytext" %> 
 
 	 <div class="row">
 	 	<div class="col-sm-6">
@@ -34,7 +34,7 @@
 			<!-- player registered and within 4 min of start --> 
 	 		<% elsif Participation.where(user_id: current_user.id, game_id: params[:id]).exists? and Time.now - 4.minutes < @games.first.starts_at and Time.now + 4.minutes > @games.first.starts_at  %>
 	 			<div class="button-wrap">
-	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(category_id: session[:category_id]) %> </a>  
+	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(game_id: session[:game_id]) %> </a>  
 		 			</div>
 			<% else %>
 				<div class="button-wrap">

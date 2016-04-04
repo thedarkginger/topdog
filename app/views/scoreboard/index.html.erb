@@ -1,5 +1,5 @@
 <div class="container">
-  <%= content_tag 'h1', session[:category] + ' scoreboard', id: "triviah1" %> 
+  <%= content_tag 'h1', @game.name + ' scoreboard', id: "triviah1" %> 
    <div class="row">
              <div class="col-lg-12 text-center">
                 <hr class="star-game">
@@ -23,27 +23,9 @@
       <td></td>
       <td><%= participation.user.username %></td>
       <td><%= participation.user.city %></td>
-      <td><%= participation.category %></td>
+      <td><%= participation.game.name %></td>
       <td><%= participation.score %></td>
-        <% if index == 0 %>
-            <% @quizzes.each do |quiz| %>
-            <td>$<%= quiz.first %></td>
-            <% end %>
-        <% elsif index == 1 %>
-          <% @quizzes.each do |quiz| %>
-            <td>$<%= quiz.second %></td>
-            <% end %>
-         <% elsif index == 2 %>
-          <% @quizzes.each do |quiz| %>
-            <td>$<%= quiz.third %></td>
-            <% end %>
-         <% elsif index == 3 %>
-          <% @quizzes.each do |quiz| %>
-            <td>$<%= quiz.fourth %></td>
-            <% end %>
-         <% else %>
-            <td>You lose</td>
-        <% end %>
+
       </tr>
       <% end %>
     </tbody>
