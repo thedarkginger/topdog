@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  before_action :set_category
+  before_action :set_game_id
   before_action :set_topic
   before_filter :set_timezone
-  before_filter :set_id
 
   protected
 
@@ -22,16 +21,12 @@ end
   root_path
 end
 
-  def set_category
-    session[:category] = params[:category] if params[:category].present?
+  def set_game_id
+    session[:game_id] = params[:game_id] if params[:game_id].present?
   end
 
   def set_topic
     session[:topic] = params[:topic] if params[:topic].present?
-  end
-
-  def set_id
-    session[:id] = params[:id] if params[:id].present?
   end
 
   private

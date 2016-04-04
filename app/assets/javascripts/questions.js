@@ -1,3 +1,15 @@
+$.urlParam = function(name, url) {
+    if (!url) {
+     url = window.location.href;
+    }
+    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
+    if (!results) { 
+        return undefined;
+    }
+    return results[1] || undefined;
+}
+
+
 
 Questions = function() {
   this.quizCurrent = 0;
@@ -12,14 +24,19 @@ Questions.prototype.init = function() {
   $('#trivia').on('click', '.btn.btn-primary-questions', this.checkAnswer.bind(this));
   $('div.timer strong').text(this.seconds)
 
+  // console.log('I am inside this init method');
+
   this.start();
 }
 
 Questions.prototype.start = function() {
   var that = this;
 
+  // console.log('I am inside this start method');
+
   $.getJSON('/api/start', function(participation) {
     that.participationId = participation.id;
+    console.log("participation" + participation.id); 
     that.interval = window.setInterval(that.timer.bind(that), 1000);
     that.nextQuestion();
   })
@@ -30,13 +47,20 @@ Questions.prototype.nextQuestion = function() {
   this.timing = this.seconds;
   var that = this;
 
-  $.getJSON('/api/show_question/' + this.participationId, function(questionData) {
+  // console.log('I am inside this next question method');
+
+  var categoryId = $.urlParam('game_id'); 
+
+  $.getJSON('/api/show_question/' + this.participationId + '/' + categoryId, function(questionData) {
+
+     console.log("question2" + questionData);
     if (questionData.finished) {
       that.finish();
       return;
     }
 
-    var questionElem = $('<div class="questiontext">').html((that.quizCurrent) + '.  ' + questionData.question + '</div>');
+   //  console.log("question" + questionData);
+    var questionElem = $('<div class="questiontext">').html((that.quizCurrent) + '.  ' + questionData.question_text + '</div>');
     var answersElems = questionData.answers.map(function(answer, index) {
       answerElem = $('<button class="btn btn-primary-questions" data-index="' + (index + 1) + '">').html(answer);
       return answerElem;
@@ -47,8 +71,11 @@ Questions.prototype.nextQuestion = function() {
 }
 
 Questions.prototype.checkAnswer = function(e) {
+  console.log("checkanswer: " + $(e.target).data('index'));
   var selectedIndex = $(e.target).data('index');
   var that = this;
+
+  console.log('I am inside this check answer method');
 
   $.getJSON('/api/validate_answer/' + this.participationId + '/' + this.quizCurrent, { answer: selectedIndex }, function(data) {
     if (data.result) {

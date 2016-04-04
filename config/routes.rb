@@ -41,7 +41,7 @@ Topdog::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get 'start' => 'quiz#start'
-    get 'show_question/:participation_id' => 'quiz#show_question'
+    get 'show_question/:participation_id/:category_id' => 'quiz#show_question'
     get 'validate_answer/:participation_id/:index' => 'quiz#validate_answer'
     get 'skip_question/:participation_id' => 'quiz#skip_question'
   end
