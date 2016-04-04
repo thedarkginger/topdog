@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.where("starts_at >= ?", Time.now).order(starts_at: :asc).limit(5)
+    @games = Game.where("starts_at >= ?", Time.now).order(starts_at: :desc).limit(5)
   end
 
   def testhome
