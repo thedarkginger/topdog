@@ -70,10 +70,10 @@
 
   <% else %>
  
-  <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
+  <%= f.fields_for :points_allocations, PointsAllocation.new do |points, i| %>
     <tr>
       <td>
-        <%= points.label :first_place %>
+        <%= points.label "#{i} points" %>
         <%= points.number_field :place, class: "form-control" %>
       </td>
       <td>
