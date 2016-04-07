@@ -43,7 +43,66 @@
       <%= f.text_field :entry, class: "form-control" %>
     </div>
   </div>
-    <div class="actions">
-      <%= f.submit class: "btn btn-primary btn-lg submitquestion" %>
-    </div>
-  <% end %>
+
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Input Points Options</th>
+      </th>
+    </thead>
+  <tbody>
+
+    <% unless @game.new_record? %>
+     <% @game.points_allocations.each_with_index do |pa,i| %>
+      <%= f.fields_for :points_allocations, pa do |points| %>
+        <tr>
+          <td>
+            <%= points.label :place %><br>
+            <%= points.number_field :place, class: "form-control" %>
+          </td>
+           <td>
+            <%= points.label :points %><br>
+            <%= points.number_field :points, class: "form-control" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+
+  <% else %>
+ 
+  <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
+    <tr>
+      <td>
+        <%= points.label :first_place %>
+        <%= points.number_field :place, class: "form-control" %>
+      </td>
+      <td>
+        <%= points.label :first_points %>
+        <%= points.number_field :points, class: "form-control" %>
+    <% end %>
+    </tr>
+
+   <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
+    <tr>
+      <td>
+        <%= points.label :second_place %>
+        <%= points.number_field :place, class: "form-control" %>
+      </td>
+      <td>
+        <%= points.label :second_points %>
+        <%= points.number_field :points, class: "form-control" %>
+    <% end %>
+    </tr>
+    <% end %>
+
+
+ </tbody>
+       </table>
+
+ <br>
+  <div class="actions">
+    <%= f.submit @game.new_record? ? "Add" : "Update", class: "btn btn-primary btn-lg submitquestion" %>
+ </div>
+<% end %>
+
+

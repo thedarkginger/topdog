@@ -14,12 +14,14 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+
   end
 
   # GET /games/new
   def new
     @game = Game.new
     @quizzes = Quiz.all
+    @game.points_allocations.build
   end
 
   # GET /games/1/edit
@@ -68,6 +70,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def points_allocations
+    @points_allocations = @game.points_allocations
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
@@ -76,6 +82,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:starts_at, :name, :max_players, :entry, :quiz_id)
+      params.require(:game).permit(:starts_at, :name, :max_players, :entry, :quiz_id, :points_allocations_attributes => [:id, :game_id, :place, :points])
     end
 end
