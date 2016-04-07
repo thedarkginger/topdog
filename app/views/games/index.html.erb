@@ -4,6 +4,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Game ID</th>
         <th>Starts at</th>
         <th>Name</th>
         <th>Max players</th>
@@ -16,6 +17,7 @@
     <tbody>
       <% @games.each do |game| %>
         <tr>
+          <td><%= game.id %></td>
           <td><%= game.starts_at %></td>
           <td><%= game.name %></td>
           <td><%= game.max_players %></td>
