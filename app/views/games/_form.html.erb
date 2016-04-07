@@ -73,8 +73,8 @@
   <%= f.fields_for :points_allocations, PointsAllocation.new do |points, i| %>
     <tr>
       <td>
-        <%= points.label "#{i} points" %>
-        <%= points.number_field :place, class: "form-control" %>
+        <%= points.label :first_place %>
+        <%= points.number_field :place, :value => 1, class: "form-control" %>
       </td>
       <td>
         <%= points.label :first_points %>
@@ -86,7 +86,7 @@
     <tr>
       <td>
         <%= points.label :second_place %>
-        <%= points.number_field :place, class: "form-control" %>
+        <%= points.number_field :place, :value => 2, class: "form-control" %>
       </td>
       <td>
         <%= points.label :second_points %>
@@ -95,6 +95,17 @@
     </tr>
     <% end %>
 
+    <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
+    <tr>
+      <td>
+        <%= points.label :third_place %>
+        <%= points.number_field :place, :value => 3, class: "form-control" %>
+      </td>
+      <td>
+        <%= points.label :third_points %>
+        <%= points.number_field :points, class: "form-control" %>
+    <% end %>
+    </tr>
 
  </tbody>
        </table>

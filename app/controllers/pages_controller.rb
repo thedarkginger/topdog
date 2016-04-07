@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 
   def reservation
     user_id = current_user.id
-      Participation.create(user_id: user_id, game_id: params[:id])
+    Reservation.create(user_id: user_id, game_id: params[:id])
   
   end
 

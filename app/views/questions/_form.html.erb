@@ -19,12 +19,22 @@
   </div>
 </div>
 
-<div class="form-group">
-   <div class="field">
-    <%= f.label :Game_Number %><br>
-    <%= f.number_field :category_id, :value => params[:id].to_i, class: "form-control" %>
+<% if params[:action] == 'edit' %>
+  <div class="form-group">
+     <div class="field">
+      <%= f.label :Game_Number %><br>
+      <%= f.number_field :category_id, class: "form-control" %>
+    </div>
   </div>
-</div>
+<% else %> 
+    <div class="form-group">
+     <div class="field">
+      <%= f.label :Game_Number %><br>
+      <%= f.number_field :category_id, :value => params[:id].to_i, class: "form-control" %>
+    </div>
+  </div>
+
+<% end %> 
 
   <table class="table table-bordered table-striped">
     <thead>

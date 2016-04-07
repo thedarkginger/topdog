@@ -30,6 +30,7 @@ module API
       participation.increment! :score if result
 
       render json: { result: result }
+      
     end
 
     def skip_question
@@ -49,11 +50,8 @@ module API
     def current_question
       puts "inside_current_question: #{params.inspect}"
       puts "participation_current_index: #{participation.current_question_index}"
-      puts "RAKIB 1: #{Question.where(category_id: params[:category_id].to_i).order(id: :asc).inspect}"
-puts "RAKIB 2: #{participation.current_question_index.inspect}"
-puts "category_id #{session[:game_id]}"
-puts "RAKIB : #{Question.where(category_id: params[:category_id].to_i).order(id: :asc)[participation.current_question_index].inspect}"
-@current_question = Question.where(category_id: session[:game_id].to_i).order(id: :asc)[participation.current_question_index]
+      puts "category_id #{session[:game_id]}"
+      @current_question = Question.where(category_id: session[:game_id].to_i).order(id: :asc)[participation.current_question_index]
 
 
     end
