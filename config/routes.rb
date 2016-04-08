@@ -43,6 +43,7 @@ Topdog::Application.routes.draw do
     get 'start' => 'quiz#start'
     get 'show_question/:participation_id/:category_id' => 'quiz#show_question'
     get 'validate_answer/:participation_id/:index' => 'quiz#validate_answer'
+    get 'update_rankings/:participation_id' => 'quiz#update_rankings'
     get 'skip_question/:participation_id' => 'quiz#skip_question'
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -38,6 +38,7 @@ class PagesController < ApplicationController
 
   def trivia 
     @game = Game.find(params[:game_id])
+
   end
   
 end

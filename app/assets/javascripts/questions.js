@@ -53,13 +53,11 @@ Questions.prototype.nextQuestion = function() {
 
   $.getJSON('/api/show_question/' + this.participationId + '/' + categoryId, function(questionData) {
 
-     console.log("question2" + questionData);
     if (questionData.finished) {
       that.finish();
       return;
     }
 
-   //  console.log("question" + questionData);
     var questionElem = $('<div class="questiontext">').html((that.quizCurrent) + '.  ' + questionData.question_text + '</div>');
     var answersElems = questionData.answers.map(function(answer, index) {
       answerElem = $('<button class="btn btn-primary-questions" data-index="' + (index + 1) + '">').html(answer);
@@ -90,6 +88,8 @@ Questions.prototype.checkAnswer = function(e) {
     }
           that.nextQuestion();
   });
+
+
 }
 
 Questions.prototype.timer = function() {
