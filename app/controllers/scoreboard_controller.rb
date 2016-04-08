@@ -6,7 +6,12 @@ class ScoreboardController < ApplicationController
   	a = Participation.where(user_id: current_user.id).last.score
   	b = Participation.where(user_id: current_user.id).last.id
   	scores = Participation.where(game_id: params[:game_id]).where("score > ?", a).count
-  	Participation.update(b, :ranking => scores)
+
+  	if scores == 0 
+  		Participation.update(b, :ranking => 1)
+  	else 
+  		Participation.update(b, :ranking => scores + 1)
+  	end 
   	
   end
 
