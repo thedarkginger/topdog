@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408233617) do
+ActiveRecord::Schema.define(version: 20160409064947) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -109,6 +109,12 @@ ActiveRecord::Schema.define(version: 20160408233617) do
   create_table "reservations", force: true do |t|
     t.integer "game_id"
     t.integer "user_id"
+  end
+
+  create_table "stacks", force: true do |t|
+    t.integer "game_id"
+    t.integer "user_id"
+    t.integer "chips",   default: 0
   end
 
   create_table "topics", force: true do |t|
