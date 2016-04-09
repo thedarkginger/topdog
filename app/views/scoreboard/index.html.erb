@@ -26,6 +26,16 @@
       <td><%= participation.user.city %></td>
       <td><%= participation.game.name %></td>
       <td><%= participation.score %></td>
+        <% if index == 0 %>
+            <td>$<%= @firstpoints %>.00</td>
+        <% elsif index == 1 %>
+            <td>$<%= @secondpoints %>.00</td>
+        <% elsif index == 2 %>
+            <td>$<%= @thirdpoints %>.00</td>
+        <% else %>
+            <td>You lose</td>
+        <% end %>
+    
 
       </tr>
       <% end %>

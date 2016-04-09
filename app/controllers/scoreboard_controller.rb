@@ -2,6 +2,9 @@ class ScoreboardController < ApplicationController
   def index
   	@participations = Participation.where(finished: true, game_id: session[:game_id]).order(score: :desc).limit(10)
   	@game = Game.find(params[:game_id])
+    @firstpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "1").pluck(:points).map(&:to_i).first
+    @secondpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "2").pluck(:points).map(&:to_i).first
+    @thirdpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "3").pluck(:points).map(&:to_i).first    
 
   	a = Participation.where(user_id: current_user.id).last.score
   	b = Participation.where(user_id: current_user.id).last.id
