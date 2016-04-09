@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407054924) do
+ActiveRecord::Schema.define(version: 20160408233617) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -143,5 +143,10 @@ ActiveRecord::Schema.define(version: 20160407054924) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "wallets", force: true do |t|
+    t.integer "game_id"
+    t.integer "wallet",  default: 0
+  end
 
 end
