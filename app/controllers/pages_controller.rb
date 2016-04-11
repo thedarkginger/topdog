@@ -26,6 +26,11 @@ class PagesController < ApplicationController
   def reservation
     user_id = current_user.id
     Reservation.create(user_id: user_id, game_id: params[:id])
+
+    entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
+    entryfix = (entry * -1)
+
+    Stack.create(user_id: user_id, game_id: params[:id], chips: entryfix)
   
   end
 
