@@ -36,6 +36,7 @@ Topdog::Application.routes.draw do
   get "scoreboard" => "scoreboard#index", as: :scoreboard
   get "gamequestion" => "questions#game"
   get "mytd" => "my_td#index", as: :mytd
+  get "stack" => "pages#stack"
   get "reservation" => "pages#reservation"
   get "testhome" => "pages#testhome"
 

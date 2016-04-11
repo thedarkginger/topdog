@@ -18,6 +18,12 @@ class PagesController < ApplicationController
   def triviahub
   end
 
+  def stack
+    @stack = Stack.where(user_id: current_user.id)
+    @total = @stack.sum(:chips)
+    @final = @total.to_i
+  end 
+
   def testhome
     @questions = Question.all
     @answers = Answer.all

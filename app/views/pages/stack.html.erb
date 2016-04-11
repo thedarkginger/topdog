@@ -1,0 +1,23 @@
+<div class="container">
+
+	<p><%= @final %></p>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Game</th>
+				<th>Chips</th>
+				<th>Game Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @stack.each do |stack| %>
+			<tr>
+			 	<td><%= stack.game_id %></td>
+			 	<td><%= stack.chips %></td>
+			 <% end %>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
