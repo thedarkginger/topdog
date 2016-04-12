@@ -14,6 +14,8 @@ Topdog::Application.routes.draw do
   
   resources :answers
 
+  resources :layouts
+
   resources :triviabuilders
 
   resources :questions do

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_game_id
   before_action :set_topic
   before_filter :set_timezone
+  before_filter :set_example
 
   protected
 
@@ -28,6 +29,16 @@ end
   def set_topic
     session[:topic] = params[:topic] if params[:topic].present?
   end
+
+  def set_example
+
+    if user_signed_in? 
+      @userstacks = Stack.where(user_id: current_user.id)
+      @usertotal = @userstacks.sum(:chips)
+      @userfinal = @usertotal.to_s
+      @example = 'Wallet ' + "$" + @userfinal
+  end
+end 
 
   private
 
