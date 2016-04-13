@@ -57,7 +57,7 @@
       <%= f.fields_for :points_allocations, pa do |points| %>
         <tr>
           <td>
-            <%= points.label :place %><br>
+            <%= points.label "place_#{i+1}" %><br>
             <%= points.number_field :place, class: "form-control" %>
           </td>
            <td>
@@ -66,11 +66,11 @@
           </td>
         </tr>
       <% end %>
-    <% end %>
+    <% end %>    
 
   <% else %>
  
-  <%= f.fields_for :points_allocations, PointsAllocation.new do |points, i| %>
+  <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
     <tr>
       <td>
         <%= points.label :first_place %>
@@ -93,9 +93,7 @@
         <%= points.number_field :points, class: "form-control" %>
     <% end %>
     </tr>
-    <% end %>
-
-    <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
+      <%= f.fields_for :points_allocations, PointsAllocation.new do |points| %>
     <tr>
       <td>
         <%= points.label :third_place %>
@@ -106,6 +104,9 @@
         <%= points.number_field :points, class: "form-control" %>
     <% end %>
     </tr>
+    <% end %>
+
+
 
  </tbody>
        </table>
@@ -115,5 +116,8 @@
     <%= f.submit @game.new_record? ? "Add" : "Update", class: "btn btn-primary btn-lg submitquestion" %>
  </div>
 <% end %>
+
+
+
 
 

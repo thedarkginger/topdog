@@ -48,14 +48,20 @@ class Participation < ActiveRecord::Base
     records = Ranking.where(game_id: game_id)
     first = PointsAllocation.where(game_id: game_id, place: 1).pluck(:points).map(&:to_i).first
     second = PointsAllocation.where(game_id: game_id, place: 2).pluck(:points).map(&:to_i).first
+    third = PointsAllocation.where(game_id: game_id, place: 3).pluck(:points).map(&:to_i).first
+    fourth = PointsAllocation.where(game_id: game_id, place: 4).pluck(:points).map(&:to_i).first
 
     records.each do |record|
       puts record.inspect
       puts record['user_id']
-    if record.ranking = 1
-      Stack.create(user_id: record['user_id'], game_id: game_id, chips: 50)
+    if record.ranking == 1
+      Stack.create(user_id: record['user_id'], game_id: game_id, chips: first)
+    elsif record.ranking == 2
+      Stack.create(user_id: record['user_id'], game_id: game_id, chips: second)
+    elsif record.ranking == 3
+      Stack.create(user_id: record['user_id'], game_id: game_id, chips: third)
     else
-      Stack.create(user_id: record['user_id'], game_id: game_id, chips: 10)
+
     end
   end
   end 
