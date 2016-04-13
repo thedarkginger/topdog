@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :games, through: :participations
   has_many :reservations
   has_many :wallets
+  has_many :rankings
 
   # removes req for confirmable
   protected

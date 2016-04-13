@@ -3,6 +3,7 @@ class Game < ActiveRecord::Base
   has_many :participations
   has_many :users, through: :participations
   has_many :points_allocations
+  has_many :rankings
   belongs_to :quiz
   accepts_nested_attributes_for :points_allocations
 

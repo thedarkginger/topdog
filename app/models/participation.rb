@@ -6,6 +6,7 @@ class Participation < ActiveRecord::Base
   belongs_to :game
 
 
+
   def self.reservations
     joins(:game).where("games.starts_at > ?", Time.now) # check joins vs includes again
   end
@@ -27,5 +28,37 @@ class Participation < ActiveRecord::Base
   def correct_answers
     answers.where(correct_answer: true)
   end
+
+  def self.calculate_ranking(game_id)
+      records = Participation.where(game_id: game_id, finished: true).order('score DESC, updated_at ASC')
+
+      records.each_with_index do |record, index|
+        puts "rank: #{index + 1}"
+        puts record.inspect
+        puts record['score']
+        puts record['user_id']
+        puts record['game_id']
+        
+        Ranking.create(game_id: game_id, user_id: record['user_id'], game_time: record['updated_at'], ranking: index + 1)
+    end
+  end
+
+
+  def self.update_wallet(game_id)
+    records = Ranking.where(game_id: game_id)
+    first = PointsAllocation.where(game_id: game_id, place: 1).pluck(:points).map(&:to_i).first
+    second = PointsAllocation.where(game_id: game_id, place: 2).pluck(:points).map(&:to_i).first
+
+    records.each do |record|
+      puts record.inspect
+      puts record['user_id']
+    if record.ranking = 1
+      Stack.create(user_id: record['user_id'], game_id: game_id, chips: 50)
+    else
+      Stack.create(user_id: record['user_id'], game_id: game_id, chips: 10)
+    end
+  end
+  end 
+
 
 end

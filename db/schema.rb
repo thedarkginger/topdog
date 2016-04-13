@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409064947) do
+ActiveRecord::Schema.define(version: 20160413025541) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -105,6 +105,13 @@ ActiveRecord::Schema.define(version: 20160409064947) do
   end
 
   add_index "quizzes", ["category_id"], name: "index_quizzes_on_category_id"
+
+  create_table "rankings", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.integer  "ranking"
+    t.datetime "game_time"
+  end
 
   create_table "reservations", force: true do |t|
     t.integer "game_id"

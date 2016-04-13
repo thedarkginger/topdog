@@ -16,17 +16,17 @@ class ScoreboardController < ApplicationController
 
     #i use scores to insert the ranking into the Participation table 
   	if scores == 0 
-  		Participation.update(b, :ranking => 1)
+  		Ranking.create(b, :ranking => 1)
   	else 
   		Participation.update(b, :ranking => scores + 1)
   	end
 
     #pluck the number of points a ranking should receive and then add to Stack table that holds Points
-    if Participation.where(ranking: "1")
-      first = PointsAllocation.where(game_id: params[:game_id]).where(place: "1").pluck(:points).map(&:to_i).first
+    if Participation.where(ranking: 1)
+      first = PointsAllocation.where(game_id: params[:game_id]).where(place: 1).pluck(:points).map(&:to_i).first
       Stack.create(game_id: params[:game_id], user_id: current_user.id, chips: first)
-    elsif Participation.where(ranking: "2")
-      second = PointsAllocation.where(game_id: params[:game_id]).where(place: "2").pluck(:points).map(&:to_i).first
+    elsif Participation.where(ranking: 2)
+      second = PointsAllocation.where(game_id: params[:game_id]).where(place: 2).pluck(:points).map(&:to_i).first
       Stack.create(game_id: params[:game_id], user_id: current_user.id, chips: second)
     else
 
