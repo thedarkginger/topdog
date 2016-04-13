@@ -36,7 +36,7 @@ end
       @userstacks = Stack.where(user_id: current_user.id)
       @usertotal = @userstacks.sum(:chips)
       @userfinal = @usertotal.to_s
-      @example = 'Wallet ' + "$" + @userfinal
+      @example = 'Wallet: ' + "$" + @userfinal
   end
 end 
 

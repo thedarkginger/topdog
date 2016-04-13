@@ -22,6 +22,9 @@ class PagesController < ApplicationController
     @stack = Stack.where(user_id: current_user.id)
     @total = @stack.sum(:chips)
     @final = @total.to_i
+
+    @find = @stack.pluck(:game_id).last
+    @game = Game.where(id: @find)
   end 
 
   def testhome
