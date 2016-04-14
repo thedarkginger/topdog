@@ -23,6 +23,8 @@ gem 'devise', '~> 3.2.4'
 
 gem 'jquery-final_countdown-rails'
 
+gem 'delayed_job_active_record'
+
 gem 'heroku-deflater', :group => :production
 
 group :development, :test do
