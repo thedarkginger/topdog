@@ -18,6 +18,8 @@ Topdog::Application.routes.draw do
 
   resources :triviabuilders
 
+  resources :jobs
+
   resources :questions do
     get 'answers', on: :member
   end

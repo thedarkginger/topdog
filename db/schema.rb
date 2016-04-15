@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413025541) do
+ActiveRecord::Schema.define(version: 20160414064929) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -31,6 +31,22 @@ ActiveRecord::Schema.define(version: 20160413025541) do
   end
 
   add_index "categories", ["topic_id"], name: "index_categories_on_topic_id"
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "games", force: true do |t|
     t.integer  "quiz_id"
