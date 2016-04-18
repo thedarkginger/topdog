@@ -1012,6 +1012,28 @@ header .intro-text .skills {
   }
 }
 
+.header2 {
+  text-align: center;
+  color: white;
+}
+
+.header2 img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.header2 .name {
+  color: black;
+}
+
+.header2 .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  font-weight: 700;
+  font-size: 2em;
+}
+
 .rad-button2 {
   top: -70px;
   position: inherit;

@@ -6,14 +6,14 @@ class ScoreboardController < ApplicationController
   	@game = Game.find(params[:game_id])
     @firstpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "1").pluck(:points).map(&:to_i).first
     @secondpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "2").pluck(:points).map(&:to_i).first
-    @thirdpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "3").pluck(:points).map(&:to_i).first 
+    @thirdpoints = PointsAllocation.where(game_id: params[:game_id]).where(place: "3").pluck(:points).map(&:to_i).first   
 
 end
 
-def update
-   Participation.calculate_ranking(params[:game_id])
-  Participation.update_wallet(params[:game_id])
-
+def chipsupdater
+  @game = Game.find(params[:game_id])
+  Delayed::Job.enqueue(ChipsUpdaterJob.new(@game.id), 1, :run_at => @game.starts_at + 1.min) 
+ 
   end 
 
 end
