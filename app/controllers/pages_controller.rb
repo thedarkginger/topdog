@@ -37,10 +37,11 @@ class PagesController < ApplicationController
     Reservation.create(user_id: user_id, game_id: params[:id])
 
     entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
-    entryfix = (entry * -1)
+    @entryfix = (entry * -1)
+    @total = @stack = Stack.where(user_id: current_user.id).sum(:chips)
 
-    if Stack.where(user_id: user_id).sum(:chips) > entryfix
-        Stack.create(user_id: user_id, game_id: params[:id], chips: entryfix)
+    if @total > @entryfix
+        Stack.create(user_id: user_id, game_id: params[:id], chips: @entryfix)
     else
     end
   

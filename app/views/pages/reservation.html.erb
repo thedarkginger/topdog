@@ -1,11 +1,15 @@
 <div class="container">
 
-<div id="firstlayer">
-
+	<% if (@total > @entryfix) %> 
+	<div id="firstlayer">
           <h1 id="hometext">Congratulations! You're In.</h1> <br>
           <h2 id="hometext2">Head Back to the Lobby. Become TopDog.</h2> <br>
       </div>
-
+     <% else %>
+     	<div id="firstlayer">
+     		<h1 id="hometext">Danger, Will Robinson!"</h1></div>
+     		<h2 id="hometext2">You do not have enough TopDog chips to play this round. Add more to your account, and you can come back to register.</h2>
+     <% end %>
 <%= link_to "To Lobby &raquo;".html_safe, lobby_path(id: params[:id]), id: "lobbybutton", class: "btn btn-danger btn-lg" %> <br>
 
 
