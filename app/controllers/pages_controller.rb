@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def stack
-    @stack = Stack.where(user_id: current_user.id)
+    @stack = Stack.where(user_id: current_user.id).limit(10)
     @total = @stack.sum(:chips)
     @final = @total.to_i
 
@@ -39,7 +39,10 @@ class PagesController < ApplicationController
     entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
     entryfix = (entry * -1)
 
-    Stack.create(user_id: user_id, game_id: params[:id], chips: entryfix)
+    if Stack.where(user_id: user_id).sum(:chips) > entryfix
+        Stack.create(user_id: user_id, game_id: params[:id], chips: entryfix)
+    else
+    end
   
   end
 
