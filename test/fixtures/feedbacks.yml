@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  email: MyString
+  time: 2016-04-19 01:27:45
+  subject: MyString
+  feedback: MyString
+
+two:
+  user_id: 1
+  email: MyString
+  time: 2016-04-19 01:27:45
+  subject: MyString
+  feedback: MyString

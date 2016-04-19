@@ -1,5 +1,7 @@
 Topdog::Application.routes.draw do
 
+  resources :feedbacks
+
   resources :quizzes
 
   resources :histories

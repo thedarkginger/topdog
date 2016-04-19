@@ -14,6 +14,7 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
+          <li><%= link_to "Feedback", feedbacks_path %></li>
           <li><%= link_to "Settings", edit_user_registration_path %></li>
            <li><%= link_to "My TopDog", mytd_path %></li> 
            <li id="newtester"><%= link_to @example, stack_path %></li>
