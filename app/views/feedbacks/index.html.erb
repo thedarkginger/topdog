@@ -1,35 +1,49 @@
-<h1>Listing feedbacks</h1>
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Email</th>
-      <th>Time</th>
-      <th>Subject</th>
-      <th>Feedback</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="header2">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="intro-text">
+                                  <%= image_tag("light-bulb.png", class: "img-responsive middle") %> 
+                                  <h1 class="boardtitle" style="color: black">TopDog Needs You!</h1>
+                                  <h4 class="boardtitle" style="color: black"><i>Leave Beta Feedback</i></h4>
+                                   <hr class="star-primary">
+                 </div>
+                 </div>
+                 </div>
+              </div>
 
-  <tbody>
-    <% @feedbacks.each do |feedback| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= feedback.user_id %></td>
-        <td><%= feedback.email %></td>
-        <td><%= feedback.time %></td>
-        <td><%= feedback.subject %></td>
-        <td><%= feedback.feedback %></td>
-        <td><%= link_to 'Show', feedback %></td>
-        <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
-        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Email</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Feedback</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @feedbacks.each do |feedback| %>
+        <tr>
+          <td><%= feedback.user_id %></td>
+          <td><%= feedback.email %></td>
+          <td><%= feedback.time %></td>
+          <td><%= feedback.subject %></td>
+          <td><%= feedback.feedback %></td>
+          <td><%= link_to 'Show', feedback %></td>
+          <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
+          <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Feedback', new_feedback_path %>
+  <br>
+
+  <%= link_to 'New Feedback', new_feedback_path %>
+</div>
