@@ -1,3 +1,4 @@
+
 class ChipsUpdaterJob < Struct.new(:game_id)
   def perform
   	Participation.calculate_ranking(game_id)
