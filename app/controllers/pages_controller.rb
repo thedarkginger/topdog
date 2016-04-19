@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def stack
-    @stack = Stack.where(user_id: current_user.id).limit(10)
+    @stack = Stack.where(user_id: current_user.id).order(game_id: :desc).limit(10)
     @total = @stack.sum(:chips)
     @final = @total.to_i
 

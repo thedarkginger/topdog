@@ -30,7 +30,8 @@ class Participation < ActiveRecord::Base
   end
 
   def self.calculate_ranking(game_id)
-      records = Participation.where(game_id: game_id, finished: true).order('score DESC, updated_at ASC')
+      
+        records = Participation.where(game_id: game_id, finished: true).where("score > ?", 0).order('score DESC, updated_at ASC')
 
       records.each_with_index do |record, index|
         puts "rank: #{index + 1}"
@@ -38,8 +39,10 @@ class Participation < ActiveRecord::Base
         puts record['score']
         puts record['user_id']
         puts record['game_id']
-        
-        Ranking.create(game_id: game_id, user_id: record['user_id'], game_time: record['updated_at'], ranking: index + 1)
+
+        unless Ranking.where(game_id: game_id, user_id: record['user_id']).present? 
+          Ranking.create(game_id: game_id, user_id: record['user_id'], game_time: record['updated_at'], ranking: index + 1)
+        end 
     end
   end
 
@@ -54,11 +57,11 @@ class Participation < ActiveRecord::Base
     records.each do |record|
       puts record.inspect
       puts record['user_id']
-    if record.ranking == 1
+    if record.ranking == 1 && (Stack.where(user_id: record['user_id'], game_id: game_id).count == 1)
       Stack.create(user_id: record['user_id'], game_id: game_id, chips: first)
-    elsif record.ranking == 2
+    elsif record.ranking == 2 && (Stack.where(user_id: record['user_id'], game_id: game_id).count == 1)
       Stack.create(user_id: record['user_id'], game_id: game_id, chips: second)
-    elsif record.ranking == 3
+    elsif record.ranking == 3 && (Stack.where(user_id: record['user_id'], game_id: game_id).count == 1)
       Stack.create(user_id: record['user_id'], game_id: game_id, chips: third)
     else
 
