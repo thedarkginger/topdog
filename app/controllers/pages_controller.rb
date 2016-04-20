@@ -23,10 +23,12 @@ class PagesController < ApplicationController
     @total = @stack.sum(:chips)
     @final = @total.to_i
 
-    @find = @stack.last.id
-    @game = Game.where(id: @find)
-
   end 
+
+  def beta 
+    @stacks= Stack.order(chips: :desc).group(:user_id).sum(:chips)
+  
+  end
 
   def testhome
     @questions = Question.all
@@ -61,3 +63,4 @@ class PagesController < ApplicationController
   end
   
 end
+

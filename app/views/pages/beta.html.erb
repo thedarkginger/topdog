@@ -1,0 +1,24 @@
+<div class="container">
+
+<h1>Make TopDog Even Better!</h1>
+
+<h1>Beta Leaderboard</h1>
+
+<table class="table table-striped">
+	<thead>
+	</thead>
+
+	<tbody>
+
+	<% @stacks.each do |stack| %>
+			<tr>
+			 	<td><%= stack.chips %></td>
+			 	<td><%= stack.user_id %></td>
+			 <% end %>
+			</tr>
+	</tbody>
+
+</table>
+
+
+</div>

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :wallets
   has_many :rankings
+  has_many :stacks
 
   # removes req for confirmable
   protected
