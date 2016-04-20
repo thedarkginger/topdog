@@ -1,12 +1,29 @@
 <div class="container">
-
 	<% if (@total > @entryfix) %> 
+     <div class="header2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                                <%= image_tag("Coins.png", class: "img-responsive middle") %> 
+               </div>
+               </div>
+               </div>
+            </div>
 	<div id="firstlayer">
           <h1 id="hometext">Congratulations! You're In.</h1> <br>
           <h2 id="hometext2">Head Back to the Lobby. Become TopDog.</h2> <br>
           <%= link_to "To Lobby &raquo;".html_safe, lobby_path(id: params[:id]), id: "lobbybutton", class: "btn btn-danger btn-lg" %>
       </div>
      <% else %>
+       <div class="header2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                                <%= image_tag("PiggyBank.png", class: "img-responsive middle") %> 
+               </div>
+               </div>
+               </div>
+            </div>
      	<div id="firstlayer">
      		<h1 id="hometext">"Danger, Will Robinson!"</h1></div>
      		<h2 id="hometext2">You do not have enough TopDog chips to play this round. Add more to your account, and you can come back to register.</h2>
