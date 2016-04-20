@@ -41,6 +41,11 @@
       <% end %>
     </tbody>
   </table>
+  <br>
+ <% @game.each do |game| %>
+    <h4 style="text-align: center; font-weight: bold">*Scores and TopDollars finalized at <%= @game.last.starts_at + 6.minutes %>.</h4>
+<% end %>
+
 </div>
 
 <script>
