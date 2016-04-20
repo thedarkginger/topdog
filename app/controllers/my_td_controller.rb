@@ -1,8 +1,12 @@
 class MyTdController < ApplicationController
 
 def index
-	# @participations = Participation.where(user_id: current_user.id).where("score > 0").order(score: :desc)
-	@games = Participation.where(user_id: current_user.id).exists? && Game.where("starts_at > ?", Time.now)
+	if Reservation.where(user_id: current_user.id).exists? 
+		@others = Game.where("starts_at > ?", Time.now)
+	else 
+	end
+
+	
 end
 end
 

@@ -34,6 +34,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @quizzes = Quiz.all
+       @match = Game.count + 1
 
     respond_to do |format|
       if @game.save

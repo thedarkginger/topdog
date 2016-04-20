@@ -21,15 +21,17 @@
  		</thead>
 
  		<tbody>
-			<% @games.each do |game| %>
-	    <tr>
-	      <td id="firstcol"><%= game.name %></td>
-	      <td><%= game.starts_at %>
-	      <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: game.id), class: "btn btn-primary btn-md" %></td>
+			<% @others.each do |other| %>
+	    		<tr>
+	      			<td id="firstcol"><%= other.name %></td>
+	      			<td><%= other.starts_at %>
+	      			<td><%= link_to "Play &raquo;".html_safe, lobby_path(id: other.id), class: "btn btn-primary btn-md" %></td>
 	      	  <% end %>
-	    </tr>
+	      	  </tr>
 	  </tbody>
 	  </table>
+
+<br>
 
 
 

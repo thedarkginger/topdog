@@ -44,9 +44,7 @@
 			<tr>
 			 	<td><%= stack.game_id %></td>
 			 	<td><%= stack.chips %></td>
-			 	<% @game.each do |game| %>
-			 		<td><%= game.name %>
-			 	<% end %>
+			 	<td><%= stack.game.name %></td>
 			 <% end %>
 			 	
 			</tr>
