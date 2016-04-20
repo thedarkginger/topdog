@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.where("starts_at >= ?", Time.now).order(starts_at: :asc).limit(5)
+    @games = Game.where("starts_at >= ?", Time.now - 2.minutes).order(starts_at: :asc).limit(5)
   end
 
   def testhome
@@ -34,14 +34,14 @@ class PagesController < ApplicationController
 
   def reservation
     user_id = current_user.id
-    Reservation.create(user_id: user_id, game_id: params[:id])
-
+  
     entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
     @entryfix = (entry * -1)
-    @total = @stack = Stack.where(user_id: current_user.id).sum(:chips)
+    @total = Stack.where(user_id: current_user.id).sum(:chips)
 
-    if @total > @entryfix
+    if @total > @entryfix 
         Stack.create(user_id: user_id, game_id: params[:id], chips: @entryfix)
+        Reservation.create(user_id: user_id, game_id: params[:id])
     else
     end
   

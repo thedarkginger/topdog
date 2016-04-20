@@ -21,6 +21,10 @@
 	 		<% elsif Time.now > @games.first.starts_at and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
+			 <!-- if time is past game start or lobby full, show error --> 
+	 		<% elsif @games.first.starts_at > Time.now and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists?(false) and @games.first.entry > Stack.where(user_id: current_user.id).sum(:chips) %>
+			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
+
 			 <!-- if user registered but game has not started yet --> 
 			<% elsif Time.now < @games.first.starts_at and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists? %>
 				<p>The game lobby will open at
