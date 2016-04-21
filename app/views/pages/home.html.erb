@@ -47,7 +47,7 @@
                           <th>Game</th>
                           <th>Start Time</th>
                           <th>Game Entry</th>
-                          <th>Prize</th>
+                          <th>Game Entries</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -57,6 +57,7 @@
                           <td><%= game.name %></td>
                            <td><%= game.starts_at %></td>
                            <td>$<%= game.entry %>0</td>
+                           <td><%= game.reservations.count %> / <%= game.max_players %> </td>
                           <td>
                              <% if user_signed_in? %>
                                  <%= link_to "Join &raquo;".html_safe, lobby_path(id: game.id), class: "btn btn-primary btn-md" %>

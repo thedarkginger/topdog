@@ -69,8 +69,9 @@
 
 	<tbody>
 
-	<% @stacks.each do |stack| %>
+	<% @stacks.each_with_index do |stack, index| %>
 			<tr>
+				<td><%= index + 1 %></td>
 				<td><%= User.where(id: stack[0]).last.username %>
 				<td><%= User.where(id: stack[0]).last.city %>
 			 	<td>$<%= stack[1] %>.00</td>

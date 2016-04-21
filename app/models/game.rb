@@ -5,6 +5,7 @@ class Game < ActiveRecord::Base
   has_many :points_allocations
   has_many :rankings
   has_many :stacks
+  has_many :reservations
   belongs_to :quiz
   accepts_nested_attributes_for :points_allocations
 
