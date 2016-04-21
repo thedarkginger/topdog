@@ -1,24 +1,87 @@
 <div class="container">
 
-<h1>Make TopDog Even Better!</h1>
+<div class="header2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+				                        <%= image_tag("Spaceman.png", class: "img-responsive middle") %> 
+				                        <h1 class="boardtitle" style="color: black">TopDog Beta HQ</h1>
+				                         <hr class="star-primary">
+				       </div>
+				       </div>
+				       </div>
+				    </div>
+	 <div class="col-md-6">
+	 <div class="panel panel-primary">
+      		<div class="panel-heading"><b>Post Requests and Bugs</b></div>
+      		<div class="panel-body">
+      			<div class="button-wrap">
+	 			<a class="btn rad-button2 wwt flat vertical" <%= link_to "Leave Feedback", new_feedback_path %> </a>
+	 			<br>
+	 			<h5>Make TopDog Even Better</h5>  
+	 			</div>
+      			</div>
+      		</div>
+      	</div>
 
-<h1>Beta Leaderboard</h1>
+      <div class="col-md-6">
+	 <div class="panel panel-primary">
+      		<div class="panel-heading"><b>See TopDog Community Requests</b></div>
+      		<div class="panel-body">
+      			<div class="button-wrap">
+	 				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Leave Feedback", feedbacks_path %> </a>
+	 				<br>
+	 				<h5>Community Requests Coming Soon</h5>  
+	 				</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
 
-<table class="table table-striped">
+   <div class="header2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+				                        <h1 class="boardtitle" style="color: black">Beta Leaderboard</h1>
+				                        <h3 style="color: black"><i>Wave 1 Ends April 29</i></h3>
+				                         <hr class="star-primary">
+				       </div>
+				       </div>
+				       </div>
+				    </div>
+
+
+<div class="container">
+
+	 <div class="panel panel-primary">
+      		<div class="panel-heading"><b>TopDog Beta Leaderboard</b></div>
+      		<div class="panel-body">
+
+      			<table class="table table-striped table-hover">
 	<thead>
+		<tr>
+			<th>Player</th>
+			<th>City</th>
+			<th>Beta Earnings</th>
+			<th>Game Wins</th>
+		</tr>
 	</thead>
 
 	<tbody>
 
 	<% @stacks.each do |stack| %>
 			<tr>
-			 	<td><%= stack.chips %></td>
-			 	<td><%= stack.user_id %></td>
+				<td><%= User.where(id: stack[0]).last.username %>
+				<td><%= User.where(id: stack[0]).last.city %>
+			 	<td>$<%= stack[1] %>.00</td>
+			 	<td><%= Ranking.where(user_id: stack[0], ranking: 1).count %>
 			 <% end %>
 			</tr>
 	</tbody>
 
 </table>
+    		</div>
+    		</div>
 
-
+</div>
 </div>

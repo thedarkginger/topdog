@@ -21,6 +21,7 @@
         <th>Time</th>
         <th>Subject</th>
         <th>Feedback</th>
+        <th>Status</th>
         <th></th>
         <th></th>
         <th></th>
@@ -35,6 +36,7 @@
           <td><%= feedback.time %></td>
           <td><%= feedback.subject %></td>
           <td><%= feedback.feedback %></td>
+          <td><%= feedback.status %></td>
           <td><%= link_to 'Show', feedback %></td>
           <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
           <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>

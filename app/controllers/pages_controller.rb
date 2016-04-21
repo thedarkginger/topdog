@@ -26,7 +26,9 @@ class PagesController < ApplicationController
   end 
 
   def beta 
-    @stacks= Stack.order(chips: :desc).group(:user_id).sum(:chips)
+
+    first = Stack.group(:user_id).sum(:chips)
+    @stacks = first.sort {|a,b| a[1] <=> b[1]}.reverse
   
   end
 

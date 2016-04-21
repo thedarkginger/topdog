@@ -25,10 +25,12 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks.json
   def create
     @feedback = Feedback.new(feedback_params)
+    user = User.where(id: current_user.id)
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }
+        @feedback.update_attributes(user_id: current_user.id, email: user.last.email, time: Time.now)
+        format.html { redirect_to beta_path, notice: 'Feedback was successfully created.' }
         format.json { render action: 'show', status: :created, location: @feedback }
       else
         format.html { render action: 'new' }
@@ -69,6 +71,6 @@ class FeedbacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
-      params.require(:feedback).permit(:user_id, :email, :time, :subject, :feedback)
+      params.require(:feedback).permit(:user_id, :email, :time, :subject, :feedback, :status)
     end
 end
