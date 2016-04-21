@@ -16,7 +16,7 @@
        <% if user_signed_in? %>
           <li><%= link_to "Beta Leaders", beta_path %></li>
           <li><%= link_to "Settings", edit_user_registration_path %></li>
-           <li><%= link_to "My TopDog", mytd_path %></li> 
+           <!-- <li><%= link_to "My TopDog", mytd_path %></li> -->
            <li id="newtester"><%= link_to @example, stack_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>

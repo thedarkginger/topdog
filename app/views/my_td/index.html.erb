@@ -11,6 +11,9 @@
 				       </div>
 				    </div>
 
+
+<% if Reservation.where(user_id: current_user.id).exists? %> 
+
  	<table class="table table-striped">
  		<thead>
  			<tr>
@@ -30,6 +33,25 @@
 	      	  </tr>
 	  </tbody>
 	  </table>
+<% else %> 
+	 	<table class="table table-striped">
+ 		<thead>
+ 			<tr>
+ 				<th>Category</th>
+ 				<th>Game Time</th>
+ 				<th>Purse</th>
+ 			</tr>
+ 		</thead>
+
+ 		<tbody>
+	    	<tr class="danger">
+	    		<td>Nothing to see here. Sign up for a game!</td>
+	      	  </tr>
+	  </tbody>
+	  </table>
+
+
+<% end %>
 
 <br>
 
