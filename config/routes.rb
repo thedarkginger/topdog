@@ -45,6 +45,8 @@ Topdog::Application.routes.draw do
   get "reservation" => "pages#reservation"
   get "testhome" => "pages#testhome"
 
+  post 'stack/promo_stacks'
+
   namespace :api, defaults: { format: :json } do
     get 'start' => 'quiz#start'
     get 'show_question/:participation_id/:category_id' => 'quiz#show_question'

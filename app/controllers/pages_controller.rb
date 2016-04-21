@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     @total = @stack.sum(:chips)
     @final = @total.to_i
 
+      def promo_stacks
+        Stack.create(user_id: 10000000, chips: 5000000)
+      end 
+
   end 
 
   def beta 
