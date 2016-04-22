@@ -22,11 +22,15 @@ class PagesController < ApplicationController
     @stack = Stack.where(user_id: current_user.id).order(game_id: :desc).limit(10)
     @total = @stack.sum(:chips)
     @final = @total.to_i
+    @current_user = current_user.id
 
-      def promo_stacks
-        Stack.create(user_id: 10000000, chips: 5000000)
+    params[:name]
+
+    if params[:username] == 'earlydogs' &&  Stack.where(user_id: current_user.id, game_id: 1).empty?
+
+        Stack.create(user_id: current_user.id, chips: 30, game_id: 1)
+      else 
       end 
-
   end 
 
   def beta 
@@ -44,14 +48,13 @@ class PagesController < ApplicationController
   def reservation
     user_id = current_user.id
   
-    entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
-    @entryfix = (entry * -1)
+    @entry = Game.where(id: params[:id]).pluck(:entry).map(&:to_i).first
+    @entryfix = (@entry * -1)
     @total = Stack.where(user_id: current_user.id).sum(:chips)
 
-    if @total > @entryfix 
+    unless @entry > @total  
         Stack.create(user_id: user_id, game_id: params[:id], chips: @entryfix)
         Reservation.create(user_id: user_id, game_id: params[:id])
-    else
     end
   
   end

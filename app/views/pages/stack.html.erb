@@ -17,15 +17,18 @@
 		<div class="col-lg-6">
 			 <div class="panel panel-primary">
       		<div class="panel-heading"><b>TopDog Total Balance</b></div>
-      		<div class="panel-body">	<b>$<%= @final %></b>
+      		<div class="panel-body"><h1 style="text-align: center"><b>$<%= @final %></b></h1>
+      		<h5 style="text-align: center">Your TopDollar Total for the Beta</h5>
     		</div>
     		</div>
 		</div>
 		<div class="col-lg-6">
 			 <div class="panel panel-primary">
-      		<div class="panel-heading"><b>TopDog Total Balance</b></div>
-      		<div class="panel-body">	
-      			<%= link_to 'Call Action', stack_path, method: :post %>
+      		<div class="panel-heading"><b>Referrals: Get 5 TopDollars for Every Signup</b></div>
+      		<div class="panel-body">
+      			<h4><b>Share:</b></h4>
+      			<h4>http://www.topdogtrivia.com/stack?username=<%= User.where(id: current_user).last.username %></h4>
+      			<h6>(Your TopDollar total will go up after 24 hours</h6>
     		</div>
     		</div>
 		</div>
