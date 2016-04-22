@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     @final = @total.to_i
     @current_user = current_user.id
 
-    if params[:username] == 'earlydogs' &&  Stack.where(user_id: @current_user, game_id: 1).empty?
+    if params[:username] == 'alphadogs' &&  Stack.where(user_id: @current_user, game_id: 1).empty?
         Stack.create(user_id: @current_user, chips: 30, game_id: 1)
       else 
       end 

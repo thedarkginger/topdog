@@ -34,10 +34,10 @@
         <p id="footertext">TopDog Trivia: Be Smart. Win Prizes.</p>
         <ul style="list-style-type:none">
         	<li id="footerli"><%= link_to "Home", root_path %></li>
-        	<!-- <li><%= link_to "Scoreboard", scoreboard_path %></li> --> 
      		<li id="footerli"><%= link_to "About", about_path %></li> 
-      		<li id="footerli"><%= link_to "Legal", legal_path %></li> 
+      		<!-- <li id="footerli"><%= link_to "Legal", legal_path %></li> -->
       		<li id="footerli"><%= link_to "Contact Us", contact_path %></li> 
+      		<li id="footerli"><%= link_to "Alpha Test HQ", beta_path %></li>
         </ul>
 
 		<% if current_user.try(:admin?) %> 

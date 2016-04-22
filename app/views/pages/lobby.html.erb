@@ -8,9 +8,8 @@
 	 		<h2 style="text-align: center;">Game Registration</h2>
 	 		<hr class="star-lobby">
 	 		
-	 		<p>Players Registered: 	<%= Reservation.where(game_id: params[:id]).count %></p>
-	 		<% @games.each do |game| %> 
-	 		<p>Max Players: <%= game.max_players %></p>
+	 		<p><b>Players Registered:</b> <%= Reservation.where(game_id: params[:id]).count %>
+	 		<% @games.each do |game| %> of <%= game.max_players %> Max Players</p>
 	 		<% end %> 
 
 	 		<!-- if lobby full, show error --> 
@@ -21,8 +20,8 @@
 	 		<% elsif Time.now > @games.first.starts_at and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists?(false) %>
 			 <p>Sorry, this game lobby is <b>closed</b>. Try again tomorrow!</p>
 
-			 <!-- if time is past game start or lobby full, show error --> 
-	 		<% elsif Participation.where(game_id: params[:id], user_id: current_user.id, finished: true) %>
+			 <!-- if game has been played --> 
+	 		<% elsif Participation.where(game_id: params[:id], user_id: current_user.id, finished: true).present? %>
 			 <p><b>Sorry, you already played this game!</b></p>
 
 			 <!-- if time is past game start or lobby full, show error --> 
@@ -50,6 +49,8 @@
 	 			<a class="btn rad-button2 wwt flat vertical" <%= link_to "Reserve Spot", reservation_path(id: params[:id]) %> </a>  
 	 			</div>
 			<% end %> 
+			<br>
+			<p><b>Rules: </b>TopDog players will be ranked: 1) by the number of correct answers earned, and 2) in the event of ties, by the fastest game finish time.</p>
 	 	</div>
 
 	 	<div class="col-sm-6" style="padding-left:15px; padding-right: 20px; border-left: 1px solid #ccc; height: 100%;">
@@ -57,13 +58,15 @@
 	 		<div style="padding-left: 10px;">
 	 		<h2 style="text-align: center;">Game Information</h2>
 	 		<hr class="star-lobby">
-	 		<p id="category">Category: <%= game.name %></p>
-	 		<p>Start Time: <%= game.starts_at %></p>
-	 		<p>Entry Fee: $<%= game.entry %>0</p>
+	 		<p id="category"><b>Category:</b> <%= game.name %></p>
+	 		<p><b>Start Time:</b> <%= game.starts_at %></p>
+	 		<p><b>Entry Fee:</b> $<%= game.entry %>0</p>
 	 		<% end %>
+	 		<p><b>Prizes:</b> 1st - $<%= PointsAllocation.where(game_id: params[:id], place: 1).last.points %>.00 | 2nd - $<%= PointsAllocation.where(game_id: params[:id], place: 2).last.points %>.00 | 3rd - $<%= PointsAllocation.where(game_id: params[:id], place: 3).last.points %>.00</p>
+
 	 		<% @games.each do |game| %>
 		 		<% if ((game.starts_at - Time.now).to_i)/60 > 0 %>
-		 			<div id="main-example"><p>Countdown to</p><p id="timer"></p></div>
+		 			<div id="main-example"><p><b>Countdown to Start:</b></p><p id="timer"></p></div>
 		 		<% else %>
 		  		<% end %>
 	 		<% end %>
