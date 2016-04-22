@@ -24,11 +24,9 @@
 		</div>
 		<div class="col-lg-6">
 			 <div class="panel panel-primary">
-      		<div class="panel-heading"><b>Referrals: Get 5 TopDollars for Every Signup</b></div>
+      		<div class="panel-heading"><b>Get $30 of TopDollar Play During Beta</b></div>
       		<div class="panel-body">
-      			<h4><b>Share:</b></h4>
-      			<h4>http://www.topdogtrivia.com/stack?username=<%= User.where(id: current_user).last.username %></h4>
-      			<h6>(Your TopDollar total will go up after 24 hours</h6>
+      			     <%= button_to 'Claim TopDollars', stacks_path(username: "earlydogs"), class: "btn rad-button2 wwt flat vertical", method: :post %>
     		</div>
     		</div>
 		</div>
