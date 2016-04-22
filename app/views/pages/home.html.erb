@@ -15,6 +15,11 @@
                         <span class="name">TopDog Trivia</span>
                         <%= image_tag("topdog4.png", class: "img-responsive") %> 
                         <span class="skills">Pub Trivia Goes Pro</span>
+                        <% if user_signed_in? %>
+                        <br>
+                          <span class="skills">Claim Your <%= link_to "TopDollars", stack_path %></span>
+                        <% else %>
+                        <% end %>
                         <hr class="star-light">
                             <% if user_signed_in? %>
                             <div class="button-wrap">
