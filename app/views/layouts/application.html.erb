@@ -10,9 +10,9 @@
 
 </head>
 <body>
-	<%= javascript_include_tag 'countdown' %>
 	
 	<%= render 'layouts/header' %>
+	<%= render 'layouts/google_analytics' %>
 
 	<% flash.each do |name, msg| %>
      	<%= content_tag(:div, msg, class: "alert alert-info") %>
