@@ -57,14 +57,13 @@
       		<div class="panel-heading"><b>TopDog Beta Leaderboard</b></div>
       		<div class="panel-body">
 
-      			<table class="table table-responsive">
+      			<table class="table table-condensed">
 	<thead>
 		<tr>
 			<th>Rank</th>
 			<th>Player</th>
 			<th>City</th>
-			<th>Beta Earnings</th>
-			<th>Game Wins</th>
+			<th>Beta Points</th>
 		</tr>
 	</thead>
 
@@ -75,8 +74,7 @@
 				<td><%= index + 1 %></td>
 				<td><%= User.where(id: stack[0]).last.username %>
 				<td><%= User.where(id: stack[0]).last.city %>
-			 	<td>$<%= stack[1] %>.00</td>
-			 	<td><%= Ranking.where(user_id: stack[0], ranking: 1).count %>
+			 	<td>$<%= stack[1] %></td>
 			 <% end %>
 			</tr>
 	</tbody>
