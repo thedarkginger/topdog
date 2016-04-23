@@ -43,8 +43,10 @@
   </table>
   <br>
  <% @game.each do |game| %>
-    <h4 style="text-align: center; font-weight: bold">*Scores and TopDollars finalized at <%= @game.last.starts_at + 6.minutes %>.</h4>
+    <h4 style="text-align: center;">*Scores and TopDollars finalized at <b><%= @game.last.starts_at + 6.minutes %>.</b></h4>
+    <h4 style="text-align: center">Have ideas for TopDog? Leave feedback <b><%= link_to "right here!", new_feedback_path %></b></h4>
 <% end %>
+
 
 </div>
 
