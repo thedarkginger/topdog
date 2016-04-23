@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @games = Game.where("starts_at >= ?", Time.now - 2.minutes).order(starts_at: :asc).limit(5)
-     first = Stack.limit(3).group(:user_id).sum(:chips)
+     first = Stack.group(:user_id).sum(:chips).take(3)
     @stacks = first.sort {|a,b| a[1] <=> b[1]}.reverse
 
 
