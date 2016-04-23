@@ -103,48 +103,82 @@
 
 
               <% if user_signed_in? %>
+                  <div class="container">
+                                    <div class="col-lg-12 text-center">
+                                      <h2>Your Upcoming Entries </h2>
+                                       <hr class="star-primary">
+                                  </div>
+
+                                   
+                                             <table class="table table-condensed">
+                                          <thead>
+                                            <tr>
+                                              <th>Rank</th>
+                                              <th>Game</th>
+                                              <th>Start Time</th>
+                                              <th>Entry</th>
+                                              <th>Top Prize</th>
+                                            </tr>
+                                          </thead>
+
+                                          <tbody>
+
+                                          <% @decks.each_with_index do |deck, index| %>
+                                              <tr>
+                                                <td><%= index + 1 %></td>
+                                                <td><%= deck.name %></td>
+                                                <td><%= deck.starts_at %>
+                                                 <td>$<%= deck.entry %>0</td>
+                                                   <td>$<%= PointsAllocation.where(game_id: deck.id, place: 1).first.points %>.00</td>
+                                                 <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: deck.id), class: "btn btn-primary btn-md" %></td>
+                                               <% end %>
+                                              </tr>
+                                          </tbody>
+
+                                        </table>
+                                      <% else %>
+                                              <div class="col-lg-12 text-center">
+                                                      <h2>Current Top Three </h2>
+                                                       <hr class="star-primary">
+                                                  </div>
+
+                                                      <table class="table table-condensed">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>Rank</th>
+                                                              <th>Player</th>
+                                                              <th>City</th>
+                                                              <th>Beta Earnings</th>
+                                                            </tr>
+                                                          </thead>
+
+                                                          <tbody>
+
+                                                          <% @stacks.each_with_index do |stack, index| %>
+                                                              <tr>
+                                                                <td><%= index + 1 %></td>
+                                                                <td><%= User.where(id: stack[0]).last.username %>
+                                                                <td><%= User.where(id: stack[0]).last.city %>
+                                                                <td>$<%= stack[1] %>.00</td>
+                                                               <% end %>
+                                                              </tr>
+                                                          </tbody>
+
+                                                        </table>
+
+                                                          <div class="button-wrap">
+                                                                <%= button_to "Check Your Ranking", beta_path, :class => "rad-button2 wwt flat", :method => :get %>
+                                                              </div>
+                                                        <br>
+                                      </div>
 
 
-<div class="container">
-                  <div class="col-lg-12 text-center">
-                    <h2>Your Upcoming Entries </h2>
-                     <hr class="star-primary">
-                </div>
-
-                 
-                           <table class="table table-condensed">
-                        <thead>
-                          <tr>
-                            <th>Rank</th>
-                            <th>Game</th>
-                            <th>Start Time</th>
-                            <th>Entry</th>
-                            <th>Top Prize</th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-
-                        <% @decks.each_with_index do |deck, index| %>
-                            <tr>
-                              <td><%= index + 1 %></td>
-                              <td><%= deck.name %></td>
-                              <td><%= deck.starts_at %>
-                               <td>$<%= deck.entry %>0</td>
-                                 <td>$<%= PointsAllocation.where(game_id: deck.id, place: 1).first.points %>.00</td>
-                               <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: deck.id), class: "btn btn-primary btn-md" %></td>
-                             <% end %>
-                            </tr>
-                        </tbody>
-
-                      </table>
-                    <% else %>
-                    <% end %>
-                    <br>
-                    </div>
-                    </div>
-                </div>
-                </div>
+                                      <% end %>
+                                      <br>
+                                      </div>
+                                      </div>
+                                  </div>
+                                  </div>
 
   <!-- About Section -->
     <section class="success" id="about">
@@ -170,42 +204,46 @@
         <br><br>
     </section>
 
+    <% if user_signed_in? %>
+
     <div class="container">
 
 
-    <div class="col-lg-12 text-center">
-                    <h2>Current Top Three </h2>
-                     <hr class="star-primary">
-                </div>
+      <div class="col-lg-12 text-center">
+                      <h2>Current Top Three </h2>
+                       <hr class="star-primary">
+                  </div>
 
-                    <table class="table table-condensed">
-                        <thead>
-                          <tr>
-                            <th>Rank</th>
-                            <th>Player</th>
-                            <th>City</th>
-                            <th>Beta Earnings</th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-
-                        <% @stacks.each_with_index do |stack, index| %>
+                      <table class="table table-condensed">
+                          <thead>
                             <tr>
-                              <td><%= index + 1 %></td>
-                              <td><%= User.where(id: stack[0]).last.username %>
-                              <td><%= User.where(id: stack[0]).last.city %>
-                              <td>$<%= stack[1] %>.00</td>
-                             <% end %>
+                              <th>Rank</th>
+                              <th>Player</th>
+                              <th>City</th>
+                              <th>Beta Earnings</th>
                             </tr>
-                        </tbody>
+                          </thead>
 
-                      </table>
+                          <tbody>
 
-                        <div class="button-wrap">
-                              <%= button_to "Check Your Ranking", beta_path, :class => "rad-button2 wwt flat", :method => :get %>
-                            </div>
-                      <br>
-    </div>
+                          <% @stacks.each_with_index do |stack, index| %>
+                              <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= User.where(id: stack[0]).last.username %>
+                                <td><%= User.where(id: stack[0]).last.city %>
+                                <td>$<%= stack[1] %>.00</td>
+                               <% end %>
+                              </tr>
+                          </tbody>
 
+                        </table>
+
+                          <div class="button-wrap">
+                                <%= button_to "Check Your Ranking", beta_path, :class => "rad-button2 wwt flat", :method => :get %>
+                              </div>
+                        <br>
+      </div>
+      <% else %>
+      
+<% end %>
     
