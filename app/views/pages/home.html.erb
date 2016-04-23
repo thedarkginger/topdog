@@ -8,7 +8,8 @@
                         <span class="skills">Pub Trivia Goes Pro</span>
                         <% if user_signed_in? %>
                         <br>
-                          <span class="skills">Claim Your <%= link_to "TopDollars", stack_path %></span>
+                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                          <span class="skills2">  Claim Your <%= link_to "Beta TopDollars", stack_path, id: "linkexample" %></span>
                         <% else %>
                         <% end %>
                         <hr class="star-light">
@@ -32,7 +33,7 @@
 <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Next on TopDog: Starting Each Hour </h2>
+                    <h2>Choose Your Next Game </h2>
                      <hr class="star-primary">
                 </div>
                 <div class="wrapper">
@@ -67,8 +68,112 @@
                     </table>
 
                     <p><b>Note for the Alpha Test Users:</b> Hey guys, thanks for playing. These games will start at the time listed above. You should register before to claim your spot, as the games can fill. The entry fee comes from the $30 TopDollars you are given for registering. You can track where you rank in the Alpha HQ Leaderboard. Have fun and leave feedback.</p>
+                  </div>
+                  </div> </div>
 
+    <section class="success" id="about">
+        <div class="container">
+             <div class="col-lg-12 text-center">
+                 <!-- <h2>About</h2> -->
+                     <%= image_tag("Circus.png", class: "img-responsive middle") %>
+                      <h2 style="color: white;">How To Play</h2> 
+                     <hr class="star-light">
+                <div class="row">
+                <div class="col-md-4">
+                       <span class="skills2" style="color: #ECECEC">
+                       <p style="color: white">1. Find Upcoming Games</p>
+                       <h4>New games posted every day.</h4>
+                       </span> </div>
+                <div class="col-md-4" style="color: #ECECEC">
+                       <span class="skills2">
+                       <p style="color: white">2. Reserve Spot</p>
+                        <h4>Pay entry points, and you're in.</h4>
+                       </span> </div>
+                <div class="col-md-4" style="color: #ECECEC">
+                       <span class="skills2">
+                       <p style="color: white">3. Return at Gametime</p>
+                        <h4>Play the field at the posted start time.</h4>
+                       </span> </div>
+                 </div>
+                </div>
+                </div>
+                </div>
+        
+    </section>
+
+
+              <% if user_signed_in? %>
+
+
+<div class="container">
                   <div class="col-lg-12 text-center">
+                    <h2>Your Upcoming Entries </h2>
+                     <hr class="star-primary">
+                </div>
+
+                 
+                           <table class="table table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Rank</th>
+                            <th>Game</th>
+                            <th>Start Time</th>
+                            <th>Entry</th>
+                            <th>Top Prize</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <% @decks.each_with_index do |deck, index| %>
+                            <tr>
+                              <td><%= index + 1 %></td>
+                              <td><%= deck.name %></td>
+                              <td><%= deck.starts_at %>
+                               <td>$<%= deck.entry %>0</td>
+                                 <td>$<%= PointsAllocation.where(game_id: deck.id, place: 1).first.points %>.00</td>
+                               <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: deck.id), class: "btn btn-primary btn-md" %></td>
+                             <% end %>
+                            </tr>
+                        </tbody>
+
+                      </table>
+                    <% else %>
+                    <% end %>
+                    <br>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+  <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                 <!-- <h2>About</h2> -->
+                     <%= image_tag("light-bulb2.png", class: "img-responsive middle") %>
+                      <h2 style="color: white;">Why TopDog?</h2> 
+                     <hr class="star-light">
+                </div>
+
+                <div class="col-md-6">
+                     <h2><b>Trivia's First Pro Tour</b></h2> <p>TopDog is the first opportunity for serious trivia players to make money from their passion. Find your favorite games, play against the field or friends, and earn real cash by winning from your talent. This is where trivia goes pro.</p>
+                </div>
+                <div class="col-md-6">
+                  <h2><b>New Games Every Day</b></h2>
+                    <p>Each day, new games will come online offering fresh sets of questions. Test your skills against the best and find new games to win. For our <b>Alpha Test</b>, we are optimizing our system before launch. There will be games each day on the hour (with more to come).</p>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br><br>
+    </section>
+
+    <div class="container">
+
+
+    <div class="col-lg-12 text-center">
                     <h2>Weekly Top Three </h2>
                      <hr class="star-primary">
                 </div>
@@ -97,33 +202,10 @@
 
                       </table>
 
-
-                    </div>
-                    </div>
-                </div>
-
-  <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                 <!-- <h2>About</h2> -->
-                     <%= image_tag("light-bulb2.png", class: "img-responsive middle") %>
-                      <h2 style="color: white;">Why TopDog?</h2> 
-                     <hr class="star-light">
-                </div>
-
-                <div class="col-md-6">
-                     <h2><b>Trivia's First Pro Tour</b></h2> <p>TopDog is the first opportunity for serious trivia players to make money from their passion. Find your favorite games, play against the field or friends, and earn real cash by winning from your talent. This is where trivia goes pro.</p>
-                </div>
-                <div class="col-md-6">
-                  <h2><b>New Games Every Day</b></h2>
-                    <p>Each day, new games will come online offering fresh sets of questions. Test your skills against the best and find new games to win. For our <b>Alpha Test</b>, we are optimizing our system before launch. There will be games each day on the hour (with more to come).</p>
-                </div>
-                <br>
-             
-            </div>
-        </div>
-    </section>
+                        <div class="button-wrap">
+                              <%= button_to "Check Your Ranking", beta_path, :class => "rad-button2 wwt flat", :method => :get %>
+                            </div>
+                      <br>
+    </div>
 
     
