@@ -1,14 +1,15 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.where("starts_at >= ?", Time.now - 2.minutes).order(starts_at: :asc).limit(5)
-     first = Stack.group(:user_id).sum(:chips).take(3)
-    @stacks = first.sort {|a,b| a[1] <=> b[1]}.reverse
+    @games = Game.where("starts_at >= ?", Time.now - 4.minutes).order(starts_at: :asc).limit(5)
 
 
     if user_signed_in?
         @reservations = Reservation.where(user_id: current_user.id).pluck(:game_id)
         @decks = Game.where("starts_at >=?", Time.now).where(id: @reservations).order(starts_at: :asc)
     end
+
+    first = Stack.group(:user_id).sum(:chips)
+    @stacks = first.sort {|a,b| a[1] <=> b[1]}.reverse.take(7)
   end
 
   def testhome
