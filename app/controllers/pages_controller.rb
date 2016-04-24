@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @games = Game.where("starts_at >= ?", Time.now - 4.minutes).order(starts_at: :asc).limit(5)
+    @games = Game.where("starts_at >= ?", Time.now - 10.minutes).order(starts_at: :asc).limit(5)
 
 
     if user_signed_in?

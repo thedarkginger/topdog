@@ -35,11 +35,11 @@
 	 					<b><%= game.starts_at %></b>
 	 				<% end %> for registered players. You will have three minutes to begin the game. Good luck.</p>
 
-			<% elsif Time.now - 4.minutes > @games.first.starts_at and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists? %>
+			<% elsif Time.now - 11.minutes > @games.first.starts_at and Reservation.where(user_id: current_user.id, game_id: params[:id]).exists? %>
 				<p style="color: #D64541; font-weight: bold; text-align: center;"><i class="fa fa-clock-o"></i>   D'oh!</p> <p> You're in the doghouse. The game already started!</p>
 
 			<!-- player registered and within 4 min of start --> 
-	 		<% elsif Reservation.where(user_id: current_user.id, game_id: params[:id]).exists? and Time.now - 4.minutes < @games.first.starts_at and Time.now + 4.minutes > @games.first.starts_at  %>
+	 		<% elsif Reservation.where(user_id: current_user.id, game_id: params[:id]).exists? and Time.now - 11.minutes < @games.first.starts_at and Time.now + 11.minutes > @games.first.starts_at  %>
 	 			<div class="button-wrap">
 	  				<a class="btn rad-button2 wwt flat vertical" <%= link_to "Enter Game", trivia_path(game_id: params[:id]) %> </a>  
 		 			</div>
