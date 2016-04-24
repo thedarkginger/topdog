@@ -44,6 +44,7 @@
                           <th>Game</th>
                           <th>Start Time</th>
                           <th>Game Entry</th>
+                          <th>First Prize</th>
                           <th>Game Entries</th>
                         </tr>
                       </thead>
@@ -54,6 +55,7 @@
                           <td><%= game.name %></td>
                            <td><%= game.starts_at %></td>
                            <td>$<%= game.entry %>0</td>
+                           <td>$<%= PointsAllocation.where(game_id: game.id, place: 1).first.points %></td>
                            <td><%= game.reservations.count %> / <%= game.max_players %> </td>
                           <td>
                              <% if user_signed_in? %>
