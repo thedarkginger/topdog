@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-    @games = Game.all
+    @games = Game.all.order(:starts_at)
   end
 
   # GET /questions/1
