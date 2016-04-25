@@ -44,7 +44,7 @@
                           <th>Game</th>
                           <th>Start Time</th>
                           <th>Game Entry</th>
-                          <th>First Prize</th>
+                          <th class="mobiletablehide">First Prize</th>
                           <th>Game Entries</th>
                         </tr>
                       </thead>
@@ -55,7 +55,7 @@
                           <td><%= game.name %></td>
                            <td><%= game.starts_at %></td>
                            <td>$<%= game.entry %>0</td>
-                           <td>$<%= PointsAllocation.where(game_id: game.id, place: 1).first.points %></td>
+                           <td class="mobiletablehide">$<%= PointsAllocation.where(game_id: game.id, place: 1).first.points %></td>
                            <td><%= game.reservations.count %> / <%= game.max_players %> </td>
                           <td>
                              <% if user_signed_in? %>
@@ -115,11 +115,11 @@
                                              <table class="table table-condensed">
                                           <thead>
                                             <tr>
-                                              <th>Rank</th>
+                                              <th class="mobiletablehide">Rank</th>
                                               <th>Game</th>
                                               <th>Start Time</th>
                                               <th>Entry</th>
-                                              <th>Top Prize</th>
+                                              <th class="mobiletablehide">Top Prize</th>
                                             </tr>
                                           </thead>
 
@@ -127,11 +127,11 @@
 
                                           <% @decks.each_with_index do |deck, index| %>
                                               <tr>
-                                                <td><%= index + 1 %></td>
+                                                <td class="mobiletablehide"><%= index + 1 %></td>
                                                 <td><%= deck.name %></td>
                                                 <td><%= deck.starts_at %>
                                                  <td>$<%= deck.entry %>0</td>
-                                                   <td>$<%= PointsAllocation.where(game_id: deck.id, place: 1).first.points %>.00</td>
+                                                 <td class="mobiletablehide">$<%= PointsAllocation.where(game_id: deck.id, place: 1).first.points %>.00</td>
                                                  <td><%= link_to "Play &raquo;".html_safe, lobby_path(id: deck.id), class: "btn btn-primary btn-md" %></td>
                                                <% end %>
                                               </tr>
