@@ -6,11 +6,14 @@
                         <span class="name">TopDog Trivia</span>
                         <%= image_tag("topdog4.png", class: "img-responsive") %> 
                         <span class="skills">Pub Trivia Goes Pro</span>
-                        <% if user_signed_in? %>
+                        <% if user_signed_in? && Stack.where(user_id: current_user.id, game_id: 1).exists? %>
+                            <br>
+                              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                               <span class="skills2">  Earn <%= link_to "5 TopDollars", about_path, id: "linkexample" %> for every friend you invite!</span>
+                        <% else %> 
                         <br>
                          <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
                           <span class="skills2">  Claim Your <%= link_to "Beta TopDollars", stack_path, id: "linkexample" %></span>
-                        <% else %>
                         <% end %>
                         <hr class="star-light">
                             <% if user_signed_in? %>
@@ -97,6 +100,9 @@
                         <h4>Play the field at the posted start time.</h4>
                        </span> </div>
                  </div>
+                 <span class="glyphicon glyphicon-chevron-down"></span>
+                  <h2 style="line-height: 130%"><b style="color: #2c3e50; font-size: 109%">Bottom Line:</b> Play trivia and earn TopDollars for Top 3 finishes. After Saturday's last game, the Top 7 will win prizes with <b style="color: #2c3e50; font-size: 108%">$250</b> to the winner. </h2>
+                  <br><br>
                 </div>
                 </div>
                 </div>

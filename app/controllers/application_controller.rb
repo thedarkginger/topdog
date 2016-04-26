@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:city, :username, :timezone, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:city, :username, :timezone, :promo, :email, :password, :password_confirmation, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:city, :login, :timezone, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:city, :username, :timezone, :email, :password, :password_confirmation, :current_password) }
   end

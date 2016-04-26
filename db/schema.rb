@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421063122) do
+ActiveRecord::Schema.define(version: 20160426011129) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -177,6 +177,7 @@ ActiveRecord::Schema.define(version: 20160421063122) do
     t.datetime "confirmation_sent_at"
     t.boolean  "admin"
     t.string   "timezone"
+    t.string   "promo"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
