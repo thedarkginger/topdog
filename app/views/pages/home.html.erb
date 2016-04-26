@@ -9,7 +9,7 @@
                         <% if user_signed_in? && Stack.where(user_id: current_user.id, game_id: 1).exists? %>
                             <br>
                               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                               <span class="skills2">  Earn <%= link_to "5 TopDollars", about_path, id: "linkexample" %> for every friend you invite!</span>
+                               <span class="skills2"><u>Breaking:</u> Earn <%= link_to "5 TopDollars", about_path, id: "linkexample" %> for every friend you invite!</span>
                         <% else %> 
                         <br>
                          <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
