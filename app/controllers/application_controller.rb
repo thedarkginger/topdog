@@ -44,7 +44,7 @@ end
 
   def set_timezone
     tz = current_user ? current_user.timezone : nil
-    Time.zone = tz || ActiveSupport::TimeZone["London"]
+    Time.zone = tz || ActiveSupport::TimeZone["Eastern Time (US & Canada)"]
   end
 
 end
